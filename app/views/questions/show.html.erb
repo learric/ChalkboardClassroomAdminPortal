@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @question.category %>
+</p>
+
+<p>
+  <strong>First line:</strong>
+  <%= @question.first_line %>
+</p>
+
+<p>
+  <strong>Last line:</strong>
+  <%= @question.last_line %>
+</p>
+
+<p>
+  <strong>Incorrect one:</strong>
+  <%= @question.incorrect_one %>
+</p>
+
+<p>
+  <strong>Incorrect two:</strong>
+  <%= @question.incorrect_two %>
+</p>
+
+<p>
+  <strong>Incorrect three:</strong>
+  <%= @question.incorrect_three %>
+</p>
+
+<p>
+  <strong>Correct answer:</strong>
+  <%= @question.correct_answer %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
