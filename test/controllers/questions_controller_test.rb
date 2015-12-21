@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class QuestionsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    @user = User.create!(email: "user@email.com", password: "password", password_confirmation: "password", created_at: "2015-12-20 23:00:00")
+    sign_in @user
     @question = questions(:one)
   end
 
