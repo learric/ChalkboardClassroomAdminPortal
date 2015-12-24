@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :is_user_teacher
+  before_action :is_user_teacher?
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions
@@ -76,9 +76,9 @@ class QuestionsController < ApplicationController
       params.require(:question).permit(:category, :first_line, :last_line, :incorrect_one, :incorrect_two, :incorrect_three, :correct_answer)
     end
 
-    def is_user_teacher
-      @user = current_user
-      if @user.is_teacher == false
+    def is_user_teacher?
+      teacher = current_user.is_teacher
+      if !teacher
         respond_to do |format|
           format.html { render 'questions/errors'}
         end
