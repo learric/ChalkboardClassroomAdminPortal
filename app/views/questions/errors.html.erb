@@ -2,4 +2,5 @@
 <h2>You must be a teacher to be here!</h2>
 <h3>We're all doing blow and making out on the copier!</h3>
 
-<%= link_to "Back to home", questions_path %>
+<p><%= link_to "Home", root_path %></p>
+<p><%= link_to "Logout", destroy_user_session_path, method: :delete  %></p>
