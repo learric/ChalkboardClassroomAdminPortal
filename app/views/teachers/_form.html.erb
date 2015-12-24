@@ -1,0 +1,57 @@
+<%= form_for(@teacher) do |f| %>
+  <% if @teacher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+      <ul>
+      <% @teacher.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name_prefix %><br>
+    <%= f.text_field :name_prefix %>
+  </div>
+  <div class="field">
+    <%= f.label :name_first %><br>
+    <%= f.text_field :name_first %>
+  </div>
+  <div class="field">
+    <%= f.label :name_last %><br>
+    <%= f.text_field :name_last %>
+  </div>
+  <div class="field">
+    <%= f.label :school_name %><br>
+    <%= f.text_field :school_name %>
+  </div>
+  <div class="field">
+    <%= f.label :school_location %><br>
+    <%= f.text_field :school_location %>
+  </div>
+  <div class="field">
+    <%= f.label :school_city %><br>
+    <%= f.text_field :school_city %>
+  </div>
+  <div class="field">
+    <%= f.label :school_state %><br>
+    <%= f.text_field :school_state %>
+  </div>
+  <div class="field">
+    <%= f.label :classroom_name %><br>
+    <%= f.text_field :classroom_name %>
+  </div>
+  <div class="field">
+    <%= f.label :classroom_location %><br>
+    <%= f.text_field :classroom_location %>
+  </div>
+  <div class="field">
+    <%= f.label :classroom_description %><br>
+    <%= f.text_area :classroom_description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
