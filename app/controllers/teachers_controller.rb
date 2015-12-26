@@ -1,10 +1,18 @@
 class TeachersController < ApplicationController
   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :is_user_teacher?
+  before_action :is_user_admin?
 
   # GET /teachers
   # GET /teachers.json
   def index
-    @teachers = Teacher.all
+    if @is_admin
+      @teachers = Teacher.all
+    else
+      id = current_user.id
+      @teachers = Teacher.where(user_id: id)
+    end
   end
 
   # GET /teachers/1
@@ -70,5 +78,21 @@ class TeachersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
       params.require(:teacher).permit(:name_prefix, :name_first, :name_last, :school_name, :school_location, :school_city, :school_state, :classroom_name, :classroom_location, :classroom_description)
+    end
+
+    def is_user_teacher?
+      if current_user && current_user.is_teacher
+        @is_teacher = true
+      else
+        respond_to do |format|
+          format.html { render 'teachers/errors'}
+        end
+      end
+    end
+
+    def is_user_admin?
+      if current_user && current_user.is_admin
+        @is_admin = true
+      end
     end
 end

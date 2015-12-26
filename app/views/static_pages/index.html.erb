@@ -1,7 +1,17 @@
 <h1>Collegiate Rivals Admin</h1>
-<% if @user %>
-  <p><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
-  <p><%= link_to "Question admin", questions_path %></p>
+
+<% if user_signed_in? %>
+  <% if current_user.is_admin %>
+    <p><%= link_to "All Questions", questions_path %></p>
+    <p><%= link_to "All Teachers", teachers_path %></p>
+  <% end %>
+
+  <% if current_user.is_teacher && !current_user.is_admin %>
+    <p><%= link_to "My Questions", questions_path %></p>
+  <% end %>
+
+    <p><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
+
 <% else %>
-  <p><%= link_to "Sign in", new_user_session_path, method: :get %></p>
+    <p><%= link_to "Sign in", new_user_session_path, method: :get %></p>
 <% end %>
