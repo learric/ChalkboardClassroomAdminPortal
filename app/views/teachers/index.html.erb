@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name prefix</th>
       <th>Name first</th>
       <th>Name last</th>
@@ -22,6 +23,7 @@
   <tbody>
     <% @teachers.each do |teacher| %>
       <tr>
+        <td><%= teacher.id %></td>
         <td><%= teacher.name_prefix %></td>
         <td><%= teacher.name_first %></td>
         <td><%= teacher.name_last %></td>

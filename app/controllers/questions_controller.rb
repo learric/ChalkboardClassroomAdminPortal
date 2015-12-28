@@ -6,12 +6,23 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    if current_user && current_user.is_admin
+      @questions = Question.all
+    elsif current_user && current_user.is_teacher
+      @questions = Question.where(teacher_id: current_user.id)
+    else
+      render 'questions/errors'
+    end
   end
 
   # GET /questions/1
   # GET /questions/1.json
   def show
+    unless current_user.is_admin
+      if @question.teacher_id != current_user.id
+        render 'questions/errors'
+      end
+    end
   end
 
   # GET /questions/new
@@ -77,10 +88,11 @@ class QuestionsController < ApplicationController
     end
 
     def is_user_teacher?
-      teacher = current_user.is_teacher
-      if !teacher
+      if current_user && current_user.is_teacher
+        @is_teacher = true
+      else
         respond_to do |format|
-          format.html { render 'questions/errors'}
+          format.html { render 'questions/errors' }
         end
       end
     end

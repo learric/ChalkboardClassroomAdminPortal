@@ -1,23 +1,26 @@
 class TeachersController < ApplicationController
-  before_action :set_teacher, only: [:show, :edit, :update, :destroy]
+  before_action :set_teacher, only: [:edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :is_user_teacher?
-  before_action :is_user_admin?
+  before_action :is_user_admin?, except: [:show, :edit, :update]
 
   # GET /teachers
   # GET /teachers.json
   def index
-    if @is_admin
-      @teachers = Teacher.all
-    else
-      id = current_user.id
-      @teachers = Teacher.where(user_id: id)
-    end
+    @teachers = Teacher.all
   end
 
   # GET /teachers/1
   # GET /teachers/1.json
   def show
+    if current_user.is_admin
+      set_teacher
+    else
+      @teacher = Teacher.where(user_id: current_user.id)
+      if @teacher.user_id != current_user.id
+        render 'questions/errors'
+      end
+    end
   end
 
   # GET /teachers/new
@@ -91,8 +94,11 @@ class TeachersController < ApplicationController
     end
 
     def is_user_admin?
-      if current_user && current_user.is_admin
-        @is_admin = true
+      @is_admin = TeachersHelper.is_teacher_admin?(current_user)
+      unless @is_admin
+        respond_to do |format|
+          format.html { render 'teachers/errors'}
+        end
       end
     end
 end
