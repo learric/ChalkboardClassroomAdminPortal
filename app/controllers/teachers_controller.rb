@@ -13,7 +13,7 @@ class TeachersController < ApplicationController
   # GET /teachers/1
   # GET /teachers/1.json
   def show
-    if current_user.is_admin
+    if @is_admin
       set_teacher
     else
       @teacher = Teacher.where(user_id: current_user.id)
@@ -84,9 +84,8 @@ class TeachersController < ApplicationController
     end
 
     def is_user_teacher?
-      if current_user && current_user.is_teacher
-        @is_teacher = true
-      else
+      @is_teacher = TeachersHelper.is_teacher?(current_user)
+      unless @is_teacher
         respond_to do |format|
           format.html { render 'teachers/errors'}
         end
