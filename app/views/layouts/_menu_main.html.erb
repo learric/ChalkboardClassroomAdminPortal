@@ -1,23 +1,29 @@
 <div class="col-md-2">
   <div class="btn-group">
-    <button type="button" class="btn btn-primary dropdown-toggle text-uppercase" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
-    <div class="dropdown-menu">
+
+    <button type="button" class="btn btn-primary dropdown-toggle text-uppercase btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</button>
+
+    <div class="dropdown-menu dropdown-menu-right text-sm-right">
+      <%= link_to "Home", root_path, class: "dropdown-item" %>
 
       <% if user_signed_in? %>
+
         <% if current_user.is_admin %>
           <%= link_to "All Questions", questions_path, class: "dropdown-item" %>
           <%= link_to "All Teachers", teachers_path, class: "dropdown-item" %>
         <% end %>
 
         <% if current_user.is_teacher && !current_user.is_admin %>
-          <%= link_to "My Questions", questions_path, class: "dropdown-item" %>
+          <%= link_to "Questions", questions_path, class: "dropdown-item" %>
         <% end %>
 
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 
       <% else %>
-        <%= link_to "Sign in", new_user_session_path, method: :get, class: "dropdown-item" %>
+        <%= link_to "Sign In", new_user_session_path, method: :get, class: "dropdown-item" %>
       <% end %>
+
     </div>
+
   </div>
 </div>

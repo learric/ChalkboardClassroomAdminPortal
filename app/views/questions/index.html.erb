@@ -1,43 +1,35 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_main' %>
 
-<h1>Listing Questions</h1>
+<div class="container-fluid">
+  <h1 class="display-4">My Questions</h1>
+  <br>
+  <%= link_to 'New Question', new_question_path, class: "btn btn-primary btn-lg text-uppercase" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Category</th>
-      <th>First line</th>
-      <th>Last line</th>
-      <th>Incorrect one</th>
-      <th>Incorrect two</th>
-      <th>Incorrect three</th>
-      <th>Correct answer</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <p>&nbsp;</p>
 
-  <tbody>
-    <% @questions.each do |question| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= question.category %></td>
-        <td><%= question.first_line %></td>
-        <td><%= question.last_line %></td>
-        <td><%= question.incorrect_one %></td>
-        <td><%= question.incorrect_two %></td>
-        <td><%= question.incorrect_three %></td>
-        <td><%= question.correct_answer %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Category</th>
+        <th>Question</th>
+        <th>Wrong Answers</th>
+        <th>Correct Answer</th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %>
-
-<p><a href="/questions.json">JSON</a></p>
-
-<%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %>
+    </thead>
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr>
+          <td><%= question.category %></td>
+          <td><%= question.first_line %><br />
+            <%= question.last_line %></td>
+          <td><%= question.incorrect_one %><br />
+            <%= question.incorrect_two %><br />
+            <%= question.incorrect_three %></td>
+          <td><%= question.correct_answer %></td>
+          <td><p class="text-xs-center"><%= link_to 'Edit', edit_question_path(question), class: "btn btn-lg btn-secondary" %></p>
+            <p class="text-xs-center"><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-lg btn-danger" %></p></td>
+        </tr>
+      <% end %>
+  </table>
+</div>
