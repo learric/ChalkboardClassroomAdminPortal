@@ -1,51 +1,47 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_main' %>
 
-<h1>Listing Teachers</h1>
+<div class="container-fluid">
+  <h1 class="display-4">All Teachers</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name prefix</th>
-      <th>Name first</th>
-      <th>Name last</th>
-      <th>School name</th>
-      <th>School location</th>
-      <th>School city</th>
-      <th>School state</th>
-      <th>Classroom name</th>
-      <th>Classroom location</th>
-      <th>Classroom description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <p>&nbsp;</p>
 
-  <tbody>
-    <% @teachers.each do |teacher| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= teacher.id %></td>
-        <td><%= teacher.name_prefix %></td>
-        <td><%= teacher.name_first %></td>
-        <td><%= teacher.name_last %></td>
-        <td><%= teacher.school_name %></td>
-        <td><%= teacher.school_location %></td>
-        <td><%= teacher.school_city %></td>
-        <td><%= teacher.school_state %></td>
-        <td><%= teacher.classroom_name %></td>
-        <td><%= teacher.classroom_location %></td>
-        <td><%= teacher.classroom_description %></td>
-        <td><%= link_to 'Show', teacher_path(teacher) %></td>
-        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-        <% if current_user.is_admin %>
-          <td><%= link_to 'Delete', teacher_path(teacher), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <th>Name</th>
+        <th>School</th>
+        <th>Location</th>
+        <th>Classroom</th>
+        <th>Room #</th>
+        <th>Description</th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @teachers.each do |teacher| %>
+        <tr>
+          <td><%= teacher.name_prefix %> <%= teacher.name_first %> <%= teacher.name_last %></td>
+          <td><%= teacher.school_name %></td>
+          <td><%= teacher.school_location %><br>
+            <%= teacher.school_city %>, <%= teacher.school_state %></td>
+          <td><%= teacher.classroom_name %></td>
+          <td><%= teacher.classroom_location %></td>
+          <td><%= teacher.classroom_description %></td>
+          <td><p><%= link_to 'Edit', edit_teacher_path(teacher), class: "btn btn-secondary" %></p>
+          <% if current_user.is_admin %>
+            <p><%= link_to 'Delete', teacher_path(teacher), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></p>
+          <% end %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<% if current_user.is_admin %>
-  <%= link_to 'New Teacher', new_teacher_path %>
-<% end %>
+  <br>
+
+  <% if current_user.is_admin %>
+    <%= link_to 'New Teacher', new_teacher_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
+
+  <p id="notice"><%= notice %></p>
+</div>

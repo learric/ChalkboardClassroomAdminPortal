@@ -1,39 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_main' %>
 
-<p>
-  <strong>Category:</strong>
-  <%= @question.category %>
-</p>
+<div class="container-fluid">
+  <h1 class="display-4"><%= @question.category %> Question</h1>
+  <p>&nbsp;</p>
 
-<p>
-  <strong>First line:</strong>
-  <%= @question.first_line %>
-</p>
+  <div class="row">
+    <div class="col col-md-6">
+      <h2>Question</h2>
 
-<p>
-  <strong>Last line:</strong>
-  <%= @question.last_line %>
-</p>
+      <p><%= @question.first_line %></p>
+      <p><%= @question.last_line %>&nbsp;</p>
+    </div>
+    <div class="col col-md-6">
+      <h2>Answers</h2>
+      <p><strong>Incorrect</strong><br>
+        <%= @question.incorrect_one %><br>
+        <%= @question.incorrect_two %><br>
+        <%= @question.incorrect_three %></p>
 
-<p>
-  <strong>Incorrect one:</strong>
-  <%= @question.incorrect_one %>
-</p>
+      <p><strong>Correct</strong><br>
+        <%= @question.correct_answer %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>Incorrect two:</strong>
-  <%= @question.incorrect_two %>
-</p>
+  <p><%= link_to 'Edit', edit_question_path(@question), class: "btn btn-lg btn-primary" %></p>
+  <p><%= link_to 'Back', questions_path, class: "btn btn-danger" %></p>
 
-<p>
-  <strong>Incorrect three:</strong>
-  <%= @question.incorrect_three %>
-</p>
-
-<p>
-  <strong>Correct answer:</strong>
-  <%= @question.correct_answer %>
-</p>
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+  <p id="notice"><%= notice %></p>
+</div>

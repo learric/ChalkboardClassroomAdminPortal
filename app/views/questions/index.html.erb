@@ -1,7 +1,11 @@
 <%= render 'layouts/header_main' %>
 
 <div class="container-fluid">
-  <h1 class="display-4">My Questions</h1>
+  <% if current_user.is_admin %>
+    <h1 class="display-4">All Questions</h1>
+  <% else %>
+    <h1 class="display-4">My Questions</h1>
+  <% end %>
   <br>
   <%= link_to 'New Question', new_question_path, class: "btn btn-primary btn-lg text-uppercase" %>
 
