@@ -1,54 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_main' %>
 
-<p>
-  <strong>Name prefix:</strong>
-  <%= @teacher.name_prefix %>
-</p>
+<div class="container-fluid">
+  <h1 class="display-4"><%= @teacher.name_prefix %> <%= @teacher.name_last %></h1>
 
-<p>
-  <strong>Name first:</strong>
-  <%= @teacher.name_first %>
-</p>
+  <p>&nbsp;</p>
 
-<p>
-  <strong>Name last:</strong>
-  <%= @teacher.name_last %>
-</p>
+  <div class="row">
+    <div class="col col-sm-4">
+      <h4><%= @teacher.name_prefix %> <%= @teacher.name_first %> <%= @teacher.name_last %></h4>
+    </div>
+    <div class="col col-sm-4">
+      <h2>School</h2>
+      <p><%= @teacher.school_name %></p>
+      <p><%= @teacher.school_location %><br>
+        <%= @teacher.school_city %>, <%= @teacher.school_state %></p>
+    </div>
+    <div class="col col-sm-4">
+      <h2>Classroom</h2>
+      <p><%= @teacher.classroom_name %><br>
+        <%= @teacher.classroom_description %></p>
+      <p><strong>Classroom Location:</strong> <%= @teacher.classroom_location %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>School name:</strong>
-  <%= @teacher.school_name %>
-</p>
+  <p><%= link_to 'Edit Teacher', edit_teacher_path(@teacher), class: "btn btn-lg btn-primary" %></p>
+  <p><%= link_to 'Back', teachers_path, class: "btn btn-danger" %></p>
 
-<p>
-  <strong>School location:</strong>
-  <%= @teacher.school_location %>
-</p>
-
-<p>
-  <strong>School city:</strong>
-  <%= @teacher.school_city %>
-</p>
-
-<p>
-  <strong>School state:</strong>
-  <%= @teacher.school_state %>
-</p>
-
-<p>
-  <strong>Classroom name:</strong>
-  <%= @teacher.classroom_name %>
-</p>
-
-<p>
-  <strong>Classroom location:</strong>
-  <%= @teacher.classroom_location %>
-</p>
-
-<p>
-  <strong>Classroom description:</strong>
-  <%= @teacher.classroom_description %>
-</p>
-
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-<%= link_to 'Back', teachers_path %>
+  <p id="notice"><%= notice %></p>
+</div>

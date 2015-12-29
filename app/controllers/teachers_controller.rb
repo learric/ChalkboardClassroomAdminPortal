@@ -1,5 +1,5 @@
 class TeachersController < ApplicationController
-  before_action :set_teacher, only: [:edit, :update, :destroy]
+  before_action :set_teacher, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :is_user_teacher?
   before_action :is_user_admin?, except: [:show, :edit, :update]
@@ -13,14 +13,6 @@ class TeachersController < ApplicationController
   # GET /teachers/1
   # GET /teachers/1.json
   def show
-    if @is_admin
-      set_teacher
-    else
-      @teacher = Teacher.where(user_id: current_user.id)
-      if @teacher.user_id != current_user.id
-        render 'questions/errors'
-      end
-    end
   end
 
   # GET /teachers/new

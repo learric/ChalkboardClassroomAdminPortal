@@ -1,6 +1,9 @@
-<h1>Editing Teacher</h1>
+<%= render 'layouts/header_main' %>
 
-<%= render 'form' %>
+<div class="container-fluid">
+  <h1 class="display-4">Edit Profile</h1>
 
-<%= link_to 'Show', @teacher %> |
-<%= link_to 'Back', teachers_path %>
+  <%= render 'form' %>
+
+  <p><%= link_to 'Back', teachers_path, class: "btn btn-danger" %></p>
+</div>

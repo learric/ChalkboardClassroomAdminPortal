@@ -11,47 +11,85 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name_prefix %><br>
-    <%= f.text_field :name_prefix %>
+  <div class="row">
+    <div class="col col-sm-12">
+      <h2>Teacher Information</h2>
+    </div>
+    <div class="col col-sm-2">
+      <fieldset class="form-group">
+        <label for="name_prefix">Prefix</label><br>
+        <%= f.text_field :name_prefix, class:"form-control" %>
+      </fieldset>
+    </div>
+    <div class="col col-sm-5">
+      <fieldset class="form-group">
+        <label for="name_first">First</label><br>
+        <%= f.text_field :name_first, class:"form-control" %>
+      </fieldset>
+    </div>
+    <div class="col col-sm-5">
+      <fieldset class="form-group">
+        <label for="name_last">Last</label><br>
+        <%= f.text_field :name_last, class:"form-control" %>
+      </fieldset>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :name_first %><br>
-    <%= f.text_field :name_first %>
+
+  <div class="row">
+    <div class="col col-sm-12">
+      <h2>School Information</h2>
+    </div>
+    <div class="col col-sm-6">
+      <fieldset class="form-group">
+        <label for="school_name">Name</label><br>
+        <%= f.text_field :school_name, class:"form-control" %>
+      </fieldset>
+    </div>
+    <div class="col col-sm-6">
+      <fieldset class="form-group">
+        <label for="school_location">Street Address</label><br>
+        <%= f.text_field :school_location, class:"form-control" %>
+      </fieldset>
+    </div>
+    <div class="col col-sm-6">
+      <fieldset class="form-group">
+        <label for="school_city">City</label><br>
+        <%= f.text_field :school_city, class:"form-control" %>
+      </fieldset>
+    </div>
+    <div class="col col-sm-6">
+      <fieldset class="form-group">
+        <label for="school_state">State</label><br>
+        <%= f.text_field :school_state, class:"form-control" %>
+      </fieldset>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :name_last %><br>
-    <%= f.text_field :name_last %>
+
+  <div class="row">
+    <div class="col col-sm-12">
+      <h2>Classroom Information</h2>
+    </div>
+    <div class="col col-sm-4">
+      <fieldset class="form-group">
+        <label for="classroom_name">Name</label><br>
+        <%= f.text_field :classroom_name, class:"form-control" %>
+      </fieldset>
+    </div>
+    <div class="col col-sm-4">
+      <fieldset class="form-group">
+        <label for="classroom_location">Room Location</label><br>
+        <%= f.text_field :classroom_location, class:"form-control" %>
+      </fieldset>
+    </div>
+    <div class="col col-sm-4">
+      <fieldset class="form-group">
+        <label for="classroom_description">Description</label><br>
+        <%= f.text_area :classroom_description, class:"form-control" %>
+      </fieldset>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :school_name %><br>
-    <%= f.text_field :school_name %>
-  </div>
-  <div class="field">
-    <%= f.label :school_location %><br>
-    <%= f.text_field :school_location %>
-  </div>
-  <div class="field">
-    <%= f.label :school_city %><br>
-    <%= f.text_field :school_city %>
-  </div>
-  <div class="field">
-    <%= f.label :school_state %><br>
-    <%= f.text_field :school_state %>
-  </div>
-  <div class="field">
-    <%= f.label :classroom_name %><br>
-    <%= f.text_field :classroom_name %>
-  </div>
-  <div class="field">
-    <%= f.label :classroom_location %><br>
-    <%= f.text_field :classroom_location %>
-  </div>
-  <div class="field">
-    <%= f.label :classroom_description %><br>
-    <%= f.text_area :classroom_description %>
-  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-lg btn-primary" %>
   </div>
 <% end %>
