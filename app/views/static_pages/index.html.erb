@@ -1,17 +1,7 @@
-<h1>Collegiate Rivals Admin</h1>
+<%= render 'layouts/header_main' %>
 
-<% if user_signed_in? %>
-  <% if current_user.is_admin %>
-    <p><%= link_to "All Questions", questions_path %></p>
-    <p><%= link_to "All Teachers", teachers_path %></p>
-  <% end %>
-
-  <% if current_user.is_teacher && !current_user.is_admin %>
-    <p><%= link_to "My Questions", questions_path %></p>
-  <% end %>
-
-    <p><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
-
-<% else %>
-    <p><%= link_to "Sign in", new_user_session_path, method: :get %></p>
-<% end %>
+<div class="container-fluid">
+  <h1 class="display-4 text-xs-center text-uppercase">Welcome!</h1>
+  <p>&nbsp;</p>
+  <p class="text-xs-center"><%= link_to "Sign in", new_user_session_path, method: :get, class: "btn btn-primary btn-lg text-uppercase" %></p>
+</div>

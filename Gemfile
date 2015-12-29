@@ -13,6 +13,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # Use Devise for user auth
 gem 'devise'
+# Bootstrap 4
+gem 'bootstrap', '~> 4.0.0.alpha3'
+# Tether (bootstrap dep)
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
