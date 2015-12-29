@@ -15,6 +15,7 @@
 
         <% if current_user.is_teacher && !current_user.is_admin %>
           <%= link_to "Questions", questions_path, class: "dropdown-item" %>
+          <%= link_to "Profile", teacher_path(current_user.id), class: "dropdown-item" %>
         <% end %>
 
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

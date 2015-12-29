@@ -1,5 +1,9 @@
 $text: 'Oswald', sans-serif;
 
+textarea {
+  min-height: 16vmin;
+}
+
 .table {
   background-color: white;
   th {

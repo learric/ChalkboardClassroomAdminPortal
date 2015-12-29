@@ -10,7 +10,8 @@
     <% end %>
 
     <% if current_user.is_teacher && !current_user.is_admin %>
-      <p class="text-xs-center"><%= link_to "Questions", questions_path, class: "btn btn-primary btn-lg text-uppercase" %></p>
+      <p class="text-xs-center"><%= link_to "My Questions", questions_path, class: "btn btn-primary btn-lg text-uppercase" %></p>
+      <p class="text-xs-center"><%= link_to "My Profile", teacher_path(current_user.id), class: "btn btn-primary btn-lg text-uppercase" %></p>
     <% end %>
 
     <p class="text-xs-center"><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-lg text-uppercase" %></p>

@@ -3,7 +3,13 @@
 <div class="container-fluid">
   <h1 class="display-4">Edit Profile</h1>
 
+  <p>&nbsp;</p>
+
   <%= render 'form' %>
 
-  <p><%= link_to 'Back', teachers_path, class: "btn btn-danger" %></p>
+  <% if @is_admin %>
+    <p><%= link_to 'Back', teachers_path, class: "btn btn-danger" %></p>
+  <% else %>
+    <p><%= link_to 'Back', teacher_path(@teacher), class: "btn btn-danger" %></p>
+  <% end %>
 </div>

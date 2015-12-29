@@ -14,38 +14,47 @@
   <div class="row">
     <div class="col col-md-6">
       <h2>Question</h2>
-      <p>&nbsp;</p>
       <fieldset class="form-group">
-        <%= f.label :first_line %><br>
         <%= f.text_area :first_line, class: "form-control" %>
       </fieldset>
-      <fieldset class="form-group">
+      <!--<fieldset class="form-group">
         <%= f.label :last_line %> (Optional)<br>
         <%= f.text_area :last_line, class: "form-control" %>
-      </fieldset>
-      <fieldset class="form-group">
+      </fieldset>-->
+      <!--<fieldset class="form-group">
         <%= f.label :category %><br>
         <%= f.text_field :category, class: "form-control" %>
-      </fieldset>
+      </fieldset>-->
     </div>
     <div class="col col-md-6">
-      <h2>Answers</h2>
-      <p>&nbsp;</p>
       <fieldset class="form-group">
-        <label for="incorrect_one">Incorrect Answer</label><br>
+        <h2>Incorrect Answers</h2>
+        <label for="incorrect_one" class="sr-only">Incorrect Answer</label>
         <%= f.text_field :incorrect_one, class: "form-control" %>
       </fieldset>
       <fieldset class="form-group">
-        <label for="incorrect_two">Incorrect Answer</label><br>
+        <label for="incorrect_two" class="sr-only">Incorrect Answer</label>
         <%= f.text_field :incorrect_two, class: "form-control" %>
       </fieldset>
       <fieldset class="form-group">
-        <label for="incorrect_three">Incorrect Answer</label><br>
+        <label for="incorrect_three" class="sr-only">Incorrect Answer</label>
         <%= f.text_field :incorrect_three, class: "form-control" %>
       </fieldset>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-md-6">
+      <h2>Correct Answer</h2>
       <fieldset class="form-group">
-        <label for="correct_answer">Correct Answer</label><br>
+        <label for="correct_answer" class="sr-only">Correct Answer</label>
         <%= f.text_field :correct_answer, class: "form-control" %>
+      </fieldset>
+    </div>
+    <div class="col col-md-6">
+      <h2>Category</h2>
+      <fieldset class="form-group">
+        <%= f.label :category, class: "sr-only" %>
+        <%= f.text_field :category, class: "form-control" %>
       </fieldset>
     </div>
   </div>
