@@ -24,7 +24,7 @@
           <td><%= teacher.name_prefix %> <%= teacher.name_first %> <%= teacher.name_last %></td>
           <td><%= teacher.school_name %></td>
           <td><%= teacher.school_location %><br>
-            <%= teacher.school_city %>, <%= teacher.school_state %></td>
+            <%= teacher.school_city %> <%= teacher.school_state %></td>
           <td><%= teacher.classroom_name %></td>
           <td><%= teacher.classroom_location %></td>
           <td><%= teacher.classroom_description %></td>
@@ -36,12 +36,6 @@
       <% end %>
     </tbody>
   </table>
-
-  <br>
-
-  <% if current_user.is_admin %>
-    <%= link_to 'New Teacher', new_teacher_path, class: "btn btn-lg btn-primary" %>
-  <% end %>
 
   <p id="notice"><%= notice %></p>
 </div>
