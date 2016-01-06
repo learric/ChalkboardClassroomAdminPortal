@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Students</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name first</th>
+      <th>Name last</th>
+      <th>Email</th>
+      <th>Favorite team</th>
+      <th>Game wins</th>
+      <th>Game losses</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name_first %></td>
+        <td><%= student.name_last %></td>
+        <td><%= student.email %></td>
+        <td><%= student.favorite_team %></td>
+        <td><%= student.game_wins %></td>
+        <td><%= student.game_losses %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student', new_student_path %>
