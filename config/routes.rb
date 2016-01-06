@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :classrooms
   root to: "static_pages#index"
 
   get 'games', to: 'games#index'
