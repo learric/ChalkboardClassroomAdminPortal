@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151224034001) do
+ActiveRecord::Schema.define(version: 20160106180353) do
+
+  create_table "classrooms", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "school",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "teacher_id", limit: 4
+    t.integer  "student_id", limit: 4
+  end
 
   create_table "questions", force: :cascade do |t|
     t.string   "category",        limit: 255
@@ -27,6 +36,17 @@ ActiveRecord::Schema.define(version: 20151224034001) do
   end
 
   add_index "questions", ["teacher_id"], name: "index_questions_on_teacher_id", using: :btree
+
+  create_table "students", force: :cascade do |t|
+    t.string   "name_first",    limit: 255
+    t.string   "name_last",     limit: 255
+    t.string   "email",         limit: 255
+    t.string   "favorite_team", limit: 255
+    t.integer  "game_wins",     limit: 4
+    t.integer  "game_losses",   limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "teachers", force: :cascade do |t|
     t.integer  "user_id",               limit: 4

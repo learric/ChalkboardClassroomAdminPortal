@@ -4,19 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  before_create :make_user_teacher
-  after_create :create_teacher
-  has_one :teacher
+  has_many :teachers
+  has_many :students
 
-  private
-
-    def create_teacher
-      id = self.id
-      Teacher.create(user_id: id)
-    end
-
-    def make_user_teacher
-      self.is_teacher = true
-      self.is_student = true
-    end
 end
