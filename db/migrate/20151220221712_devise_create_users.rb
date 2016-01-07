@@ -32,6 +32,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
 
       t.timestamps null: false
+
+      t.boolean :is_admin, default: false
+      t.boolean :is_teacher, default: false
+      t.boolean :is_student, default: true
     end
 
     add_index :users, :email,                unique: true

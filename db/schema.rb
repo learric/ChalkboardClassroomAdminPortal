@@ -49,10 +49,10 @@ ActiveRecord::Schema.define(version: 20160107010900) do
     t.string   "name_last",     limit: 255
     t.string   "email",         limit: 255
     t.string   "favorite_team", limit: 255
-    t.integer  "game_wins",     limit: 4
-    t.integer  "game_losses",   limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "game_wins",     limit: 4,   default: 0
+    t.integer  "game_losses",   limit: 4,   default: 0
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.integer  "user_id",       limit: 4
   end
 
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20160107010900) do
     t.datetime "updated_at",                                         null: false
     t.boolean  "is_admin",                           default: false
     t.boolean  "is_teacher",                         default: false
-    t.boolean  "is_student",                         default: false
+    t.boolean  "is_student",                         default: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
