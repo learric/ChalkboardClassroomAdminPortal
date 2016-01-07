@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :check_user_admin_creds, only: [:index, :new, :create, :destroy]
 
   # GET /students
   # GET /students.json
@@ -70,5 +71,12 @@ class StudentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
       params.require(:student).permit(:name_first, :name_last, :email, :favorite_team, :game_wins, :game_losses)
+    end
+
+    def check_user_admin_creds
+      is_admin = AdminHelper.is_user_admin?(current_user)
+      if !is_admin
+        render 'students/errors'
+      end
     end
 end
