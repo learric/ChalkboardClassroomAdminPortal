@@ -22,7 +22,7 @@ end
 # Angular Rails CSRF Header
 gem 'angular_rails_csrf'
 
-gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors', require: 'rack/cors'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
