@@ -19,6 +19,8 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
+# Angular Rails CSRF Header
+gem 'angular_rails_csrf'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
