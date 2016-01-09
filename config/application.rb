@@ -12,7 +12,9 @@ module Api
     config.middleware.use Rack::Cors do
       allow do
         origins "*"
-        resource "*", headers: :any, methods: [:get, :post, :put, :delete, :options], expose: ['access-token', 'expiry', 'token-type', 'uid', 'client']
+        resource "*",
+                 :headers => :any,
+                 :methods => [:get, :post, :put, :delete, :options]
       end
     end
 
