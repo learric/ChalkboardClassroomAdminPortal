@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "homepage": "https://github.com/learric/ChalkboardClassroomAdminPortal",
+  "authors": [
+    "Rick Lear <learric@gmail.com>"
+  ],
+  "description": "chalkboard classroom teacher portal",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
