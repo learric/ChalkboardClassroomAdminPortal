@@ -8,5 +8,10 @@ angular.module('collegiateRivals', [
   $routeProvider
   .when('/',
     templateUrl: "index.html"
+    controller: "CoreController"
+  )
+
+  .when('/home',
+    templateUrl: "home.html"
   )
 ])
