@@ -12,3 +12,4 @@
 !/log/.keep
 /tmp
 .idea
+vendor/assets/javascripts/bower_components
