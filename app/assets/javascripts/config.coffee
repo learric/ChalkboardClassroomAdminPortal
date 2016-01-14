@@ -1,4 +1,12 @@
 angular.module('collegiateRivals', [
-  'ui.router'
+  'templates',
+  'ngRoute',
   'ngCookies'
+])
+
+.config([ '$routeProvider', ($routeProvider) ->
+  $routeProvider
+  .when('/',
+    templateUrl: "index.html"
+  )
 ])
