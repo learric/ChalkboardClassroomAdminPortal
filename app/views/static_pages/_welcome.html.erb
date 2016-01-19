@@ -15,7 +15,10 @@
       <p class="text-xs-center"><%= link_to "My Profile", teacher_path(current_user.id), class: "btn btn-primary btn-lg text-uppercase" %></p>
     <% end %>
 
-    <p class="text-xs-center"><%= link_to "My Games", games_path, class: "btn btn-primary btn-lg text-uppercase" %></p>
+    <% unless current_user.is_admin %>
+      <p class="text-xs-center"><%= link_to "My Games", games_path, class: "btn btn-primary btn-lg text-uppercase" %></p>
+    <% end %>
+
     <p class="text-xs-center"><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-lg text-uppercase" %></p>
 
   <% else %>
