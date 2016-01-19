@@ -1,12 +1,12 @@
 angular.module('collegiateRivals', [
   'templates',
-  'restangular',
   'ngRoute',
   'ui.router',
   'ngCookies'
 ])
 
-.config([ '$stateProvider', ($stateProvider) ->
+.config(($stateProvider) ->
+
   $stateProvider
   .state('home',
     url: '/'
@@ -58,4 +58,4 @@ angular.module('collegiateRivals', [
     url: '/outro'
     templateUrl: 'outro.html'
   )
-])
+)

@@ -1,5 +1,4 @@
 angular.module('collegiateRivals')
 
-.controller 'CoreController', ($scope, Restangular) ->
-  r = Restangular
-  console.log r
+.controller 'CoreController', ($scope) ->
+  console.log 'core'
