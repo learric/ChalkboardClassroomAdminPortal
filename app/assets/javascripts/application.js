@@ -18,6 +18,8 @@
 //= require buzz/dist/buzz
 //= require flipclock/compiled/flipclock
 //= require angular/angular
+//= require lodash/lodash
+//= require restangular/dist/restangular
 //= require angular-animate/angular-animate
 //= require angular-cookies/angular-cookies
 //= require angular-timer/dist/angular-timer

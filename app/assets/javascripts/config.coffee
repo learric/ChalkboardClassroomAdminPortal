@@ -1,5 +1,6 @@
 angular.module('collegiateRivals', [
   'templates',
+  'restangular',
   'ngRoute',
   'ui.router',
   'ngCookies'
