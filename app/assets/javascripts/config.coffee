@@ -17,6 +17,7 @@ angular.module('collegiateRivals', [
   .state('menu',
     url: '/menu'
     templateUrl: 'menu.html'
+    controller: 'SessionController'
   )
 
   .state('settings',

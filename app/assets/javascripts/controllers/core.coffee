@@ -1,7 +1,5 @@
 angular.module('collegiateRivals')
 
-.controller 'CoreController', ($scope, SessionFactory) ->
+.controller 'CoreController', ($scope) ->
 
-  getSession = SessionFactory.getSession('collegiate_rivals')
-
-  $scope.session = getSession.$$state
+  return this
