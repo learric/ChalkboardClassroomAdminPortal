@@ -8,6 +8,8 @@ class GamesController < ApplicationController
   end
 
   def collegiate_rivals
+    @user = current_user
+    @student = Student.where(user_id: current_user.id)
   end
 
   private
