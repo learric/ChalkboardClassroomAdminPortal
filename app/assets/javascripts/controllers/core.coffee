@@ -1,4 +1,4 @@
 angular.module('collegiateRivals')
 
-.controller 'CoreController', ->
+.controller 'CoreController', ($scope) ->
   console.log 'Core'
