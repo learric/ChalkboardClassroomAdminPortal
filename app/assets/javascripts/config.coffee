@@ -1,17 +1,15 @@
 angular.module('collegiateRivals', [
   'templates',
   'ngRoute',
+  'ui.router',
   'ngCookies'
 ])
 
-.config([ '$routeProvider', ($routeProvider) ->
-  $routeProvider
-  .when('/',
-    templateUrl: "index.html"
-    controller: "CoreController"
-  )
-
-  .when('/home',
-    templateUrl: "home.html"
+.config([ '$stateProvider', ($stateProvider) ->
+  $stateProvider
+  .state('/',
+    url: '/'
+    templateUrl: 'index.html'
+    controller: 'CoreController'
   )
 ])
