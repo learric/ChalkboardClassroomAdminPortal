@@ -1,5 +1,17 @@
 <h1>Main Menu</h1>
 
-<p><a href ui-sref="settings">New Game</a></p>
+<h3>Player Info</h3>
 
-<p><a href ui-sref="home">End Game</a></p>
+<p>First Name: {{ session.value.student[0].name_first }}</p>
+
+<p>Last Name: {{ session.value.student[0].name_last }}</p>
+
+<p>Email: {{ session.value.student[0].email }}</p>
+
+<p>Favorite Team: {{ session.value.student[0].favorite_team }}</p>
+
+<p>Record: {{ session.value.student[0].game_wins }} - {{ session.value.student[0].game_losses }}</p>
+
+<p><a href ui-sref="home" class="btn btn-primary">New Game</a></p>
+
+<p><a href="/games" class="btn btn-primary">End Game</a></p>

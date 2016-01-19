@@ -10,7 +10,6 @@ class GamesController < ApplicationController
   # GET /games/collegiate_rivals
   # GET /games/collegiate_rivals.json
   def collegiate_rivals
-    @user = current_user
     @student = Student.where(user_id: current_user.id)
   end
 

@@ -1,5 +1,6 @@
 angular.module('collegiateRivals', [
   'templates',
+  'services',
   'ngRoute',
   'ui.router',
   'ngCookies'
@@ -11,7 +12,6 @@ angular.module('collegiateRivals', [
   .state('home',
     url: '/'
     templateUrl: 'index.html'
-    controller: 'CoreController'
   )
 
   .state('menu',
