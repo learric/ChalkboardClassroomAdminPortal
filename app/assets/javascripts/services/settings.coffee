@@ -1,4 +1,4 @@
-angular.module('collegiateRivals')
+angular.module('services')
 
 .factory 'SettingsFactory', ->
 

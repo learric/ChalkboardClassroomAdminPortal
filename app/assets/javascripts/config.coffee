@@ -105,20 +105,14 @@ angular.module('collegiateRivals', [
     controller: 'CointossController as cointoss'
   )
 
-  .state('cointoss.welcome',
-    url: '/welcome'
-    views: {
-      'header': {
-        template: '<h2>Welcome</h2>'
-      }
-    }
-  )
-
   .state('cointoss.choice',
     url: '/choice'
     views: {
       'header': {
         template: '<h2>Choice</h2>'
+      }
+      'buttons': {
+        template: '<coinflip-buttons></coinflip-buttons>'
       }
     }
   )
@@ -129,6 +123,12 @@ angular.module('collegiateRivals', [
       'header': {
         template: '<h2>Flip</h2>'
       }
+      'subheader': {
+        template: '<p>chooses {{ cointoss.headsTails }}</p>'
+      }
+      'buttons': {
+        template: '<button class="btn btn-primary" cointoss-button>Flip</button>'
+      }
     }
   )
 
@@ -138,6 +138,12 @@ angular.module('collegiateRivals', [
       'header': {
         template: '<h2>Result</h2>'
       }
+      'subheader': {
+        template: '<span ng-show="cointoss.homeActive">{{ cointoss.homeTeam.nickname }}</span><span ng-show="cointoss.awayActive">{{ cointoss.awayTeam.nickname }}</span>'
+      }
+      'buttons': {
+        template: '<button class="btn btn-primary" cointoss-button>Start</button>'
+      }
     }
   )
 
@@ -146,6 +152,7 @@ angular.module('collegiateRivals', [
   .state('gameplay',
     url: '/gameplay'
     templateUrl: 'gameplay.html'
+    controller: 'GameplayController as gameplay'
   )
 
 #

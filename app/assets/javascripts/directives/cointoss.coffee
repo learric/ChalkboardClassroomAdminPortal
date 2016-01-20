@@ -8,9 +8,14 @@ angular.module('collegiateRivals')
         state = $state.current.url
 
         switch state
-          when '/welcome' then $state.go('cointoss.choice')
           when '/choice' then $state.go('cointoss.flip')
           when '/flip' then $state.go('cointoss.result')
           else $state.go('gameplay')
       )
+  }
+
+.directive 'coinflipButtons', ->
+  return {
+    restrict: 'EAC'
+    template: '<button class="btn btn-primary" cointoss-button ng-click="cointoss.choice(0)">Heads</button> <button class="btn btn-primary" cointoss-button ng-click="cointoss.choice(1)">Tails</button>'
   }
