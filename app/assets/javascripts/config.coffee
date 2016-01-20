@@ -102,6 +102,43 @@ angular.module('collegiateRivals', [
   .state('cointoss',
     url: '/cointoss'
     templateUrl: 'cointoss.html'
+    controller: 'CointossController as cointoss'
+  )
+
+  .state('cointoss.welcome',
+    url: '/welcome'
+    views: {
+      'header': {
+        template: '<h2>Welcome</h2>'
+      }
+    }
+  )
+
+  .state('cointoss.choice',
+    url: '/choice'
+    views: {
+      'header': {
+        template: '<h2>Choice</h2>'
+      }
+    }
+  )
+
+  .state('cointoss.flip',
+    url: '/flip'
+    views: {
+      'header': {
+        template: '<h2>Flip</h2>'
+      }
+    }
+  )
+
+  .state('cointoss.result',
+    url: '/result'
+    views: {
+      'header': {
+        template: '<h2>Result</h2>'
+      }
+    }
   )
 
 #
