@@ -1,5 +1,28 @@
-<h1>Settings</h1>
+<span ui-view="header">Settings</span>
+
+<ul>
+  <li ng-repeat="team in settings.teams" ng-click="settings.saveTeam($index)">{{ team.nickname }}</li>
+</ul>
+
+<ul>
+  <li ng-repeat="times in settings.quarterLengths" ng-click="settings.saveTime(times)">{{ times }}</li>
+</ul>
+
+<ul>
+  <li ng-click="settings.saveSounds(true)">On</li>
+  <li ng-click="settings.saveSounds(false)">Off</li>
+</ul>
 
 <p><a href ui-sref="home">Home</a></p>
 
-<p><a href ui-sref="cointoss">Coin Toss</a></p>
+<p><a href ui-sref="settings.homeTeam">Home Team</a></p>
+
+<p><a href ui-sref="settings.awayTeam">Away Team</a></p>
+
+<p><a href ui-sref="settings.quarters">Quarters</a></p>
+
+<p><a href ui-sref="settings.questions">Questions</a></p>
+
+<p><a href ui-sref="settings.sounds">Sounds</a></p>
+
+<p><a href ui-sref="settings.review">Review</a></p>
