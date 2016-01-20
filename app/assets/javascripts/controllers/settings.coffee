@@ -1,6 +1,6 @@
 angular.module('collegiateRivals')
 
-.controller 'SettingsController', ($scope, $state, TEAMS, QUARTER_LENGTHS) ->
+.controller 'SettingsController', (SettingsFactory, $scope, $state, TEAMS, QUARTER_LENGTHS) ->
 
   settings = this
 
@@ -15,23 +15,25 @@ angular.module('collegiateRivals')
 #
 #  save teams
   settings.saveTeam = (team) ->
-    state = $state.current.name
 
 #
 #    check state before saving team
+    state = $state.current.name
+
     if state == 'settings.homeTeam'
-      console.log 'Home: ' + team
-    else
-      console.log 'Away: ' + team
+      SettingsFactory.saveHomeTeam(team)
+
+    if state == 'settings.awayTeam'
+      SettingsFactory.saveAwayTeam(team)
 
 #
 #  save quarter length
   settings.saveTime = (time) ->
-    console.log time
+    SettingsFactory.saveTime(time)
 
 #
 #  save sound effect settings
   settings.saveSounds = (bool) ->
-    console.log bool
+    SettingsFactory.saveSounds(bool)
 
   return settings

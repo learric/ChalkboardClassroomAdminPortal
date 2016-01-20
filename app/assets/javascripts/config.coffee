@@ -77,13 +77,12 @@ angular.module('collegiateRivals', [
     }
   )
 
-  .state('settings.review',
+#
+#  review settings state
+  .state('review',
     url: '/review'
-    views: {
-      'header': {
-        template: 'Review'
-      }
-    }
+    templateUrl: 'review.html'
+    controller: 'ReviewController as review'
   )
 
 #
