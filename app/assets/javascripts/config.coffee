@@ -36,7 +36,10 @@ angular.module('collegiateRivals', [
     url: '/homeTeam'
     views: {
       'header': {
-        template: 'Home Team'
+        template: '<h2>Home Team</h2>'
+      }
+      'list': {
+        template: '<ul><team-choices></team-choices></ul>'
       }
     }
   )
@@ -45,7 +48,10 @@ angular.module('collegiateRivals', [
     url: '/awayTeam'
     views: {
       'header': {
-        template: 'Away Team'
+        template: '<h2>Away Team</h2>'
+      }
+      'list': {
+        template: '<ul><team-choices></team-choices></ul>'
       }
     }
   )
@@ -54,7 +60,10 @@ angular.module('collegiateRivals', [
     url: '/quarters'
     views: {
       'header': {
-        template: 'Quarters'
+        template: '<h2>Quarters</h2>'
+      }
+      'list': {
+        template: '<ul><quarter-choices></quarter-choices></ul>'
       }
     }
   )
@@ -63,7 +72,7 @@ angular.module('collegiateRivals', [
     url: '/questions'
     views: {
       'header': {
-        template: 'Questions'
+        template: '<h2>Questions</h2>'
       }
     }
   )
@@ -72,7 +81,10 @@ angular.module('collegiateRivals', [
     url: '/sounds'
     views: {
       'header': {
-        template: 'Sounds'
+        template: '<h2>Sounds</h2>'
+      }
+      'list': {
+        template: '<ul><sound-choices></sound-choices></ul>'
       }
     }
   )
