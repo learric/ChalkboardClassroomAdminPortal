@@ -74,6 +74,9 @@ angular.module('collegiateRivals', [
       'header': {
         template: '<h2>Questions</h2>'
       }
+      'list': {
+        template: '{{ questions.value.teachers }}'
+      }
     }
   )
 

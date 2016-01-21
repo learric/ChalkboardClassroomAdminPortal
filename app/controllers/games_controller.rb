@@ -1,6 +1,7 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!
   before_action :user_redirect
+  before_action :teacher_student_assoc, only: [:questions]
 
   # GET /games
   # GET /games.json
@@ -13,11 +14,49 @@ class GamesController < ApplicationController
     @student = Student.where(user_id: current_user.id)
   end
 
+  # GET /games/questions.json
+  def questions
+  end
+
   private
 
     def user_redirect
       unless user_signed_in?
         redirect_to new_user_session
+      end
+    end
+
+    def teacher_student_assoc
+      if current_user
+        id = current_user.id
+        classrooms = StudentClassroom.where(student_id: id)
+        teachers = []
+
+        classrooms.each do |t|
+          teachers.push(t.teacher_id)
+        end
+
+        get_teachers teachers.uniq
+        get_questions teachers.uniq
+
+      end
+    end
+
+    def get_teachers teachers
+      @teachers = []
+
+      teachers.each do |t|
+        teacher = Teacher.find(t)
+        @teachers.push(teacher)
+      end
+    end
+
+    def get_questions teachers
+      @questions = []
+
+      teachers.each do |t|
+        questions = Question.where(teacher_id: t)
+        @questions.push(questions)
       end
     end
 end
