@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160107003559) do
   create_table "student_classrooms", id: false, force: :cascade do |t|
     t.integer  "student_id",   limit: 4
     t.integer  "classroom_id", limit: 4
+    t.integer  "teacher_id",   limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

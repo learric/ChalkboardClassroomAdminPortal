@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'angular-rails-templates', '0.2.0'
+gem 'faker'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
