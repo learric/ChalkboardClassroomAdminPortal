@@ -1,11 +1,17 @@
 angular.module('collegiateRivals')
 
-.controller 'CoreController', (SessionFactory, QuestionsFactory, $scope) ->
+.controller 'CoreController', (SessionFactory, QuestionsFactory, TeachersFactory, $scope) ->
 
   getSession = SessionFactory.getSession('collegiate_rivals')
 
-  getQuestions = QuestionsFactory.getQuestions()
+  getTeachers = TeachersFactory.getTeachers()
 
   $scope.session = getSession.$$state
 
-  $scope.questions = getQuestions.$$state
+  $scope.teachers = getTeachers.$$state
+
+  $scope.getQuestions = ->
+    $scope.questions = QuestionsFactory.getQuestions()
+
+  $scope.setLocalQuestions = ->
+    $scope.localQuestions = QuestionsFactory.getQuestionsLocally()

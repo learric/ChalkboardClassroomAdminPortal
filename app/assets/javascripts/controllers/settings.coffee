@@ -1,6 +1,6 @@
 angular.module('collegiateRivals')
 
-.controller 'SettingsController', (SettingsFactory, $scope, $state, TEAMS, QUARTER_LENGTHS) ->
+.controller 'SettingsController', (SettingsFactory, QuestionsFactory, $scope, $state, TEAMS, QUARTER_LENGTHS) ->
 
   settings = this
 
@@ -30,6 +30,13 @@ angular.module('collegiateRivals')
 #  save quarter length
   settings.saveTime = (time) ->
     SettingsFactory.saveTime(time)
+
+#
+#  save questions
+  settings.saveQuestions = (id) ->
+    SettingsFactory.saveQuestions(id)
+    QuestionsFactory.setTeacherId(id)
+    $scope.getQuestions()
 
 #
 #  save sound effect settings

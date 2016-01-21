@@ -12,6 +12,12 @@ angular.module('collegiateRivals')
     template: '<li ng-repeat="times in settings.quarterLengths" ng-click="settings.saveTime(times)">{{ times }}</li>'
   }
 
+.directive 'questionChoices', ->
+  return {
+    restrict: 'EAC'
+    template: '<li ng-click="settings.saveQuestions(0)" settings-button>Default</li> <li ng-repeat="teacher in teachers.value.teachers" ng-click="settings.saveQuestions(teacher.id)" settings-button>{{ teacher.classroom_name }}</li>'
+  }
+
 .directive 'soundChoices', ->
   return {
     restrict: 'EAC'

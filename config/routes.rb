@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   get 'games', to: 'games#index'
   get 'games/collegiate_rivals', to: 'games#collegiate_rivals'
-  get 'games/questions', to: 'games#questions'
+  get 'games/teachers', to: 'games#teachers'
+  get 'games/questions/:teacher', to: 'games#questions'
 
   devise_for :users
 

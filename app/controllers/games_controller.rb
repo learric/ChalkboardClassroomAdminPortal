@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!
   before_action :user_redirect
-  before_action :teacher_student_assoc, only: [:questions]
+  before_action :teacher_student_assoc, only: [:teachers]
+  before_action :find_questions, only: [:questions]
 
   # GET /games
   # GET /games.json
@@ -12,6 +13,10 @@ class GamesController < ApplicationController
   # GET /games/collegiate_rivals.json
   def collegiate_rivals
     @student = Student.where(user_id: current_user.id)
+  end
+
+  # GET /games/teachers.json
+  def teachers
   end
 
   # GET /games/questions.json
@@ -37,7 +42,6 @@ class GamesController < ApplicationController
         end
 
         get_teachers teachers.uniq
-        get_questions teachers.uniq
 
       end
     end
@@ -51,12 +55,8 @@ class GamesController < ApplicationController
       end
     end
 
-    def get_questions teachers
-      @questions = []
-
-      teachers.each do |t|
-        questions = Question.where(teacher_id: t)
-        @questions.push(questions)
-      end
+    def find_questions
+      teacher = params[:teacher]
+      @questions = Question.where(teacher_id: teacher)
     end
 end
