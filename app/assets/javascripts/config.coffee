@@ -155,6 +155,36 @@ angular.module('collegiateRivals', [
     controller: 'GameplayController as gameplay'
   )
 
+  .state('gameplay.kickoff',
+    url: '/kickoff'
+    views: {
+      'scoreboard': {
+        template: 'Scoreboard'
+      }
+      'header': {
+        template: 'Kickoff'
+      }
+      'buttons': {
+        template: '<button class="btn btn-primary" ui-sref="gameplay.newplay">Kick</button>'
+      }
+    }
+  )
+
+  .state('gameplay.newplay',
+    url: '/newplay'
+    views: {
+      'scoreboard': {
+        template: 'Scoreboard'
+      }
+      'header': {
+        template: 'New Play'
+      }
+      'buttons': {
+        template: '<button class="btn btn-primary" ui-sref="question">New</button>'
+      }
+    }
+  )
+
 #
 #  question states
   .state('question',

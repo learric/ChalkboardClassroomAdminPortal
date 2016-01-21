@@ -10,7 +10,7 @@ angular.module('collegiateRivals')
         switch state
           when '/choice' then $state.go('cointoss.flip')
           when '/flip' then $state.go('cointoss.result')
-          else $state.go('gameplay')
+          else $state.go('gameplay.kickoff')
       )
   }
 
