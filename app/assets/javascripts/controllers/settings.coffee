@@ -1,6 +1,6 @@
 angular.module('collegiateRivals')
 
-.controller 'SettingsController', (SettingsFactory, QuestionsFactory, $scope, $state, TEAMS, QUARTER_LENGTHS) ->
+.controller 'SettingsController', (SettingsFactory, QuestionsFactory, TeachersFactory, $scope, $state, TEAMS, QUARTER_LENGTHS) ->
 
   settings = this
 
@@ -11,6 +11,15 @@ angular.module('collegiateRivals')
 #
 #  list quarters
   settings.quarterLengths = QUARTER_LENGTHS.quarterLengths
+
+#
+#  list teachers
+  settings.listTeachers = TeachersFactory.getTeachers()
+
+  if Object.keys(settings.listTeachers).length == 0
+    TeachersFactory.setTeachers().then((res) ->
+      settings.listTeachers = res
+    )
 
 #
 #  save teams
@@ -34,7 +43,7 @@ angular.module('collegiateRivals')
 #
 #  save questions
   settings.saveQuestions = (id) ->
-    SettingsFactory.saveQuestions(id)
+    SettingsFactory.saveTeacher(id)
     QuestionsFactory.setTeacherId(id)
     $scope.getQuestions()
 

@@ -3,25 +3,25 @@ angular.module('collegiateRivals')
 .directive 'teamChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-repeat="team in settings.teams" ng-click="settings.saveTeam($index)">{{ team.nickname }}</li>'
+    template: '<li ng-repeat="team in settings.teams" ng-click="settings.saveTeam($index)" settings-button>{{ team.nickname }}</li>'
   }
 
 .directive 'quarterChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-repeat="times in settings.quarterLengths" ng-click="settings.saveTime(times)">{{ times }}</li>'
+    template: '<li ng-repeat="times in settings.quarterLengths" ng-click="settings.saveTime(times)" settings-button>{{ times }}</li>'
   }
 
 .directive 'questionChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-click="settings.saveQuestions(0)" settings-button>Default</li> <li ng-repeat="teacher in teachers.value.teachers" ng-click="settings.saveQuestions(teacher.id)" settings-button>{{ teacher.classroom_name }}</li>'
+    template: '<li ng-click="settings.saveQuestions(0)" settings-button>Default</li> <li ng-repeat="teacher in settings.listTeachers.teachers" ng-click="settings.saveQuestions(teacher.id)" settings-button>{{ teacher.classroom_name }}</li>'
   }
 
 .directive 'soundChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-click="settings.saveSounds(true)">On</li><li ng-click="settings.saveSounds(false)">Off</li>'
+    template: '<li ng-click="settings.saveSounds(true)" settings-button>On</li><li ng-click="settings.saveSounds(false)" settings-button>Off</li>'
   }
 
 .directive 'settingsButton', ($state) ->

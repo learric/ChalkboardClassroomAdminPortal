@@ -5,7 +5,7 @@ angular.module('services')
   home = 0
   away = 1
   time = 1
-  questions = 0
+  teacher = 0
   sounds = true
 
   return {
@@ -21,8 +21,8 @@ angular.module('services')
     saveTime: (num) ->
       time = num
 
-    saveQuestions: (id) ->
-      questions = id
+    saveTeacher: (id) ->
+      teacher = id
 
     saveSounds: (bool) ->
       sounds = bool
@@ -38,8 +38,8 @@ angular.module('services')
     getTime: ->
       return time
 
-    getQuestions: ->
-      return questions
+    getTeacher: ->
+      return teacher
 
     getSounds: ->
       return sounds

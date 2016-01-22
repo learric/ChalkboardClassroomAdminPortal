@@ -4,14 +4,8 @@ angular.module('collegiateRivals')
 
   getSession = SessionFactory.getSession('collegiate_rivals')
 
-  getTeachers = TeachersFactory.getTeachers()
-
   $scope.session = getSession.$$state
 
-  $scope.teachers = getTeachers.$$state
-
+# TODO: Get rid of this
   $scope.getQuestions = ->
     $scope.questions = QuestionsFactory.getQuestions()
-
-  $scope.setLocalQuestions = ->
-    $scope.localQuestions = QuestionsFactory.getQuestionsLocally()
