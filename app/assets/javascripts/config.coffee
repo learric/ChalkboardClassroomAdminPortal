@@ -183,7 +183,7 @@ angular.module('collegiateRivals', [
         template: 'New Play'
       }
       'buttons': {
-        template: '<button class="btn btn-primary" ui-sref="question">New</button>'
+        template: '<button class="btn btn-primary" ui-sref="question.ask">New</button>'
       }
     }
   )
@@ -193,6 +193,16 @@ angular.module('collegiateRivals', [
   .state('question',
     url: '/question'
     templateUrl: 'question.html'
+    controller: 'QuestionController as question'
+  )
+
+  .state('question.ask',
+    url: '/ask'
+    views: {
+      'header': {
+        template: '<h2>Ask Question</h2>'
+      }
+    }
   )
 
 #
@@ -200,6 +210,7 @@ angular.module('collegiateRivals', [
   .state('play',
     url: '/play'
     templateUrl: 'play.html'
+    controller: 'PlaysController as plays'
   )
 
 #
@@ -207,6 +218,43 @@ angular.module('collegiateRivals', [
   .state('score',
     url: '/score'
     templateUrl: 'score.html'
+    controller: 'ScoreController as score'
+  )
+
+  .state('score.touchdown',
+    url: '/touchdown'
+    views: {
+      'header': {
+        template: '<h2>Touchdown</h2>'
+      }
+    }
+  )
+
+  .state('score.one',
+    url: '/one'
+    views: {
+      'header': {
+        template: '<h2>One Point</h2>'
+      }
+    }
+  )
+
+  .state('score.two',
+    url: '/two'
+    views: {
+      'header': {
+        template: '<h2>Two Points</h2>'
+      }
+    }
+  )
+
+  .state('score.three',
+    url: '/three'
+    views: {
+      'header': {
+        template: '<h2>Field Goal</h2>'
+      }
+    }
   )
 
 #

@@ -9,17 +9,17 @@ angular.module('services')
     setTeacherId: (id) ->
       teacher = id
 
+    getTeacherId: ->
+      return teacher
+
     getQuestions: ->
-      if teacher > 0
-        $http({
-          method: 'GET'
-          url: '/games/questions/' + teacher + '.json'
-        }).then((res) ->
-          questions = res.data
-          return questions
-        )
-      else
-        questions = 0
+      $http({
+        method: 'GET'
+        url: '/games/questions/' + teacher + '.json'
+      }).then((res) ->
+        questions = res.data
+        return questions
+      )
 
     getQuestionsLocally: ->
         return questions

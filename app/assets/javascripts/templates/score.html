@@ -1,7 +1,13 @@
-<h1>Score</h1>
+<div ui-view="header">Score</div>
 
-<p><a href ui-sref="home">Home</a></p>
+<a class="btn btn-primary" ui-sref="play">Back</a>
 
-<p><a href ui-sref="play">Back</a></p>
+<a class="btn btn-primary" ui-sref="score.touchdown" ng-click="score.setScores(6)">Touchdown</a>
 
-<p><a href ui-sref="gameplay">Kickoff</a></p>
+<a class="btn btn-primary" ui-sref="score.one" ng-click="score.setScores(1)">One Point</a>
+
+<a class="btn btn-primary" ui-sref="score.two" ng-click="score.setScores(2)">Two Point</a>
+
+<a class="btn btn-primary" ui-sref="score.three" ng-click="score.setScores(3)">Field Goal</a>
+
+<a class="btn btn-primary" ui-sref="gameplay.newplay">Kickoff</a>
