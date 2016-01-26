@@ -1,6 +1,8 @@
 angular.module('collegiateRivals', [
   'templates',
   'services',
+  'controllers',
+  'constants',
   'ngRoute',
   'ui.router',
   'ngCookies'
@@ -16,21 +18,22 @@ angular.module('collegiateRivals', [
 #  home states
   .state('home',
     url: '/'
-    templateUrl: 'index.html'
+    templateUrl: 'collegiate-rivals/index.html'
+    controller: 'SessionController as session'
   )
 
 #
 #  menu states
   .state('menu',
     url: '/menu'
-    templateUrl: 'menu.html'
+    templateUrl: 'collegiate-rivals/menu.html'
   )
 
 #
 #  settings states
   .state('settings',
     url: '/settings'
-    templateUrl: 'settings.html'
+    templateUrl: 'collegiate-rivals/settings.html'
     controller: 'SettingsController as settings'
   )
 
@@ -98,7 +101,7 @@ angular.module('collegiateRivals', [
 #  review settings state
   .state('review',
     url: '/review'
-    templateUrl: 'review.html'
+    templateUrl: 'collegiate-rivals/review.html'
     controller: 'ReviewController as review'
   )
 
@@ -106,7 +109,7 @@ angular.module('collegiateRivals', [
 #  cointoss states
   .state('cointoss',
     url: '/cointoss'
-    templateUrl: 'cointoss.html'
+    templateUrl: 'collegiate-rivals/cointoss.html'
     controller: 'CointossController as cointoss'
   )
 
@@ -129,7 +132,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Flip</h2>'
       }
       'subheader': {
-        template: '<p>chooses {{ cointoss.headsTails }}</p>'
+        template: '<p>chooses {{cointoss.headstails}}</p>'
       }
       'buttons': {
         template: '<button class="btn btn-primary" cointoss-button>Flip</button>'
@@ -144,7 +147,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Result</h2>'
       }
       'subheader': {
-        template: '<span ng-show="cointoss.homeActive">{{ cointoss.homeTeam.nickname }}</span><span ng-show="cointoss.awayActive">{{ cointoss.awayTeam.nickname }}</span>'
+        template: '<span>{{cointoss.homeTeam.nickname}}</span><span>{{cointoss.awayTeam.nickname}}</span>'
       }
       'buttons': {
         template: '<button class="btn btn-primary" cointoss-button>Start</button>'
@@ -156,7 +159,7 @@ angular.module('collegiateRivals', [
 #  gameplay states
   .state('gameplay',
     url: '/gameplay'
-    templateUrl: 'gameplay.html'
+    templateUrl: 'collegiate-rivals/gameplay.html'
     controller: 'GameplayController as gameplay'
   )
 
@@ -194,7 +197,7 @@ angular.module('collegiateRivals', [
 #  question states
   .state('question',
     url: '/question'
-    templateUrl: 'question.html'
+    templateUrl: 'collegiate-rivals/question.html'
     controller: 'QuestionController as question'
   )
 
@@ -211,7 +214,7 @@ angular.module('collegiateRivals', [
 #  play states
   .state('play',
     url: '/play'
-    templateUrl: 'play.html'
+    templateUrl: 'collegiate-rivals/play.html'
     controller: 'PlaysController as plays'
   )
 
@@ -219,7 +222,7 @@ angular.module('collegiateRivals', [
 #  score states
   .state('score',
     url: '/score'
-    templateUrl: 'score.html'
+    templateUrl: 'collegiate-rivals/score.html'
     controller: 'ScoreController as score'
   )
 
@@ -230,7 +233,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Confirm</h2>'
       }
       'buttons': {
-        template: '<touchdown-button></touchdown-button> <a class="btn btn-primary" ui-sref="score.three" ng-click="score.setScores(3)">Field Goal</a> <a class="btn btn-primary" ui-sref="play">Back</a>'
+        template: '<div class="btn btn-success" touchdown-button>Touchdown</div> <a class="btn btn-warning" ui-sref="score.three" ng-click="score.setScores(3)">Field Goal</a> <a class="btn btn-danger" ui-sref="play">Back</a>'
       }
     }
   )
@@ -299,13 +302,13 @@ angular.module('collegiateRivals', [
 #  interlude states
   .state('interlude',
     url: '/interlude'
-    templateUrl: 'interlude.html'
+    templateUrl: 'collegiate-rivals/interlude.html'
   )
 
 #
 #  outro states
   .state('outro',
     url: '/outro'
-    templateUrl: 'outro.html'
+    templateUrl: 'collegiate-rivals/outro.html'
   )
 )

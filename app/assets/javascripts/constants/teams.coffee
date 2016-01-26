@@ -1,4 +1,4 @@
-angular.module('collegiateRivals')
+angular.module('constants')
 
 .constant('TEAMS', {
   'sec': [

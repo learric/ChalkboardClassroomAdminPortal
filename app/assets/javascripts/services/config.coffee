@@ -1,4 +1,6 @@
 angular.module('services', [
   'ui.router',
-  'ngCookies'
+  'ngCookies',
+  'constants',
+  'controllers'
 ])

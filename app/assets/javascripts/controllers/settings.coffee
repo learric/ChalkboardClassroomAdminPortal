@@ -1,4 +1,4 @@
-angular.module('collegiateRivals')
+angular.module('controllers')
 
 .controller 'SettingsController', (SettingsFactory, QuestionsFactory, TeachersFactory, $scope, $state, TEAMS, QUARTER_LENGTHS) ->
 

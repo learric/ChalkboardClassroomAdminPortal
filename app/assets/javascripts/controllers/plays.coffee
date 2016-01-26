@@ -1,4 +1,4 @@
-angular.module('collegiateRivals')
+angular.module('controllers')
 
 .controller 'PlaysController', (PlaysService) ->
 

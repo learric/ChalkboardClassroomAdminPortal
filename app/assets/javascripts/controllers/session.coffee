@@ -1,3 +1,3 @@
-angular.module('collegiateRivals')
+angular.module('controllers')
 
 .controller 'SessionController', ($scope) ->

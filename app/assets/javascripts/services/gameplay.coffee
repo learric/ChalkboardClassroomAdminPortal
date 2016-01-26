@@ -1,6 +1,6 @@
 angular.module('services')
 
-.factory 'GameplayFactory', ->
+.factory 'ActiveTeamFactory', ->
 
   activeTeam = 0
 

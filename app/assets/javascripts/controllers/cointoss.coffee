@@ -1,6 +1,7 @@
 angular.module('collegiateRivals')
 
-.controller 'CointossController', (SettingsFactory, GameplayFactory, TEAMS) ->
+.controller 'CointossController', (SettingsFactory, ActiveTeamFactory, TEAMS) ->
+
   cointoss = this
 
   home = SettingsFactory.getHomeTeam()
@@ -17,11 +18,11 @@ angular.module('collegiateRivals')
       cointoss.headsTails = 'tails'
 
     if choice == toss
-      GameplayFactory.updateActiveTeam(1)
+      ActiveTeamFactory.updateActiveTeam(1)
       cointoss.homeActive = false
       cointoss.awayActive = true
     else
-      GameplayFactory.updateActiveTeam(0)
+      ActiveTeamFactory.updateActiveTeam(0)
       cointoss.homeActive = true
       cointoss.awayActive = false
 

@@ -1,11 +1,11 @@
-angular.module('collegiateRivals')
+angular.module('controllers')
 
-.controller 'ScoreController', (GameplayFactory, ScoreFactory) ->
+.controller 'ScoreController', (ActiveTeamFactory, ScoreFactory) ->
 
   score = this
 
   score.setScores = (num) ->
-    active = GameplayFactory.getActiveTeam()
+    active = ActiveTeamFactory.getActiveTeam()
     ScoreFactory.setScores(active, num)
 
   return score

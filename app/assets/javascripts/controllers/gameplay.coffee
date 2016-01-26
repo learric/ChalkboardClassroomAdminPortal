@@ -1,10 +1,10 @@
-angular.module('collegiateRivals')
+angular.module('controllers')
 
-.controller 'GameplayController', (GameplayFactory, SettingsFactory, TEAMS) ->
+.controller 'GameplayController', (ActiveTeamFactory, SettingsFactory, TEAMS) ->
 
   gameplay = this
 
-  activeTeam = GameplayFactory.getActiveTeam()
+  activeTeam = ActiveTeamFactory.getActiveTeam()
 
   if activeTeam == 0
     activeTeam = SettingsFactory.getHomeTeam()
