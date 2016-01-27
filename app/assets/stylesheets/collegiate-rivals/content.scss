@@ -1,0 +1,27 @@
+.content_overlay {
+  z-index: 100;
+  position: relative;
+  padding-top: 2vmin;
+}
+
+.content_container {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.button_container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0 3vmin 3vmin;
+
+  .left_button {
+    display: block;
+    float: left;
+  }
+
+  .right_button {
+    display: block;
+    float: right;
+  }
+}

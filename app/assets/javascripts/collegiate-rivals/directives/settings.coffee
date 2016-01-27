@@ -1,21 +1,27 @@
 angular.module('collegiateRivals')
 
-.directive 'teamChoices', ->
+.directive 'homeTeamChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button>{{ team.nickname }}</li>'
+    template: '<li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button><img ng-src="/assets/teams/home/{{ team.logo }}.png" /></li>'
+  }
+
+.directive 'awayTeamChoices', ->
+  return {
+    restrict: 'EAC'
+    template: '<li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button><img ng-src="/assets/teams/away/{{ team.logo }}.png" /></li>'
   }
 
 .directive 'quarterChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-repeat="times in settings.quarterLengths" ng-click="settings.saveTime(times)" settings-button>{{ times }}</li>'
+    template: '<section class="time_selection_list" ng-repeat="times in settings.quarterLengths" ng-click="settings.saveTime(times)" settings-button><p>{{ times }}:00</p></section>'
   }
 
 .directive 'questionChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-click="settings.saveQuestions(0)" settings-button>Default</li> <li ng-repeat="teacher in settings.listTeachers.teachers" ng-click="settings.saveQuestions(teacher.id)" settings-button>{{ teacher.classroom_name }}</li>'
+    template: '<li ng-repeat="teacher in settings.listTeachers.teachers" ng-click="settings.saveQuestions(teacher.id)" settings-button>{{ teacher.classroom_name }}</li> <li ng-click="settings.saveQuestions(0)" settings-button>Default</li>'
   }
 
 .directive 'soundChoices', ->

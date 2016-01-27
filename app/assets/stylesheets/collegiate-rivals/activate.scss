@@ -1,0 +1,31 @@
+.view-container {
+  text-align: center;
+  text-transform: uppercase;
+
+  .btn {
+    text-transform: uppercase;
+    font-size: 6vmin;
+  }
+
+  h1 {
+    font-size: 9vmin;
+  }
+
+  h2 {
+    font-size: 7vmin;
+  }
+
+  h3 {
+    font-size: 5vmin;
+  }
+
+  p {
+    font-size: 3vmin;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}

@@ -1,11 +1,24 @@
-<h2>Review Settings</h2>
+<div class="stadium_background">
+  <div class="white_overlay">
+  </div>
+</div>
 
-<p>{{ review.homeTeam }}</p>
-<p>{{ review.awayTeam }}</p>
-<p>{{ review.quarterLength }}:00</p>
-<p>{{ review.questions }}</p>
-<p>{{ review.sounds }}</p>
+<div class="content_overlay">
 
-<p><a class="btn btn-primary" ui-sref="settings.homeTeam">Edit</a></p>
+  <div class="content_container">
+    <h2>Review Settings</h2>
 
-<p><a class="btn btn-primary" ui-sref="cointoss.choice">Start</a></p>
+    <p>{{ review.homeTeam.nickname }}</p>
+    <p>{{ review.awayTeam.nickname }}</p>
+    <p>{{ review.quarterLength }}:00</p>
+    <p>{{ review.questions }}</p>
+    <p>{{ review.sounds }}</p>
+  </div>
+
+  <div class="button_container">
+    <button class="btn btn-warning left_button" ui-sref="settings.homeTeam">Edit</button>
+
+    <button class="btn btn-success right_button" ui-sref="cointoss.choice">Start</button>
+  </div>
+
+</div>

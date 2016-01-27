@@ -1,17 +1,30 @@
-<h2>Main Menu</h2>
+<div class="stadium_background">
+  <div class="white_overlay">
+  </div>
+</div>
 
-<h3>Player Info</h3>
+<div id="menu">
+  <div class="content_overlay">
 
-<p>First Name: {{ session.value.student[0].name_first }}</p>
+    <div class="content_container">
+      <div class="logo">
+        <img src="/assets/collegiate_rivals/logo.png" />
+      </div>
 
-<p>Last Name: {{ session.value.student[0].name_last }}</p>
+      <h3>Player Info</h3>
 
-<p>Email: {{ session.value.student[0].email }}</p>
+      <p>{{ session.value.student[0].name_first }} {{ session.value.student[0].name_last }}</p>
 
-<p>Favorite Team: {{ session.value.student[0].favorite_team }}</p>
+      <p><strong>Favorite Team:</strong><br />{{ session.value.student[0].favorite_team }}</p>
 
-<p>Record: {{ session.value.student[0].game_wins }} - {{ session.value.student[0].game_losses }}</p>
+      <p><strong>Record:</strong><br />{{ session.value.student[0].game_wins }} - {{ session.value.student[0].game_losses }}</p>
+    </div>
 
-<p><a class="btn btn-primary" home-button>New Game</a></p>
+    <div class="button_container">
+      <a class="btn btn-danger left_button" href="/games">End</a>
 
-<p><a href="/games" class="btn btn-primary">End Game</a></p>
+      <button class="btn btn-success right_button" home-button>New</button>
+    </div>
+
+  </div>
+</div>

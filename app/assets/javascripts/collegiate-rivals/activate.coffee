@@ -41,10 +41,10 @@ angular.module('collegiateRivals', [
     url: '/homeTeam'
     views: {
       'header': {
-        template: '<h2>Home Team</h2>'
+        template: '<h2>Choose Home Team</h2>'
       }
       'list': {
-        template: '<ul><team-choices></team-choices></ul>'
+        template: '<ul class="team_selection_list"><home-team-choices></home-team-choices></ul>'
       }
     }
   )
@@ -53,10 +53,10 @@ angular.module('collegiateRivals', [
     url: '/awayTeam'
     views: {
       'header': {
-        template: '<h2>Away Team</h2>'
+        template: '<h2>Choose Away Team</h2>'
       }
       'list': {
-        template: '<ul><team-choices></team-choices></ul>'
+        template: '<ul class="team_selection_list"><away-team-choices></away-team-choices></ul>'
       }
     }
   )
@@ -65,10 +65,10 @@ angular.module('collegiateRivals', [
     url: '/quarters'
     views: {
       'header': {
-        template: '<h2>Quarters</h2>'
+        template: '<h2>Choose Quarter Length</h2>'
       }
       'list': {
-        template: '<ul><quarter-choices></quarter-choices></ul>'
+        template: '<quarter-choices></quarter-choices>'
       }
     }
   )
@@ -77,10 +77,10 @@ angular.module('collegiateRivals', [
     url: '/questions'
     views: {
       'header': {
-        template: '<h2>Questions</h2>'
+        template: '<h2>Choose Question List</h2>'
       }
       'list': {
-        template: '<question-choices></question-choices>'
+        template: '<ul class="opaque_box_selection_list"><question-choices></question-choices></ul>'
       }
     }
   )
@@ -92,7 +92,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Sounds</h2>'
       }
       'list': {
-        template: '<ul><sound-choices></sound-choices></ul>'
+        template: '<ul class="opaque_box_selection_list"><sound-choices></sound-choices></ul>'
       }
     }
   )
