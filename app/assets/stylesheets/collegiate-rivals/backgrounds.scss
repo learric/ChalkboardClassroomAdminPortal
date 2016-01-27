@@ -1,0 +1,23 @@
+.stadium_background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("backgrounds/stadium.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.white_overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.extra_height {
+  height:1000px;
+}

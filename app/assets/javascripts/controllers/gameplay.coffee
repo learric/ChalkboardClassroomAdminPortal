@@ -4,13 +4,13 @@ angular.module('controllers')
 
   gameplay = this
 
+  gameplay.teams = TEAMS
+
   activeTeam = ActiveTeamFactory.getActiveTeam()
 
   if activeTeam == 0
-    activeTeam = SettingsFactory.getHomeTeam()
+    gameplay.activeTeam = SettingsFactory.getHomeTeam()
   else
-    activeTeam = SettingsFactory.getAwayTeam()
-
-  gameplay.activeTeam = TEAMS.sec[activeTeam]
+    gameplay.activeTeam = SettingsFactory.getAwayTeam()
 
   return gameplay

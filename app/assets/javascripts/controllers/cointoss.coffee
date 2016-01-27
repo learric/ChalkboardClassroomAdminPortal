@@ -1,4 +1,4 @@
-angular.module('collegiateRivals')
+angular.module('controllers')
 
 .controller 'CointossController', (SettingsFactory, ActiveTeamFactory, TEAMS) ->
 

@@ -1,0 +1,36 @@
+#index {
+  .content_overlay {
+    z-index: 100;
+    position: relative;
+    padding-top: 5vmin;
+  }
+
+  .logo {
+    width: 50%;
+    margin: 0 auto;
+
+    img {
+      height: auto;
+      width: 100%;
+      max-width: 485px;
+      max-height: 300px;
+    }
+  }
+
+  .button_container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0 5vmin 2vmin;
+
+    .left_button {
+      display: block;
+      float: left;
+    }
+
+    .right_button {
+      display: block;
+      float: right;
+    }
+  }
+}

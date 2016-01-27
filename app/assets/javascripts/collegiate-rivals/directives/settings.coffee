@@ -3,7 +3,7 @@ angular.module('collegiateRivals')
 .directive 'teamChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-repeat="team in settings.teams" ng-click="settings.saveTeam($index)" settings-button>{{ team.nickname }}</li>'
+    template: '<li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button>{{ team.nickname }}</li>'
   }
 
 .directive 'quarterChoices', ->

@@ -1,6 +1,8 @@
+// bootstrap 4
 @import "bootstrap";
-@import "header";
-@import "static_pages";
-@import "questions";
-@import "scaffolds";
-@import "teachers";
+
+//portal styling
+@import "portal/*";
+
+//collegiate rivals styling
+@import "collegiate-rivals/*";

@@ -6,7 +6,7 @@ angular.module('controllers')
 
 #
 #  list teams
-  settings.teams = TEAMS.sec
+  settings.teams = TEAMS
 
 #
 #  list quarters

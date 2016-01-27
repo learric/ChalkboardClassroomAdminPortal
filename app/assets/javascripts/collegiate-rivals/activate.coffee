@@ -132,7 +132,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Flip</h2>'
       }
       'subheader': {
-        template: '<p>chooses {{cointoss.headstails}}</p>'
+        template: '<p>{{ cointoss.awayTeam }} chooses {{cointoss.headsTails}}</p>'
       }
       'buttons': {
         template: '<button class="btn btn-primary" cointoss-button>Flip</button>'
@@ -147,7 +147,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Result</h2>'
       }
       'subheader': {
-        template: '<span>{{cointoss.homeTeam.nickname}}</span><span>{{cointoss.awayTeam.nickname}}</span>'
+        template: '<span ng-show="cointoss.homeActive">{{cointoss.homeTeam.nickname}}</span><span ng-show="cointoss.awayActive">{{cointoss.awayTeam.nickname}}</span>'
       }
       'buttons': {
         template: '<button class="btn btn-primary" cointoss-button>Start</button>'
