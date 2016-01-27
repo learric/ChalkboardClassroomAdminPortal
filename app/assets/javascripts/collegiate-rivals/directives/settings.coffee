@@ -3,13 +3,13 @@ angular.module('collegiateRivals')
 .directive 'homeTeamChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button><img ng-src="/assets/teams/home/{{ team.logo }}.png" /></li>'
+    template: '<ul class="team_selection_list"><li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button><img ng-src="/assets/teams/home/{{ team.logo }}.png" /></li></ul>'
   }
 
 .directive 'awayTeamChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button><img ng-src="/assets/teams/away/{{ team.logo }}.png" /></li>'
+    template: '<ul class="team_selection_list"><li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button><img ng-src="/assets/teams/away/{{ team.logo }}.png" /></li></ul>'
   }
 
 .directive 'quarterChoices', ->
@@ -21,13 +21,13 @@ angular.module('collegiateRivals')
 .directive 'questionChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-repeat="teacher in settings.listTeachers.teachers" ng-click="settings.saveQuestions(teacher.id)" settings-button>{{ teacher.classroom_name }}</li> <li ng-click="settings.saveQuestions(0)" settings-button>Default</li>'
+    template: '<ul class="opaque_box_selection_list"><li ng-repeat="teacher in settings.listTeachers.teachers" ng-click="settings.saveQuestions(teacher.id)" settings-button>{{ teacher.classroom_name }}</li> <li ng-click="settings.saveQuestions(0)" settings-button>Default</li></ul>'
   }
 
 .directive 'soundChoices', ->
   return {
     restrict: 'EAC'
-    template: '<li ng-click="settings.saveSounds(true)" settings-button>On</li><li ng-click="settings.saveSounds(false)" settings-button>Off</li>'
+    template: '<ul class="opaque_box_selection_list"><li ng-click="settings.saveSounds(true)" settings-button>On</li><li ng-click="settings.saveSounds(false)" settings-button>Off</li></ul>'
   }
 
 .directive 'settingsButton', ($state) ->

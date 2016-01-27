@@ -44,7 +44,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Choose Home Team</h2>'
       }
       'list': {
-        template: '<ul class="team_selection_list"><home-team-choices></home-team-choices></ul>'
+        template: '<home-team-choices></home-team-choices>'
       }
     }
   )
@@ -56,7 +56,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Choose Away Team</h2>'
       }
       'list': {
-        template: '<ul class="team_selection_list"><away-team-choices></away-team-choices></ul>'
+        template: '<away-team-choices></away-team-choices>'
       }
     }
   )
@@ -80,7 +80,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Choose Question List</h2>'
       }
       'list': {
-        template: '<ul class="opaque_box_selection_list"><question-choices></question-choices></ul>'
+        template: '<question-choices></question-choices>'
       }
     }
   )
@@ -92,7 +92,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Sounds</h2>'
       }
       'list': {
-        template: '<ul class="opaque_box_selection_list"><sound-choices></sound-choices></ul>'
+        template: '<sound-choices></sound-choices>'
       }
     }
   )
