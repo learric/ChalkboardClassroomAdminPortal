@@ -1,5 +1,16 @@
-<div ui-view="header"></div>
+<div class="chalkboard_background">
+</div>
 
-<a class="btn btn-primary" ui-sref="play">Play</a>
+<div id="question">
+  <div class="content_overlay">
 
-<div>{{ question.questionList }}</div>
+    <div ui-view="header"></div>
+
+    <div>{{ question.questionList[0] }}</div>
+
+    <div class="button_container">
+      <a class="btn btn-primary" ui-sref="play">Play</a>
+    </div>
+
+  </div>
+</div>

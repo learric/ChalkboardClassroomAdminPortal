@@ -1,5 +1,20 @@
-<div ui-view="header"></div>
+<div class="stadium_background">
+  <div class="white_overlay">
+  </div>
+</div>
 
-<div ui-view="subheader"></div>
+<div id="cointoss">
+  <div class="content_overlay">
 
-<div ui-view="buttons"></div>
+    <div class="content_container">
+      <div ui-view="header"></div>
+
+      <div ui-view="subheader"></div>
+    </div>
+
+    <div class="button_container">
+      <div ui-view="buttons"></div>
+    </div>
+
+  </div>
+</div>

@@ -1,7 +1,24 @@
-<div ui-view="scoreboard"></div>
+<div class="stadium_background">
+  <div class="white_overlay">
+  </div>
+</div>
 
-<div ui-view="header"></div>
+<div id="gameplay">
+  <div class="content_overlay">
 
-<p>{{ gameplay.teams.sec[gameplay.activeTeam] }}</p>
+    <div class="scoreboard_container">
+      <div ui-view="scoreboard"></div>
+    </div>
 
-<div ui-view="buttons"></div>
+    <div class="content_container">
+      <div ui-view="header"></div>
+
+      <p>{{ gameplay.teams.sec[gameplay.activeTeam] }}</p>
+    </div>
+
+    <div class="button_container">
+      <div ui-view="buttons"></div>
+    </div>
+
+  </div>
+</div>

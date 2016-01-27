@@ -3,22 +3,24 @@
   </div>
 </div>
 
-<div class="content_overlay">
+<div id="review">
+  <div class="content_overlay">
 
-  <div class="content_container">
-    <h2>Review Settings</h2>
+    <div class="content_container">
+      <h2>Review Settings</h2>
 
-    <p>{{ review.homeTeam.nickname }}</p>
-    <p>{{ review.awayTeam.nickname }}</p>
-    <p>{{ review.quarterLength }}:00</p>
-    <p>{{ review.questions }}</p>
-    <p>{{ review.sounds }}</p>
+      <p>{{ review.homeTeam.nickname }}</p>
+      <p>{{ review.awayTeam.nickname }}</p>
+      <p>{{ review.quarterLength }}:00</p>
+      <p>{{ review.questions }}</p>
+      <p>{{ review.sounds }}</p>
+    </div>
+
+    <div class="button_container">
+      <button class="btn btn-warning left_button" ui-sref="settings.homeTeam">Edit</button>
+
+      <button class="btn btn-success right_button" ui-sref="cointoss.choice">Start</button>
+    </div>
+
   </div>
-
-  <div class="button_container">
-    <button class="btn btn-warning left_button" ui-sref="settings.homeTeam">Edit</button>
-
-    <button class="btn btn-success right_button" ui-sref="cointoss.choice">Start</button>
-  </div>
-
 </div>

@@ -117,7 +117,10 @@ angular.module('collegiateRivals', [
     url: '/choice'
     views: {
       'header': {
-        template: '<h2>Choice</h2>'
+        template: '<h2>{{ cointoss.awayTeam.nickname }}</h2>'
+      }
+      'subheader': {
+        template: '<h3>Choose Heads or Tails</h3>'
       }
       'buttons': {
         template: '<coinflip-buttons></coinflip-buttons>'
@@ -129,13 +132,13 @@ angular.module('collegiateRivals', [
     url: '/flip'
     views: {
       'header': {
-        template: '<h2>Flip</h2>'
+        template: '<h2>{{ cointoss.awayTeam.nickname }}</h2>'
       }
       'subheader': {
-        template: '<p>{{ cointoss.awayTeam }} chooses {{cointoss.headsTails}}</p>'
+        template: '<h3>chooses {{cointoss.headsTails}}</h3>'
       }
       'buttons': {
-        template: '<button class="btn btn-primary" cointoss-button>Flip</button>'
+        template: '<cointoss-button>Flip</cointoss-button>'
       }
     }
   )
@@ -150,7 +153,7 @@ angular.module('collegiateRivals', [
         template: '<span ng-show="cointoss.homeActive">{{cointoss.homeTeam.nickname}}</span><span ng-show="cointoss.awayActive">{{cointoss.awayTeam.nickname}}</span>'
       }
       'buttons': {
-        template: '<button class="btn btn-primary" cointoss-button>Start</button>'
+        template: '<cointoss-button>Start</cointoss-button>'
       }
     }
   )
@@ -173,7 +176,7 @@ angular.module('collegiateRivals', [
         template: 'Kickoff'
       }
       'buttons': {
-        template: '<button class="btn btn-primary" ui-sref="gameplay.newplay">Kick</button>'
+        template: '<button class="btn btn-success right_button" ui-sref="gameplay.newplay">Kick</button>'
       }
     }
   )
@@ -188,7 +191,7 @@ angular.module('collegiateRivals', [
         template: 'New Play'
       }
       'buttons': {
-        template: '<button class="btn btn-primary" ui-sref="question.ask">New</button>'
+        template: '<button class="btn btn-success right_button" ui-sref="question.ask">New</button>'
       }
     }
   )
@@ -233,7 +236,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Confirm</h2>'
       }
       'buttons': {
-        template: '<div class="btn btn-success" touchdown-button>Touchdown</div> <a class="btn btn-warning" ui-sref="score.three" ng-click="score.setScores(3)">Field Goal</a> <a class="btn btn-danger" ui-sref="play">Back</a>'
+        template: '<a class="btn btn-warning left_button" ui-sref="score.three" ng-click="score.setScores(3)">Field Goal</a> <a class="btn btn-success" touchdown-button>Touchdown</a> <a class="btn btn-danger right_button" ui-sref="play">Back</a>'
       }
     }
   )
@@ -245,7 +248,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Touchdown</h2>'
       }
       'buttons': {
-        template: '<a class="btn btn-primary" ui-sref="score.one" ng-click="score.setScores(1)">One Point</a> <a class="btn btn-primary" ui-sref="score.two" ng-click="score.setScores(2)">Two Point</a>'
+        template: '<a class="btn btn-primary left_button" ui-sref="score.one" ng-click="score.setScores(1)">One Point</a> <a class="btn btn-primary right_button" ui-sref="score.two" ng-click="score.setScores(2)">Two Point</a>'
       }
     }
   )
@@ -257,7 +260,7 @@ angular.module('collegiateRivals', [
         template: '<h2>One Point</h2>'
       }
       'buttons': {
-        template: '<a class="btn btn-primary" ui-sref="score.kickoff">Kickoff</a>'
+        template: '<a class="btn btn-success right_button" ui-sref="score.kickoff">Kickoff</a>'
       }
     }
   )
@@ -269,7 +272,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Two Points</h2>'
       }
       'buttons': {
-        template: '<a class="btn btn-primary" ui-sref="score.kickoff">Kickoff</a>'
+        template: '<a class="btn btn-success right_button" ui-sref="score.kickoff">Kickoff</a>'
       }
     }
   )
@@ -281,7 +284,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Field Goal</h2>'
       }
       'buttons': {
-        template: '<a class="btn btn-primary" ui-sref="score.kickoff">Kickoff</a>'
+        template: '<a class="btn btn-success right_button" ui-sref="score.kickoff">Kickoff</a>'
       }
     }
   )
@@ -293,7 +296,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Kickoff</h2>'
       }
       'buttons': {
-        template: '<a class="btn btn-primary" ui-sref="gameplay.newplay">Kick</a>'
+        template: '<a class="btn btn-success right_button" ui-sref="gameplay.newplay">Kick</a>'
       }
     }
   )
