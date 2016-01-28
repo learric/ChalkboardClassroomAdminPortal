@@ -11,19 +11,34 @@
         <img src="/assets/collegiate_rivals/logo.png" />
       </div>
 
-      <h3>Player Info</h3>
+      <div ng-hide="showExitGamePopup">
+        <h3>Player Info</h3>
 
-      <p>{{ session.value.student[0].name_first }} {{ session.value.student[0].name_last }}</p>
+        <p>{{ session.name_first }} {{ session.name_last }}</p>
 
-      <p><strong>Favorite Team:</strong><br />{{ session.value.student[0].favorite_team }}</p>
+        <p><strong>Favorite Team:</strong><br />{{ session.favorite_team }}</p>
 
-      <p><strong>Record:</strong><br />{{ session.value.student[0].game_wins }} - {{ session.value.student[0].game_losses }}</p>
+        <p><strong>Record:</strong><br />{{ session.game_wins }} - {{ session.game_losses }}</p>
+      </div>
+
+      <div ng-show="showExitGamePopup">
+        <h2>Are you sure?</h2>
+        <h3>Your current game will not be saved!</h3>
+      </div>
     </div>
 
     <div class="button_container">
-      <a class="btn btn-danger left_button" href="/games">End Game</a>
+      <div ng-hide="showExitGamePopup">
+        <a class="btn btn-danger left_button" ng-click="toggleExitGamePopup()">End Game</a>
 
-      <button class="btn btn-success right_button" home-button>Home</button>
+        <button class="btn btn-success right_button" home-button>Home</button>
+      </div>
+
+      <div ng-show="showExitGamePopup">
+        <a class="btn btn-danger left_button" href="/games">Exit</a>
+
+        <button class="btn btn-success right_button" ng-click="toggleExitGamePopup()">Resume</button>
+      </div>
     </div>
 
   </div>

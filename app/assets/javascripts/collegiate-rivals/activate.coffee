@@ -15,15 +15,14 @@ angular.module('collegiateRivals', [
   $stateProvider
 
 #
-#  home states
+#  home state
   .state('home',
     url: '/'
     templateUrl: 'collegiate-rivals/index.html'
-    controller: 'SessionController as session'
   )
 
 #
-#  menu states
+#  menu state
   .state('menu',
     url: '/menu'
     templateUrl: 'collegiate-rivals/menu.html'
