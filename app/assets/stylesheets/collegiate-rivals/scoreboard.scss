@@ -1,0 +1,63 @@
+.scoreboard_container {
+  background-color: black;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  padding: 1vmin;
+
+  .scoreboard_section {
+    width: 33.33333%;
+    float: left;
+    position: relative;
+
+    &.away {
+      float: right;
+    }
+  }
+
+  .team_logo {
+    width: 50%;
+    float: left;
+
+    img {
+      width: 90%;
+      height: auto;
+    }
+  }
+
+  .team_score {
+    width: 50%;
+    float: left;
+    font-size: 13vmin;
+    font-weight: bold;
+  }
+
+  .clock_container {
+    font-size: 13vmin;
+    font-weight: bold;
+    line-height: 100%;
+  }
+
+  .game_options {
+    padding-top: 2vmin;
+
+    span {
+      width: 33.33333%;
+      float: left;
+    }
+  }
+
+  .quarter_marker {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    span {
+      display: block;
+    }
+
+    span + span {
+      font-size: 5vmin;
+    }
+  }
+}

@@ -170,7 +170,7 @@ angular.module('collegiateRivals', [
     url: '/kickoff'
     views: {
       'scoreboard': {
-        template: 'Scoreboard'
+        templateUrl: 'collegiate-rivals/scoreboard.html'
       }
       'header': {
         template: 'Kickoff'
@@ -185,7 +185,7 @@ angular.module('collegiateRivals', [
     url: '/newplay'
     views: {
       'scoreboard': {
-        template: 'Scoreboard'
+        templateUrl: 'collegiate-rivals/scoreboard.html'
       }
       'header': {
         template: 'New Play'
