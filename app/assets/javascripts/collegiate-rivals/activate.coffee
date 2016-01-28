@@ -188,7 +188,10 @@ angular.module('collegiateRivals', [
         templateUrl: 'collegiate-rivals/scoreboard.html'
       }
       'header': {
-        template: 'New Play'
+        template: '<h2>{{ gameplay.teams.sec[gameplay.activeTeam].nickname }}</h2>'
+      }
+      'subheader': {
+        template: '<h3>Call a new play</h3>'
       }
       'buttons': {
         template: '<button class="btn btn-success right_button" ui-sref="question.ask">New</button>'
@@ -245,7 +248,10 @@ angular.module('collegiateRivals', [
         templateUrl: 'collegiate-rivals/scoreboard.html'
       }
       'header': {
-        template: '<h2>Confirm</h2>'
+        template: '<h2>Active Team</h2>'
+      }
+      'subheader': {
+        template: '<h3>Confirm?</h3>'
       }
       'buttons': {
         template: '<a class="btn btn-warning left_button" ui-sref="score.three" ng-click="score.setScores(3)">Field Goal</a> <a class="btn btn-success" touchdown-button>Touchdown</a> <a class="btn btn-danger right_button" ui-sref="play.new">Back</a>'
