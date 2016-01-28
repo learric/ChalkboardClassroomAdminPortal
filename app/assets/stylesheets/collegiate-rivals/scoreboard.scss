@@ -16,17 +16,17 @@
   }
 
   .team_logo {
-    width: 50%;
+    width: 40%;
     float: left;
 
     img {
-      width: 90%;
+      width: 100%;
       height: auto;
     }
   }
 
   .team_score {
-    width: 50%;
+    width: 60%;
     float: left;
     font-size: 13vmin;
     font-weight: bold;
@@ -39,11 +39,12 @@
   }
 
   .game_options {
-    padding-top: 2vmin;
+    padding-top: 3vmin;
 
     span {
       width: 33.33333%;
       float: left;
+      font-size: 4vmin;
     }
   }
 
@@ -54,6 +55,7 @@
 
     span {
       display: block;
+      font-size: 3vmin;
     }
 
     span + span {

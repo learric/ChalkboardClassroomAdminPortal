@@ -221,6 +221,15 @@ angular.module('collegiateRivals', [
     controller: 'PlaysController as plays'
   )
 
+  .state('play.new',
+    url: '/new'
+    views: {
+      'scoreboard': {
+        templateUrl: 'collegiate-rivals/scoreboard.html'
+      }
+    }
+  )
+
 #
 #  score states
   .state('score',
@@ -232,11 +241,14 @@ angular.module('collegiateRivals', [
   .state('score.confirm',
     url: '/confirm'
     views: {
+      'scoreboard': {
+        templateUrl: 'collegiate-rivals/scoreboard.html'
+      }
       'header': {
         template: '<h2>Confirm</h2>'
       }
       'buttons': {
-        template: '<a class="btn btn-warning left_button" ui-sref="score.three" ng-click="score.setScores(3)">Field Goal</a> <a class="btn btn-success" touchdown-button>Touchdown</a> <a class="btn btn-danger right_button" ui-sref="play">Back</a>'
+        template: '<a class="btn btn-warning left_button" ui-sref="score.three" ng-click="score.setScores(3)">Field Goal</a> <a class="btn btn-success" touchdown-button>Touchdown</a> <a class="btn btn-danger right_button" ui-sref="play.new">Back</a>'
       }
     }
   )
@@ -244,6 +256,9 @@ angular.module('collegiateRivals', [
   .state('score.touchdown',
     url: '/touchdown'
     views: {
+      'scoreboard': {
+        templateUrl: 'collegiate-rivals/scoreboard.html'
+      }
       'header': {
         template: '<h2>Touchdown</h2>'
       }
@@ -256,6 +271,9 @@ angular.module('collegiateRivals', [
   .state('score.one',
     url: '/one'
     views: {
+      'scoreboard': {
+        templateUrl: 'collegiate-rivals/scoreboard.html'
+      }
       'header': {
         template: '<h2>One Point</h2>'
       }
@@ -268,6 +286,9 @@ angular.module('collegiateRivals', [
   .state('score.two',
     url: '/two'
     views: {
+      'scoreboard': {
+        templateUrl: 'collegiate-rivals/scoreboard.html'
+      }
       'header': {
         template: '<h2>Two Points</h2>'
       }
@@ -280,6 +301,9 @@ angular.module('collegiateRivals', [
   .state('score.three',
     url: '/three'
     views: {
+      'scoreboard': {
+        templateUrl: 'collegiate-rivals/scoreboard.html'
+      }
       'header': {
         template: '<h2>Field Goal</h2>'
       }
@@ -292,6 +316,9 @@ angular.module('collegiateRivals', [
   .state('score.kickoff',
     url: '/kickoff'
     views: {
+      'scoreboard': {
+        templateUrl: 'collegiate-rivals/scoreboard.html'
+      }
       'header': {
         template: '<h2>Kickoff</h2>'
       }
