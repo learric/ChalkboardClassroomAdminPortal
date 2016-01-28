@@ -1,0 +1,30 @@
+.review_logo {
+  width: 35%;
+  float: left;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &.right {
+    float: right;
+  }
+}
+
+.review_versus {
+  width: 30%;
+  float: left;
+  font-size: 7vmin;
+  font-weight: bold;
+  padding-top: 8vmin;
+}
+
+.review_settings {
+  width: 33.33333%;
+  float: left;
+  padding-top: 5vmin;
+
+  span {
+  }
+}
