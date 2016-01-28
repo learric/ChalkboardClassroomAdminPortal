@@ -172,10 +172,13 @@ angular.module('collegiateRivals', [
         templateUrl: 'collegiate-rivals/scoreboard.html'
       }
       'header': {
-        template: 'Kickoff'
+        template: '<h2>{{ gameplay.teams.sec[gameplay.activeTeam].nickname }}</h2>'
+      }
+      'subheader': {
+        template: '<h3>Line up to kickoff</h3>'
       }
       'buttons': {
-        template: '<button class="btn btn-success right_button" ui-sref="gameplay.newplay">Kick</button>'
+        template: '<button class="btn btn-success right_button" ui-sref="gameplay.newplay">Kickoff</button>'
       }
     }
   )
@@ -283,7 +286,7 @@ angular.module('collegiateRivals', [
         template: '<h2>One Point</h2>'
       }
       'buttons': {
-        template: '<a class="btn btn-success right_button" ui-sref="score.kickoff">Kickoff</a>'
+        template: '<a class="btn btn-success right_button" ui-sref="gameplay.kickoff">Kickoff</a>'
       }
     }
   )
@@ -298,7 +301,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Two Points</h2>'
       }
       'buttons': {
-        template: '<a class="btn btn-success right_button" ui-sref="score.kickoff">Kickoff</a>'
+        template: '<a class="btn btn-success right_button" ui-sref="gameplay.kickoff">Kickoff</a>'
       }
     }
   )
@@ -313,22 +316,7 @@ angular.module('collegiateRivals', [
         template: '<h2>Field Goal</h2>'
       }
       'buttons': {
-        template: '<a class="btn btn-success right_button" ui-sref="score.kickoff">Kickoff</a>'
-      }
-    }
-  )
-
-  .state('score.kickoff',
-    url: '/kickoff'
-    views: {
-      'scoreboard': {
-        templateUrl: 'collegiate-rivals/scoreboard.html'
-      }
-      'header': {
-        template: '<h2>Kickoff</h2>'
-      }
-      'buttons': {
-        template: '<a class="btn btn-success right_button" ui-sref="gameplay.newplay">Kick</a>'
+        template: '<a class="btn btn-success right_button" ui-sref="gameplay.kickoff">Kickoff</a>'
       }
     }
   )
