@@ -121,6 +121,9 @@ angular.module('collegiateRivals', [
       'subheader': {
         template: '<h3>Choose Heads or Tails</h3>'
       }
+      'coinAnimation': {
+        template: '<coinflip-choice></coinflip-choice>'
+      }
       'buttons': {
         template: '<coinflip-buttons></coinflip-buttons>'
       }

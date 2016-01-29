@@ -9,6 +9,8 @@ angular.module('controllers')
   cointoss.homeTeam = TEAMS.sec[home]
   cointoss.awayTeam = TEAMS.sec[away]
 
+  cointoss.coinflipChoiceLogo = cointoss.awayTeam.logo
+
   cointoss.choice = (choice) ->
     toss = Math.floor(Math.random() * 2)
 

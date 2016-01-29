@@ -23,3 +23,32 @@ angular.module('collegiateRivals')
         $state.go('cointoss.flip')
       )
   }
+
+.directive 'coinflipChoice', ($timeout) ->
+  return {
+    restrict: 'EAC'
+    template: '<div class="coin animated flip infinite"><img ng-src="/assets/teams/home/{{ cointoss.coinflipChoiceLogo }}.png" /></div>'
+    link: (sc, el) ->
+      home = sc.cointoss.homeTeam.logo
+      away = sc.cointoss.awayTeam.logo
+
+      flipTimeout = ->
+        $timeout(->
+          if sc.cointoss.coinflipChoiceLogo == sc.cointoss.awayTeam.logo
+            sc.cointoss.coinflipChoiceLogo = home
+          else
+            sc.cointoss.coinflipChoiceLogo = away
+
+          flipTimeout()
+
+        1000)
+
+      flipTimeout()
+  }
+
+.directive 'coinflipDecision', ($timeout) ->
+  return {
+    restrict: 'EAC'
+    template: '<div class="coin animated pulse infinite"><img ng-src="/assets/teams/home/{{ cointoss.coinflipChoiceLogo }}.png" /></div>'
+    link: (sc, el) ->
+  }
