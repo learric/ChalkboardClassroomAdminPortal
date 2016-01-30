@@ -1,0 +1,129 @@
+/*
+create team color variables
+P = Primary
+S = Secondary
+*/
+
+// alabama
+$alabamaP: #DC143C;	//	crimson
+$alabamaS: #ffffff;	//	white
+
+//	arkansas
+$arkansasP: #CD1041;	//	red
+$arkansasS: #231F20;	//	black
+
+//	auburn
+$auburnP: #CC5500;	//	orange
+$auburnS: #000080;	//	navy
+
+//	florida
+$floridaP: #2139CE;	//	royal
+$floridaS: #FF4208;	//	orange
+
+//	georgia
+$georgiaP: #000000;	//	black
+$georgiaS: #A0000B;	//	red
+
+//	kentucky
+$kentuckyP: #003399;	//	blue
+$kentuckyS: #ffffff;	//	white
+
+//	lsu
+$lsuP: #33297B;	//	purple
+$lsuS: #FDB827;	//	gold
+
+//	state
+$stateP: #762123;	//	maroon
+$stateS: #D1D5D8;	//	silver
+
+//	mizzou
+$mizzouP: #231F20;	//	black
+$mizzouS: #E8AF11;	//	gold
+
+//	oleMiss
+$oleMissP: #002C91;	//	blue
+$oleMissS: #FF002C;	//	red
+
+//	tenn
+$tennP: #EE9627;	//	orange
+$tennS: #ffffff;	//	white
+
+//	texas
+$texasP: #5C0025;	//	maroon
+$texasS: #ffffff;	//	white
+
+//	usc
+$uscP: #000000;	//	maroon
+$uscS: #CD0000;	//	black
+
+//	vandy
+$vandyP: #000000;	//	black
+$vandyS: #BB8D09;	//	gold
+
+/*
+create team color mixin
+*/
+
+@mixin teamColor($color) {
+  color: $color !important;
+}
+
+/*
+team classes
+*/
+
+.Alabama {
+  @include teamColor($alabamaP);
+}
+
+.Arkansas {
+  @include teamColor($arkansasP);
+}
+
+.Auburn {
+  @include teamColor($auburnP);
+}
+
+.Florida {
+  @include teamColor($floridaP);
+}
+
+.Georgia {
+  @include teamColor($georgiaP);
+}
+
+.Kentucky {
+  @include teamColor($kentuckyP);
+}
+
+.LSU {
+  @include teamColor($lsuP);
+}
+
+.State {
+  @include teamColor($stateP);
+}
+
+.Mizzou {
+  @include teamColor($mizzouP);
+}
+
+.Miss {
+  @include teamColor($oleMissP);
+}
+
+.Tenn {
+  @include teamColor($tennP);
+}
+
+.Texas {
+  @include teamColor($texasP);
+}
+
+.USC {
+  @include teamColor($uscP);
+}
+
+.Vandy {
+  @include teamColor($vandyP);
+}

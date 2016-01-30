@@ -4,7 +4,7 @@ angular.module('collegiateRivals')
   return {
     restrict: 'EAC'
     link: (sc, el) ->
-      el.addClass('btn btn-success right_button')
+      el.addClass('btn btn-success right_button animated rubberBand')
       el.on('click', ->
         state = $state.current.url
 
@@ -14,41 +14,38 @@ angular.module('collegiateRivals')
       )
   }
 
-.directive 'coinflipButtons', ($state) ->
+.directive 'coinflipChoiceHeads', ($state, CointossFactory, SettingsFactory, TEAMS) ->
   return {
     restrict: 'EAC'
-    template: '<button class="btn btn-primary left_button" ng-click="cointoss.choice(0)">Heads</button> <button class="btn btn-primary right_button" ng-click="cointoss.choice(1)">Tails</button>'
+    template: '<div class="coin"><img ng-src="/assets/teams/home/{{ cointoss.homeTeam }}.png" /></div>'
     link: (sc, el) ->
+      id = SettingsFactory.getHomeTeam()
+      team = TEAMS.sec[id].logo
+
+      sc.cointoss.homeTeam = team
+
+      el.addClass('animated pulse infinite')
       el.on('click', ->
+        CointossFactory.setCointoss(0)
+        sc.cointoss.headsTails = 'heads'
         $state.go('cointoss.flip')
       )
   }
 
-.directive 'coinflipChoice', ($timeout) ->
+.directive 'coinflipChoiceTails', ($state, CointossFactory, SettingsFactory, TEAMS) ->
   return {
     restrict: 'EAC'
-    template: '<div class="coin animated flip infinite"><img ng-src="/assets/teams/home/{{ cointoss.coinflipChoiceLogo }}.png" /></div>'
+    template: '<div class="coin"><img ng-src="/assets/teams/away/{{ cointoss.awayTeam }}.png" /></div>'
     link: (sc, el) ->
-      home = sc.cointoss.homeTeam.logo
-      away = sc.cointoss.awayTeam.logo
+      id = SettingsFactory.getAwayTeam()
+      team = TEAMS.sec[id].logo
 
-      flipTimeout = ->
-        $timeout(->
-          if sc.cointoss.coinflipChoiceLogo == sc.cointoss.awayTeam.logo
-            sc.cointoss.coinflipChoiceLogo = home
-          else
-            sc.cointoss.coinflipChoiceLogo = away
+      sc.cointoss.awayTeam = team
 
-          flipTimeout()
-
-        1000)
-
-      flipTimeout()
-  }
-
-.directive 'coinflipDecision', ($timeout) ->
-  return {
-    restrict: 'EAC'
-    template: '<div class="coin animated pulse infinite"><img ng-src="/assets/teams/home/{{ cointoss.coinflipChoiceLogo }}.png" /></div>'
-    link: (sc, el) ->
+      el.addClass('animated pulse infinite')
+      el.on('click', ->
+        CointossFactory.setCointoss(1)
+        sc.cointoss.headsTails = 'tails'
+        $state.go('cointoss.flip')
+      )
   }

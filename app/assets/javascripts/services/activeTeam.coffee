@@ -5,7 +5,7 @@ angular.module('services')
   activeTeam = 0
 
   return {
-    updateActiveTeam: (id) ->
+    setActiveTeam: (id) ->
       activeTeam = id
 
     getActiveTeam: ->

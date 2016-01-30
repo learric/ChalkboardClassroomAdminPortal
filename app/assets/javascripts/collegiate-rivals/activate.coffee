@@ -116,16 +116,13 @@ angular.module('collegiateRivals', [
     url: '/choice'
     views: {
       'header': {
-        template: '<h2>{{ cointoss.awayTeam.nickname }}</h2>'
+        template: '<h2 away-team-nickname></h2>'
       }
       'subheader': {
-        template: '<h3>Choose Heads or Tails</h3>'
+        template: '<h3>Choose Heads or Tails!</h3>'
       }
       'coinAnimation': {
-        template: '<coinflip-choice></coinflip-choice>'
-      }
-      'buttons': {
-        template: '<coinflip-buttons></coinflip-buttons>'
+        template: '<div coinflip-choice-heads></div><div coinflip-choice-tails></div>'
       }
     }
   )
@@ -134,7 +131,7 @@ angular.module('collegiateRivals', [
     url: '/flip'
     views: {
       'header': {
-        template: '<h2>{{ cointoss.awayTeam.nickname }}</h2>'
+        template: '<h2 away-team-nickname></h2>'
       }
       'subheader': {
         template: '<h3>chooses {{cointoss.headsTails}}</h3>'
