@@ -134,10 +134,13 @@ angular.module('collegiateRivals', [
         template: '<h2 away-team-nickname></h2>'
       }
       'subheader': {
-        template: '<h3>chooses {{cointoss.headsTails}}</h3>'
+        template: '<h3>chooses {{ cointoss.headsTails }}</h3>'
+      }
+      'coinAnimation': {
+        template: '<div coinflip-choice-confirm></div>'
       }
       'buttons': {
-        template: '<cointoss-button>Flip</cointoss-button>'
+        template: '<cointoss-change-button>Change</cointoss-change-button><cointoss-button>Flip Coin</cointoss-button>'
       }
     }
   )
@@ -146,13 +149,16 @@ angular.module('collegiateRivals', [
     url: '/result'
     views: {
       'header': {
-        template: '<h2>Result</h2>'
+        template: '<h2 class="{{ cointoss.winner.class }}">{{ cointoss.winner.nickname }}</h2>'
       }
       'subheader': {
-        template: '<span ng-show="cointoss.homeActive">{{cointoss.homeTeam.nickname}}</span><span ng-show="cointoss.awayActive">{{cointoss.awayTeam.nickname}}</span>'
+        template: '<h3>It\'s {{ cointoss.result }}, you win!</h3>'
+      }
+      'coinAnimation': {
+        template: '<div coinflip-flip-container><div id="coin" coinflip-flip-coin></div></div><section><div coinflip-result></div></section>'
       }
       'buttons': {
-        template: '<cointoss-button>Start</cointoss-button>'
+        template: '<cointoss-button>Kickoff</cointoss-button>'
       }
     }
   )

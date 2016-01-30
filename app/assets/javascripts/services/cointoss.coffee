@@ -16,6 +16,9 @@ angular.module('services')
         ActiveTeamFactory.setActiveTeam(0)
         tossWinner = 0
 
+    getCointossChoice: ->
+      return tossChoice
+
     getCointossResult: ->
       return tossResult
 

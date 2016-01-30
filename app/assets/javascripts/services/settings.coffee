@@ -1,6 +1,6 @@
 angular.module('services')
 
-.factory 'SettingsFactory', ->
+.factory 'SettingsFactory', (TEAMS) ->
 
   home = 0
   away = 1
@@ -32,8 +32,16 @@ angular.module('services')
     getHomeTeam: ->
       return home
 
+    getFullHomeTeam: ->
+      fullHome = TEAMS.sec[home]
+      return fullHome
+
     getAwayTeam: ->
       return away
+
+    getFullAwayTeam: ->
+      fullAway = TEAMS.sec[away]
+      return fullAway
 
     getTime: ->
       return time

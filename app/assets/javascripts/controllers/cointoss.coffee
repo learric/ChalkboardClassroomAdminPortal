@@ -4,4 +4,6 @@ angular.module('controllers')
 
   cointoss = this
 
+  cointoss.headsTails = 'heads'
+
   return cointoss

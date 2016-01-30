@@ -1,11 +1,20 @@
 angular.module('collegiateRivals')
 
-.directive 'awayTeamNickname', (SettingsFactory, TEAMS) ->
+.directive 'awayTeamNickname', (SettingsFactory) ->
   return {
     restrict: 'EAC'
     link: (sc, el) ->
-      id = SettingsFactory.getAwayTeam()
-      team = TEAMS.sec[id]
+      team = SettingsFactory.getFullAwayTeam()
+
+      el.text(team.nickname)
+      el.addClass(team.class)
+  }
+
+.directive 'homeTeamNickname', (SettingsFactory) ->
+  return {
+    restrict: 'EAC'
+    link: (sc, el) ->
+      team = SettingsFactory.getFullHomeTeam()
 
       el.text(team.nickname)
       el.addClass(team.class)
