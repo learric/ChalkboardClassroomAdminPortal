@@ -181,7 +181,7 @@ angular.module('collegiateRivals', [
         template: '<h2>{{ gameplay.teams.sec[gameplay.activeTeam].nickname }}</h2>'
       }
       'subheader': {
-        template: '<h3>Line up to kickoff</h3>'
+        template: '<h3>will receive the kick</h3>'
       }
       'buttons': {
         template: '<button class="btn btn-success right_button" ui-sref="gameplay.newplay">Kickoff</button>'

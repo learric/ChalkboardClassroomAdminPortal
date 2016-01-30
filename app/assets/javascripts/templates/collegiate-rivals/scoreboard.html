@@ -1,14 +1,9 @@
-<div class="scoreboard_container">
+<div class="scoreboard_container" ng-controller="ScoreboardController as scoreboard">
 
   <div class="scoreboard_section home">
+    <div class="team_logo" home-team-logo></div>
 
-    <div class="team_logo">
-      <img src="/assets/teams/home/sec/auburn.png" />
-    </div>
-
-    <div class="team_score">
-      <span>00</span>
-    </div>
+    <div class="team_score" home-team-score></div>
   </div>
 
   <div class="scoreboard_section clock">
@@ -29,13 +24,8 @@
   </div>
 
   <div class="scoreboard_section away">
+    <div class="team_score" away-team-score></div>
 
-    <div class="team_score">
-      <span>00</span>
-    </div>
-
-    <div class="team_logo">
-      <img src="/assets/teams/away/sec/alabama-bw.png" />
-    </div>
+    <div class="team_logo" away-team-logo></div>
   </div>
 </div>

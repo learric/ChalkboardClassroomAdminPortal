@@ -27,13 +27,12 @@ angular.module('collegiateRivals')
 .directive 'coinflipChoiceHeads', ($state, CointossFactory, SettingsFactory) ->
   return {
     restrict: 'EAC'
-    template: '<div class="coin"><img ng-src="/assets/teams/home/{{ cointoss.homeTeam }}.png" /></div>'
+    template: '<div class="coin animated pulse infinite"><img ng-src="/assets/teams/home/{{ cointoss.homeTeam }}.png" /></div>'
     link: (sc, el) ->
       team = SettingsFactory.getFullHomeTeam()
 
       sc.cointoss.homeTeam = team.logo
 
-      el.addClass('animated pulse infinite')
       el.on('click', ->
         CointossFactory.setCointoss(0)
         sc.cointoss.headsTails = 'heads'
@@ -44,13 +43,12 @@ angular.module('collegiateRivals')
 .directive 'coinflipChoiceTails', ($state, CointossFactory, SettingsFactory) ->
   return {
     restrict: 'EAC'
-    template: '<div class="coin"><img ng-src="/assets/teams/home/{{ cointoss.awayTeam }}.png" /></div>'
+    template: '<div class="coin animated pulse infinite"><img ng-src="/assets/teams/home/{{ cointoss.awayTeam }}.png" /></div>'
     link: (sc, el) ->
       team = SettingsFactory.getFullAwayTeam()
 
       sc.cointoss.awayTeam = team.logo
 
-      el.addClass('animated pulse infinite')
       el.on('click', ->
         CointossFactory.setCointoss(1)
         sc.cointoss.headsTails = 'tails'
@@ -58,10 +56,11 @@ angular.module('collegiateRivals')
       )
   }
 
-.directive 'coinflipChoiceConfirm', (CointossFactory, SettingsFactory) ->
+.directive 'coinflipChoiceConfirm', (CointossFactory, SettingsFactory, $state) ->
   return {
     restrict: 'EAC'
-    template: '<div class="coin"><img ng-src="/assets/teams/home/{{ cointoss.tossChoice }}.png" /></div>'
+    template: '<div class="coin larger_coin animated pulse infinite"><img ng-src="/assets/teams/home/{{ cointoss' +
+      '.tossChoice }}.png" /></div>'
     link: (sc, el) ->
       choice = CointossFactory.getCointossChoice()
 
@@ -72,7 +71,9 @@ angular.module('collegiateRivals')
         team = SettingsFactory.getFullAwayTeam()
         sc.cointoss.tossChoice = team.logo
 
-      el.addClass('animated pulse infinite')
+      el.on('click', ->
+        $state.go('cointoss.result')
+      )
   }
 
 .directive 'coinflipFlipContainer', ($timeout) ->
