@@ -4,12 +4,19 @@
 <div id="question">
   <div class="content_overlay">
 
-    <div ui-view="header"></div>
+    <div class="question_container">
+      <div ui-view="header"></div>
 
-    <div>{{ question.questionList[0] }}</div>
+      <div ui-view="category"></div>
+
+      <div class="question_content">
+        <div ui-view="firstLine"></div>
+        <div ui-view="lastLine"></div>
+      </div>
+    </div>
 
     <div class="button_container">
-      <div ui-view="buttons"></div>
+      <div ui-view="buttons" class="button_content"></div>
     </div>
 
   </div>

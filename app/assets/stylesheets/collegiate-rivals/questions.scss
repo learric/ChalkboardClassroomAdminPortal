@@ -4,11 +4,54 @@
     color: white;
 
     .button_container {
-      bottom: 1vmin;
+      bottom: 3vmin;
+      right: 0;
+      left: 0;
+      width: 100%;
+      padding: 0 3.5vmin;
+
+      .button_content {
+        width: 100%;
+
+        div {
+          width: 50%;
+          display: inline-block;
+          padding-top: 2vmin;
+
+          span:first-child {
+            width: 15%;
+            float: left;
+            font-family: Eraser, sans-serif;
+            font-size: 7vmin;
+            padding-bottom: 2vmin;
+          }
+
+          span + span {
+            width: 85%;
+            float: left;
+            text-align: left;
+            font-size: 2.8vmin;
+          }
+        }
+      }
+    }
+
+    .answer_icon {
+      font-size: 15vmin;
+      display: inline-block;
     }
   }
 }
 
 .question_container {
   font-family: Eraser, sans-serif;
+
+  .question_content {
+    padding-top: 3vmin;
+  }
+
+  p {
+    font-size: 4vmin;
+    font-family: Eraser, sans-serif;
+  }
 }

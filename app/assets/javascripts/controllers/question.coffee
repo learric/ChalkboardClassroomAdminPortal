@@ -7,15 +7,22 @@ angular.module('controllers')
   teacherId = QuestionsFactory.getTeacherId()
 
   if teacherId == 0
-    question.questionList = QUESTIONS.default
+    qRand = Math.floor(Math.random() * QUESTIONS.default.length)
+    question.questionList = QUESTIONS.default[qRand]
   else
-    getQuestions = QuestionsFactory.getQuestionsLocally()
+    getQuestions = QuestionsFactory.getQuestions()
 
-    if Object.keys(getQuestions).length == 0
-      QuestionsFactory.getQuestions().then((res) ->
-        question.questionList = res.questions
-      )
-    else
-      question.questionList = QuestionsFactory.getQuestionsLocally()
+    getQuestions.then((res) ->
+      qRand = Math.floor(Math.random() * res.questions.length)
+      question.questionList = res.questions[qRand]
+    )
+
+  random = Math.floor(Math.random() * 4)
+
+  switch random
+    when 0 then question.questionOrder = [0, 1, 2, 3]
+    when 1 then question.questionOrder = [1, 2, 3, 0]
+    when 2 then question.questionOrder = [2, 3, 0, 1]
+    else question.questionOrder = [3, 2, 1, 0]
 
   return question

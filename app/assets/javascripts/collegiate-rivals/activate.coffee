@@ -226,10 +226,58 @@ angular.module('collegiateRivals', [
     url: '/ask'
     views: {
       'header': {
-        template: '<h2 active-team-nickname>Ask Question</h2>'
+        template: '<h2 active-team-nickname></h2>'
+      }
+      'category': {
+        template: '<h3>{{ question.questionList.category }} Question</h3>'
+      }
+      'firstLine': {
+        template: '<p>{{ question.questionList.firstLine }}</p>'
       }
       'buttons': {
-        template: '<new-play-button></new-play-button>'
+        template: '<first-answer></first-answer><second-answer></second-answer><third-answer></third-answer><fourth-answer></fourth-answer>'
+      }
+    }
+  )
+
+  .state('question.incorrect',
+    url: '/incorrect'
+    views: {
+      'header': {
+        template: '<h2 active-team-nickname></h2>'
+      }
+      'category': {
+        template: '<h3>incorrect!</h3>'
+      }
+      'firstLine': {
+        template: '<div class="answer_icon animated tada"><span class="fa fa-close text-danger animated pulse infinite"></span></div>'
+      }
+      'lastLine': {
+        template: '<p>The correct answer is<br />{{ question.questionList.answers[3] }}</p>'
+      }
+      'buttons': {
+        template: '<incorrect-button></incorrect-button>'
+      }
+    }
+  )
+
+  .state('question.correct',
+    url: '/correct'
+    views: {
+      'header': {
+        template: '<h2 active-team-nickname></h2>'
+      }
+      'category': {
+        template: '<h3>That\'s correct!</h3>'
+      }
+      'firstLine': {
+        template: '<div class="answer_icon animated tada"><span class="fa fa-check text-success animated pulse infinite"></span></div>'
+      }
+      'lastLine': {
+        template: '<p class="animated tada infinite" active-team-slogan></p>'
+      }
+      'buttons': {
+        template: '<correct-button></correct-button>'
       }
     }
   )
@@ -299,7 +347,7 @@ angular.module('collegiateRivals', [
         templateUrl: 'collegiate-rivals/scoreboard.html'
       }
       'header': {
-        template: '<h2 active-team-nickname>Touchdown</h2>'
+        template: '<h2 active-team-nickname></h2>'
       }
       'subheader': {
         template: '<h3>Choose an extra point try!</h3>'

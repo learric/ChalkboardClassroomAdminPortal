@@ -3,7 +3,7 @@ angular.module('services')
 .factory 'QuestionsFactory', ($http) ->
 
   teacher = 0
-  questions = {}
+  question = {}
 
   return {
     setTeacherId: (id) ->
@@ -17,11 +17,11 @@ angular.module('services')
         method: 'GET'
         url: '/games/questions/' + teacher + '.json'
       }).then((res) ->
-        questions = res.data
-        return questions
+        question = res.data
+        return question
       )
 
     getQuestionsLocally: ->
-        return questions
+        return question
 
   }
