@@ -8,6 +8,26 @@
 // animation library
 @import "animate.css";
 
+// import fonts
+
+// eraser
+@font-face {
+  font-family: Eraser;
+  src: url(fonts/Eraser.otf);
+}
+
+// oswald bold
+@font-face {
+  font-family: Osbold;
+  src: url(fonts/Oswald-Bold.otf);
+}
+
+// oswald
+@font-face {
+  font-family: Oswald;
+  src: url(fonts/Oswald-Regular.otf);
+}
+
 //portal styling
 @import "portal/*";
 
