@@ -1,19 +1,5 @@
 angular.module('collegiateRivals')
 
-.directive 'cointossButton', ($state) ->
-  return {
-    restrict: 'EAC'
-    link: (sc, el) ->
-      el.addClass('btn btn-success right_button animated rubberBand')
-      el.on('click', ->
-        state = $state.current.url
-
-        switch state
-          when '/flip' then $state.go('cointoss.result')
-          else $state.go('gameplay.kickoff')
-      )
-  }
-
 .directive 'cointossChangeButton', ($state) ->
   return {
     restrict: 'EAC'

@@ -10,10 +10,10 @@ angular.module('services')
       tossResult = Math.floor(Math.random() * 2)
 
       if tossChoice == tossResult
-        ActiveTeamFactory.setActiveTeam(1)
+        ActiveTeamFactory.setActiveTeam(0)
         tossWinner = 1
       else
-        ActiveTeamFactory.setActiveTeam(0)
+        ActiveTeamFactory.setActiveTeam(1)
         tossWinner = 0
 
     getCointossChoice: ->

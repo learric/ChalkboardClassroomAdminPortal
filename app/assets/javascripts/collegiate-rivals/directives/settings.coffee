@@ -29,19 +29,3 @@ angular.module('collegiateRivals')
     restrict: 'EAC'
     template: '<ul class="opaque_box_selection_list"><li ng-click="settings.saveSounds(true)" settings-button>On</li><li ng-click="settings.saveSounds(false)" settings-button>Off</li></ul>'
   }
-
-.directive 'settingsButton', ($state) ->
-  return {
-    restrict: 'EAC'
-    link: (sc, el) ->
-      el.on('click', ->
-        state = $state.current.url
-
-        switch state
-          when '/homeTeam' then $state.go('settings.awayTeam')
-          when '/awayTeam' then $state.go('settings.quarters')
-          when '/quarters' then $state.go('settings.questions')
-          when '/questions' then $state.go('settings.sounds')
-          else $state.go('review')
-      )
-  }

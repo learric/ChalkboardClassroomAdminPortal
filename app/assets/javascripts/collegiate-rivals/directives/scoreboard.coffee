@@ -1,14 +1,15 @@
 angular.module('collegiateRivals')
 
-.directive 'homeTeamLogo', (ActiveTeamFactory, SettingsFactory) ->
+.directive 'homeTeamLogo', (ActiveTeamFactory, SettingsFactory, $state) ->
   return {
     restrict: 'EAC'
     template: '<img src="/assets/teams/home/{{ scoreboard.homeTeamLogo }}.png" />'
     link: (sc, el) ->
       active = ActiveTeamFactory.getActiveTeam()
       team = SettingsFactory.getFullHomeTeam()
+      state = $state.current.name
 
-      if active == 1
+      if active == 1 || state == 'gameplay.kickoff'
         sc.scoreboard.homeTeamLogo = team.logo + '-bw'
         el.removeClass('animated pulse infinite')
       else
@@ -16,15 +17,16 @@ angular.module('collegiateRivals')
         el.addClass('animated pulse infinite')
   }
 
-.directive 'awayTeamLogo', (ActiveTeamFactory, SettingsFactory) ->
+.directive 'awayTeamLogo', (ActiveTeamFactory, SettingsFactory, $state) ->
   return {
     restrict: 'EAC'
     template: '<img src="/assets/teams/away/{{ scoreboard.awayTeamLogo }}.png" />'
     link: (sc, el) ->
       active = ActiveTeamFactory.getActiveTeam()
       team = SettingsFactory.getFullAwayTeam()
+      state = $state.current.name
 
-      if active == 0
+      if active == 0 || state == 'gameplay.kickoff'
         sc.scoreboard.awayTeamLogo = team.logo + '-bw'
         el.removeClass('animated pulse infinite')
       else

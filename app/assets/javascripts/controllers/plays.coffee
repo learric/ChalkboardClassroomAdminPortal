@@ -4,6 +4,4 @@ angular.module('controllers')
 
   plays = this
 
-  plays.playList = PlaysService.setPlay()
-
   return plays

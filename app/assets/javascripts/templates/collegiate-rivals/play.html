@@ -11,15 +11,17 @@
     </div>
 
     <div class="content_container">
-      <h2>Play</h2>
+      <div ui-view="header"></div>
 
-      <h3>{{ plays.playList }}</h3>
+      <div ui-view="action"></div>
+
+      <div ui-view="result"></div>
     </div>
 
     <div class="button_container">
-      <a class="btn btn-primary left_button" ui-sref="score.confirm">Score</a>
+      <div ui-view="score"></div>
 
-      <a class="btn btn-success right_button" ui-sref="gameplay.newplay">Next</a>
+      <div ui-view="next"></div>
     </div>
 
   </div>

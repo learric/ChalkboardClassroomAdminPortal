@@ -3,7 +3,7 @@ angular.module('services')
 .factory 'PlaysService', (PLAYS) ->
 
   plays = PLAYS.all
-  play = {}
+  play = plays[0]
 
   return {
     setPlay: ->

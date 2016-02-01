@@ -2,11 +2,17 @@ angular.module('services')
 
 .factory 'ActiveTeamFactory', (SettingsFactory) ->
 
-  activeTeam = 0
+  activeTeam = 1
 
   return {
     setActiveTeam: (id) ->
       activeTeam = id
+
+    toggleActiveTeam: ->
+      if activeTeam == 0
+        activeTeam = 1
+      else
+        activeTeam = 0
 
     getActiveTeam: ->
       return activeTeam

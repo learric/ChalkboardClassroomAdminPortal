@@ -19,3 +19,13 @@ angular.module('collegiateRivals')
       el.text(team.nickname)
       el.addClass(team.class)
   }
+
+.directive 'activeTeamNickname', (ActiveTeamFactory) ->
+  return {
+    restrict: 'EAC'
+    link: (sc, el) ->
+      team = ActiveTeamFactory.getFullActiveTeam()
+
+      el.addClass(team.class)
+      el.text(team.nickname)
+  }
