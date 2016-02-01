@@ -22,6 +22,13 @@ angular.module('collegiateRivals', [
   )
 
 #
+#  paused state
+  .state('paused',
+    url: '/paused'
+    templateUrl: 'collegiate-rivals/paused.html'
+  )
+
+#
 #  menu state
   .state('menu',
     url: '/menu'

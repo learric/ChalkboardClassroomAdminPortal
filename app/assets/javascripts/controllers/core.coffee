@@ -1,6 +1,6 @@
 angular.module('controllers')
 
-.controller 'CoreController', (SessionFactory, QuestionsFactory, TeachersFactory, $scope) ->
+.controller 'CoreController', (SessionFactory, QuestionsFactory, $scope) ->
 
   SessionFactory.getSession('collegiate_rivals').then((res) ->
     $scope.session = res.student[0]
@@ -12,6 +12,6 @@ angular.module('controllers')
     else
       $scope.showExitGamePopup = true
 
-# TODO: Get rid of this
+# TODO: GET RID OF THIS
   $scope.getQuestions = ->
     $scope.questions = QuestionsFactory.getQuestions()

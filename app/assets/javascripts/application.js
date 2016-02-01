@@ -20,7 +20,6 @@
 //= require angular/angular
 //= require angular-animate/angular-animate
 //= require angular-cookies/angular-cookies
-//= require angular-timer/dist/angular-timer
 //= require angular-route/angular-route
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-rails-templates

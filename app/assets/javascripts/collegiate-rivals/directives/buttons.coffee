@@ -8,3 +8,12 @@ angular.module('collegiateRivals')
         $state.go('home')
       )
   }
+
+.directive 'startNewClock', (ClockFactory) ->
+  return {
+    restrict: 'EAC'
+    link: (sc, el) ->
+      el.on('click', ->
+        ClockFactory.setGameClock()
+      )
+  }
