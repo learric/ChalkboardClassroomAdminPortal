@@ -284,10 +284,10 @@ angular.module('collegiateRivals', [
         template: '<h2 active-team-nickname></h2>'
       }
       'subheader': {
-        template: '<h3>Confirm?</h3>'
+        template: '<h3>Did you score?</h3>'
       }
       'buttons': {
-        template: '<a class="btn btn-warning left_button" ui-sref="score.three" ng-click="score.setScores(3)">Field Goal</a> <a class="btn btn-success" touchdown-button>Touchdown</a> <a class="btn btn-danger right_button" ui-sref="play.new">Back</a>'
+        template: '<fg-button></fg-button><touchdown-button></touchdown-button><cancel-score-button></cancel-score-button>'
       }
     }
   )
@@ -301,53 +301,29 @@ angular.module('collegiateRivals', [
       'header': {
         template: '<h2 active-team-nickname>Touchdown</h2>'
       }
+      'subheader': {
+        template: '<h3>Choose an extra point try!</h3>'
+      }
       'buttons': {
-        template: '<a class="btn btn-primary left_button" ui-sref="score.one" ng-click="score.setScores(1)">One Point</a> <a class="btn btn-primary right_button" ui-sref="score.two" ng-click="score.setScores(2)">Two Point</a>'
+        template: '<one-point-button></one-point-button><two-point-button></two-point-button>'
       }
     }
   )
 
-  .state('score.one',
-    url: '/one'
+  .state('score.result',
+    url: '/result'
     views: {
       'scoreboard': {
         templateUrl: 'collegiate-rivals/scoreboard.html'
       }
       'header': {
-        template: '<h2 active-team-nickname>One Point</h2>'
+        template: '<h2 active-team-nickname></h2>'
+      }
+      'subheader': {
+        template: '<h3>It\'s {{ score.scoreResult }}!</h3>'
       }
       'buttons': {
-        template: '<a class="btn btn-success right_button" ui-sref="gameplay.kickoff">Kickoff</a>'
-      }
-    }
-  )
-
-  .state('score.two',
-    url: '/two'
-    views: {
-      'scoreboard': {
-        templateUrl: 'collegiate-rivals/scoreboard.html'
-      }
-      'header': {
-        template: '<h2 active-team-nickname>Two Points</h2>'
-      }
-      'buttons': {
-        template: '<a class="btn btn-success right_button" ui-sref="gameplay.kickoff">Kickoff</a>'
-      }
-    }
-  )
-
-  .state('score.three',
-    url: '/three'
-    views: {
-      'scoreboard': {
-        templateUrl: 'collegiate-rivals/scoreboard.html'
-      }
-      'header': {
-        template: '<h2 active-team-nickname>Field Goal</h2>'
-      }
-      'buttons': {
-        template: '<a class="btn btn-success right_button" ui-sref="gameplay.kickoff">Kickoff</a>'
+        template: '<scoring-kickoff-button></scoring-kickoff-button>'
       }
     }
   )
