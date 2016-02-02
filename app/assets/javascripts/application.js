@@ -22,6 +22,7 @@
 //= require angular-cookies/angular-cookies
 //= require angular-route/angular-route
 //= require angular-ui-router/release/angular-ui-router
+//= require youtube-iframe-api/youtube-iframe-api
 //= require angular-rails-templates
 //= require_tree .
 

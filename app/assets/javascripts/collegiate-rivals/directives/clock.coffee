@@ -6,6 +6,7 @@ angular.module('collegiateRivals')
     link: (sc, el) ->
       clock = ClockFactory.getGameClock()
       time = clock.getTime()
+      quarter = ClockFactory.getQuarter()
 
       checkTime = ->
         minTen = clock.face.lists[2].digit
@@ -20,7 +21,12 @@ angular.module('collegiateRivals')
 
         $timeout(->
           if (minTen == '0' && minOne == '0' && secTen == '0' && secOne == '0')
-            $state.go('interlude')
+            switch quarter
+              when 1 then $state.go('interlude.first')
+              when 2 then $state.go('interlude.half')
+              when 3 then $state.go('interlude.third')
+              else $state.go('interlude.end')
+
           else
             checkTime()
           1000)

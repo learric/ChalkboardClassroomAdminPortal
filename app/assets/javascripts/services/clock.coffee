@@ -6,7 +6,7 @@ angular.module('services')
     countdown: true
   })
 
-  gameClock.setTime(60)
+  gameClock.setTime(3)
 
   gameQuarter = 1
 
@@ -16,7 +16,7 @@ angular.module('services')
     setGameClock: ->
       getTime = SettingsFactory.getTime()
       setTime = getTime * 60
-      gameClock.setTime(setTime)
+      gameClock.setTime(3)
 
     getGameClock: ->
       return gameClock

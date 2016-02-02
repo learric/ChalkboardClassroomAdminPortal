@@ -381,6 +381,79 @@ angular.module('collegiateRivals', [
   .state('interlude',
     url: '/interlude'
     templateUrl: 'collegiate-rivals/interlude.html'
+    controller: 'InterludeController as interlude'
+  )
+
+  .state('interlude.first',
+    url: '/first'
+    views: {
+      'header': {
+        template: '<h2>End of the First quarter!</h2>'
+      }
+      'subheader': {
+        template: ''
+      }
+      'video': {
+        template: '<iframe src="https://www.youtube.com/embed/EDlC7oG_2W4" frameborder="0" allowfullscreen></iframe>'
+      }
+      'buttons': {
+        template: '<skip-video-counter></skip-video-counter><interlude-button></interlude-button>'
+      }
+    }
+  )
+
+  .state('interlude.half',
+    url: '/half'
+    views: {
+      'header': {
+        template: '<h2>Half</h2>'
+      }
+      'subheader': {
+        template: ''
+      }
+      'video': {
+        template: '<iframe src="https://www.youtube.com/embed/Tja6_h4lT6A" frameborder="0" allowfullscreen></iframe>'
+      }
+      'buttons': {
+        template: '<skip-video-counter></skip-video-counter><interlude-button></interlude-button>'
+      }
+    }
+  )
+
+  .state('interlude.third',
+    url: '/third'
+    views: {
+      'header': {
+        template: '<h2>Third</h2>'
+      }
+      'subheader': {
+        template: ''
+      }
+      'video': {
+        template: '<iframe src="https://www.youtube.com/embed/R2F_hGwD26g" frameborder="0" allowfullscreen></iframe>'
+      }
+      'buttons': {
+        template: '<skip-video-counter></skip-video-counter><interlude-button></interlude-button>'
+      }
+    }
+  )
+
+  .state('interlude.end',
+    url: '/end'
+    views: {
+      'header': {
+        template: '<h2>end</h2>'
+      }
+      'subheader': {
+        template: ''
+      }
+      'video': {
+        template: '<iframe src="https://www.youtube.com/embed/fj-10lIrboM" frameborder="0" allowfullscreen></iframe>'
+      }
+      'buttons': {
+        template: '<skip-video-counter></skip-video-counter><outro-button></outro-button>'
+      }
+    }
   )
 
 #
@@ -388,5 +461,9 @@ angular.module('collegiateRivals', [
   .state('outro',
     url: '/outro'
     templateUrl: 'collegiate-rivals/outro.html'
+  )
+
+  .state('outro.final',
+    url: '/final'
   )
 )

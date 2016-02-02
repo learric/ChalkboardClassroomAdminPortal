@@ -27,6 +27,7 @@
     "flipclock": "~0.7.7",
     "angular-route": "~1.4.8",
     "restangular": "latest",
-    "lodash": "~3.10.1"
+    "lodash": "~3.10.1",
+    "angular-youtube-embed": "latest"
   }
 }

@@ -7,11 +7,17 @@
   <div class="content_overlay">
 
     <div class="content_container">
-      <h2>Interlude</h2>
+      <div ui-view="header"></div>
+
+      <div ui-view="subheader"></div>
+    </div>
+
+    <div class="interlude_video_container">
+      <div ui-view="video"></div>
     </div>
 
     <div class="button_container">
-      <a class="btn btn-success right_button" ui-sref="gameplay.newplay" start-new-clock>Next</a>
+      <div ui-view="buttons"></div>
     </div>
 
   </div>

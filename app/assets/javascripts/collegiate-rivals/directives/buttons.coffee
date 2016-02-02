@@ -45,7 +45,6 @@ angular.module('collegiateRivals')
     link: (sc, el) ->
       el.on('click', ->
         ClockFactory.setGameClock()
-        ClockFactory.setQuarter()
       )
   }
 
