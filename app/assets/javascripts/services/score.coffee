@@ -12,6 +12,13 @@ angular.module('services')
     getAwayScore: ->
       return away
 
+    getFinalScore: ->
+      final = {
+        home: home
+        away: away
+      }
+      return final
+
     setScores: (team, num) ->
       if team == 0
         home += num

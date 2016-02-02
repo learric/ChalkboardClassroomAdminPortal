@@ -7,11 +7,17 @@
   <div class="content_overlay">
 
     <div class="content_container">
-      <h2>Outro</h2>
+      <div ui-view="header"></div>
+      <div ui-view="subheader"></div>
+      <div ui-view="content"></div>
+
+      <div class="team_logo_container">
+        <div ui-view="logo"></div>
+      </div>
     </div>
 
     <div class="button_container">
-      <a class="btn btn-success right_button" ui-sref="home">New Game</a>
+      <div ui-view="buttons"></div>
     </div>
 
   </div>

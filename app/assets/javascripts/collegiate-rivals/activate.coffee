@@ -461,9 +461,69 @@ angular.module('collegiateRivals', [
   .state('outro',
     url: '/outro'
     templateUrl: 'collegiate-rivals/outro.html'
+    controller: 'OutroController as outro'
   )
 
   .state('outro.final',
     url: '/final'
+    views: {
+      'header': {
+        template: '<h2>Game Over!</h2>'
+      }
+      'subheader': {
+        template: '<h3 winning-team-nickname></h3>'
+      }
+      'content': {
+        template: '<h3 final-score></h3>'
+      }
+      'logo': {
+        template: '<div winning-team-logo></div>'
+      }
+      'buttons': {
+        template: '<final-score-button></final-score-button>'
+      }
+    }
+  )
+
+  .state('outro.reward',
+    url: '/reward'
+    views: {
+      'header': {
+        template: '<h2>Reward</h2>'
+      }
+      'subheader': {
+        template: ''
+      }
+      'content': {
+        template: ''
+      }
+      'logo': {
+        template: ''
+      }
+      'buttons': {
+        template: ''
+      }
+    }
+  )
+
+  .state('outro.social',
+    url: '/social'
+    views: {
+      'header': {
+        template: '<h2>Social</h2>'
+      }
+      'subheader': {
+        template: ''
+      }
+      'content': {
+        template: ''
+      }
+      'logo': {
+        template: ''
+      }
+      'buttons': {
+        template: ''
+      }
+    }
   )
 )
