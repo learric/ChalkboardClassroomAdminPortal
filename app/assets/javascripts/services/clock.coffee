@@ -27,6 +27,9 @@ angular.module('services')
     getQuarter: ->
       return gameQuarter
 
+    resetQuarter: ->
+      gameQuarter = 1
+
     setState: (state) ->
       gameState = state
 

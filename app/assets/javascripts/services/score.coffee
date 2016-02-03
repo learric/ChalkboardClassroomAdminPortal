@@ -24,4 +24,8 @@ angular.module('services')
         home += num
       else
         away += num
+
+    resetScores: ->
+      home = 0
+      away = 0
   }

@@ -56,3 +56,35 @@ angular.module('collegiateRivals')
           $state.go('outro.social')
       )
   }
+
+.directive 'rewardButton', (SessionFactory, $state) ->
+  return {
+    restrict: 'EAC'
+    template: '<button class="btn btn-success right_button animated rubberBand">Next</button>'
+    link: (sc, el) ->
+      el.on('click', ->
+        $state.go('outro.social')
+      )
+  }
+
+.directive 'socialShareButton', (SessionFactory, $state) ->
+  return {
+    restrict: 'EAC'
+    template: '<button class="btn btn-success right_button animated rubberBand">Next</button>'
+    link: (sc, el) ->
+      el.on('click', ->
+        $state.go('outro.end')
+      )
+  }
+
+.directive 'endGameButton', (SessionFactory, ScoreFactory, ClockFactory, $state) ->
+  return {
+    restrict: 'EAC'
+    template: '<button class="btn btn-success right_button animated rubberBand">Home</button>'
+    link: (sc, el) ->
+      el.on('click', ->
+        ScoreFactory.resetScores()
+        ClockFactory.resetQuarter()
+        $state.go('home')
+      )
+  }

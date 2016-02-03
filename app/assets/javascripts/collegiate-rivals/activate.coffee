@@ -489,19 +489,19 @@ angular.module('collegiateRivals', [
     url: '/reward'
     views: {
       'header': {
-        template: '<h2>Reward</h2>'
+        template: '<h2 home-team-nickname></h2>'
       }
       'subheader': {
-        template: ''
+        template: '<h3>Check your email!</h3>'
       }
       'content': {
-        template: ''
+        template: '<p>You have a reward waiting for winning!</p>'
       }
       'logo': {
-        template: ''
+        template: '<div winning-team-logo></div>'
       }
       'buttons': {
-        template: ''
+        template: '<reward-button></reward-button>'
       }
     }
   )
@@ -510,19 +510,40 @@ angular.module('collegiateRivals', [
     url: '/social'
     views: {
       'header': {
-        template: '<h2>Social</h2>'
+        template: '<h2 home-team-nickname></h2>'
       }
       'subheader': {
-        template: ''
+        template: '<h3>Share your score on Facebook!</h3>'
       }
       'content': {
-        template: ''
+        template: '<p>(coming soon)</p>'
       }
       'logo': {
-        template: ''
+        template: '<div winning-team-logo></div>'
       }
       'buttons': {
-        template: ''
+        template: '<social-share-button></social-share-button>'
+      }
+    }
+  )
+
+  .state('outro.end',
+    url: '/end'
+    views: {
+      'header': {
+        template: '<h2 home-team-nickname></h2>'
+      }
+      'subheader': {
+        template: '<h3>End of game</h3>'
+      }
+      'content': {
+        template: '<p>Click below to start over</p>'
+      }
+      'logo': {
+        template: '<div winning-team-logo></div>'
+      }
+      'buttons': {
+        template: '<end-game-button></end-game-button>'
       }
     }
   )
