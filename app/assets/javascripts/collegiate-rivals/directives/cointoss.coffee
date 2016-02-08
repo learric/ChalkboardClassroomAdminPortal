@@ -13,7 +13,7 @@ angular.module('collegiateRivals')
 .directive 'coinflipChoiceHeads', ($state, CointossFactory, SettingsFactory) ->
   return {
     restrict: 'EAC'
-    template: '<div class="coin animated pulse infinite"><img ng-src="/assets/teams/home/{{ cointoss.homeTeam }}.png" /></div>'
+    template: '<div class="coin animated pulse infinite"><img ng-src="/images/teams/home/{{ cointoss.homeTeam }}.png" /></div>'
     link: (sc, el) ->
       team = SettingsFactory.getFullHomeTeam()
 
@@ -29,7 +29,7 @@ angular.module('collegiateRivals')
 .directive 'coinflipChoiceTails', ($state, CointossFactory, SettingsFactory) ->
   return {
     restrict: 'EAC'
-    template: '<div class="coin animated pulse infinite"><img ng-src="/assets/teams/home/{{ cointoss.awayTeam }}.png" /></div>'
+    template: '<div class="coin animated pulse infinite"><img ng-src="/images/teams/home/{{ cointoss.awayTeam }}.png" /></div>'
     link: (sc, el) ->
       team = SettingsFactory.getFullAwayTeam()
 
@@ -45,7 +45,7 @@ angular.module('collegiateRivals')
 .directive 'coinflipChoiceConfirm', (CointossFactory, SettingsFactory, $state) ->
   return {
     restrict: 'EAC'
-    template: '<div class="coin larger_coin animated pulse infinite"><img ng-src="/assets/teams/home/{{ cointoss' +
+    template: '<div class="coin larger_coin animated pulse infinite"><img ng-src="/images/teams/home/{{ cointoss' +
       '.tossChoice }}.png" /></div>'
     link: (sc, el) ->
       choice = CointossFactory.getCointossChoice()
@@ -76,7 +76,7 @@ angular.module('collegiateRivals')
 .directive 'coinflipFlipCoin', (SettingsFactory, $timeout) ->
   return {
     restrict: 'EAC'
-    template: '<section class="front"><div class="coin larger_coin"><img ng-src="/assets/teams/home/{{ cointoss.homeTeamFlip }}.png" /></div></section><section class="back"><div class="coin larger_coin"><img ng-src="/assets/teams/home/{{ cointoss.awayTeamFlip }}.png" /></div></section>'
+    template: '<section class="front"><div class="coin larger_coin"><img ng-src="/images/teams/home/{{ cointoss.homeTeamFlip }}.png" /></div></section><section class="back"><div class="coin larger_coin"><img ng-src="/images/teams/home/{{ cointoss.awayTeamFlip }}.png" /></div></section>'
     link: (sc, el) ->
       home = SettingsFactory.getFullHomeTeam()
       away = SettingsFactory.getFullAwayTeam()
@@ -92,7 +92,7 @@ angular.module('collegiateRivals')
 .directive 'coinflipResult', ($timeout, CointossFactory, SettingsFactory) ->
   return {
     restrict: 'EAC'
-    template: '<img ng-src="/assets/teams/home/{{ cointoss.tossResult }}.png" />'
+    template: '<img ng-src="/images/teams/home/{{ cointoss.tossResult }}.png" />'
     link: (sc, el) ->
       el.addClass('coin larger_coin animated infinite pulse')
       el.hide()

@@ -3,13 +3,13 @@ angular.module('collegiateRivals')
 .directive 'homeTeamChoices', ->
   return {
     restrict: 'EAC'
-    template: '<ul class="team_selection_list"><li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button><img ng-src="/assets/teams/home/{{ team.logo }}.png" /></li></ul>'
+    template: '<ul class="team_selection_list"><li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button><img ng-src="/images/teams/home/{{ team.logo }}.png" /></li></ul>'
   }
 
 .directive 'awayTeamChoices', ->
   return {
     restrict: 'EAC'
-    template: '<ul class="team_selection_list"><li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button><img ng-src="/assets/teams/away/{{ team.logo }}.png" /></li></ul>'
+    template: '<ul class="team_selection_list"><li ng-repeat="team in settings.teams.sec" ng-click="settings.saveTeam($index)" settings-button><img ng-src="/images/teams/away/{{ team.logo }}.png" /></li></ul>'
   }
 
 .directive 'quarterChoices', ->

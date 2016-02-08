@@ -3,7 +3,7 @@ angular.module('collegiateRivals')
 .directive 'homeTeamLogo', (ActiveTeamFactory, SettingsFactory, $state) ->
   return {
     restrict: 'EAC'
-    template: '<img src="/assets/teams/home/{{ scoreboard.homeTeamLogo }}.png" />'
+    template: '<img src="/images/teams/home/{{ scoreboard.homeTeamLogo }}.png" />'
     link: (sc, el) ->
       active = ActiveTeamFactory.getActiveTeam()
       team = SettingsFactory.getFullHomeTeam()
@@ -20,7 +20,7 @@ angular.module('collegiateRivals')
 .directive 'awayTeamLogo', (ActiveTeamFactory, SettingsFactory, $state) ->
   return {
     restrict: 'EAC'
-    template: '<img src="/assets/teams/away/{{ scoreboard.awayTeamLogo }}.png" />'
+    template: '<img src="/images/teams/away/{{ scoreboard.awayTeamLogo }}.png" />'
     link: (sc, el) ->
       active = ActiveTeamFactory.getActiveTeam()
       team = SettingsFactory.getFullAwayTeam()
