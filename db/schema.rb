@@ -14,85 +14,85 @@
 ActiveRecord::Schema.define(version: 20160107003559) do
 
   create_table "classrooms", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "school",     limit: 255
-    t.integer  "teacher_id", limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name"
+    t.string   "school"
+    t.integer  "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string   "category",        limit: 255
-    t.text     "first_line",      limit: 65535
-    t.text     "last_line",       limit: 65535
-    t.string   "incorrect_one",   limit: 255
-    t.string   "incorrect_two",   limit: 255
-    t.string   "incorrect_three", limit: 255
-    t.string   "correct_answer",  limit: 255
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.integer  "teacher_id",      limit: 4
+    t.string   "category"
+    t.text     "first_line"
+    t.text     "last_line"
+    t.string   "incorrect_one"
+    t.string   "incorrect_two"
+    t.string   "incorrect_three"
+    t.string   "correct_answer"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "teacher_id"
   end
 
-  add_index "questions", ["teacher_id"], name: "index_questions_on_teacher_id", using: :btree
+  add_index "questions", ["teacher_id"], name: "index_questions_on_teacher_id"
 
   create_table "student_classrooms", id: false, force: :cascade do |t|
-    t.integer  "student_id",   limit: 4
-    t.integer  "classroom_id", limit: 4
-    t.integer  "teacher_id",   limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "student_id"
+    t.integer  "classroom_id"
+    t.integer  "teacher_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "students", force: :cascade do |t|
-    t.integer  "user_id",       limit: 4
-    t.string   "name_first",    limit: 255
-    t.string   "name_last",     limit: 255
-    t.string   "email",         limit: 255
-    t.string   "favorite_team", limit: 255
-    t.integer  "game_wins",     limit: 4,   default: 0
-    t.integer  "game_losses",   limit: 4,   default: 0
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.integer  "user_id"
+    t.string   "name_first"
+    t.string   "name_last"
+    t.string   "email"
+    t.string   "favorite_team"
+    t.integer  "game_wins",     default: 0
+    t.integer  "game_losses",   default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.integer  "user_id",               limit: 4
-    t.string   "name_prefix",           limit: 255
-    t.string   "name_first",            limit: 255
-    t.string   "name_last",             limit: 255
-    t.string   "school_name",           limit: 255
-    t.string   "school_location",       limit: 255
-    t.string   "school_city",           limit: 255
-    t.string   "school_state",          limit: 255
-    t.string   "classroom_name",        limit: 255
-    t.string   "classroom_location",    limit: 255
-    t.text     "classroom_description", limit: 65535
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.integer  "user_id"
+    t.string   "name_prefix"
+    t.string   "name_first"
+    t.string   "name_last"
+    t.string   "school_name"
+    t.string   "school_location"
+    t.string   "school_city"
+    t.string   "school_state"
+    t.string   "classroom_name"
+    t.string   "classroom_location"
+    t.text     "classroom_description"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
-  add_index "teachers", ["user_id"], name: "index_teachers_on_user_id", using: :btree
+  add_index "teachers", ["user_id"], name: "index_teachers_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "",    null: false
-    t.string   "encrypted_password",     limit: 255, default: "",    null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
-    t.boolean  "is_admin",                           default: false
-    t.boolean  "is_teacher",                         default: false
-    t.boolean  "is_student",                         default: true
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "is_admin",               default: false
+    t.boolean  "is_teacher",             default: false
+    t.boolean  "is_student",             default: true
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

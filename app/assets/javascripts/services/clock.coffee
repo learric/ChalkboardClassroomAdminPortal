@@ -16,7 +16,7 @@ angular.module('services')
     setGameClock: ->
       getTime = SettingsFactory.getTime()
       setTime = getTime * 60
-      gameClock.setTime(3)
+      gameClock.setTime(setTime)
 
     getGameClock: ->
       return gameClock
