@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.3'
-# gem 'mysql'
-# gem 'mysql2', '~> 0.3.13'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -21,7 +19,6 @@ gem 'faker'
 gem 'font-awesome-sass'
 gem 'ngannotate-rails'
 gem 'therubyracer',  platforms: :ruby
-
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 source 'https://rails-assets.org' do
@@ -32,7 +29,6 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  # gem 'sqlite3'
 end
 
 group :production, :staging do
@@ -40,6 +36,5 @@ group :production, :staging do
   gem 'rails_stdout_logging'
   gem 'rails_serve_static_assets'
   gem "sprockets-redirect"
-  # gem 'pg'
   gem 'puma'
 end

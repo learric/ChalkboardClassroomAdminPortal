@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160107003559) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "classrooms", force: :cascade do |t|
     t.string   "name"
     t.string   "school"
@@ -34,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160107003559) do
     t.integer  "teacher_id"
   end
 
-  add_index "questions", ["teacher_id"], name: "index_questions_on_teacher_id"
+  add_index "questions", ["teacher_id"], name: "index_questions_on_teacher_id", using: :btree
 
   create_table "student_classrooms", id: false, force: :cascade do |t|
     t.integer  "student_id"
@@ -72,7 +75,7 @@ ActiveRecord::Schema.define(version: 20160107003559) do
     t.datetime "updated_at",            null: false
   end
 
-  add_index "teachers", ["user_id"], name: "index_teachers_on_user_id"
+  add_index "teachers", ["user_id"], name: "index_teachers_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -92,7 +95,7 @@ ActiveRecord::Schema.define(version: 20160107003559) do
     t.boolean  "is_student",             default: true
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
