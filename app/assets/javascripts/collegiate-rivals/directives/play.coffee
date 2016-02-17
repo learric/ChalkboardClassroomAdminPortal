@@ -23,7 +23,7 @@ angular.module('collegiateRivals')
     link: (sc, el) ->
       clock = ClockFactory.getGameClock()
 
-      el.addClass('btn btn-primary left_button')
+      el.addClass('btn btn-primary left_button animated rubberBand')
       el.on('click', ->
         clock.stop()
         $state.go('score.confirm')
@@ -35,7 +35,7 @@ angular.module('collegiateRivals')
     restrict: 'EAC'
     template: 'next'
     link: (sc, el) ->
-      el.addClass('btn btn-success right_button')
+      el.addClass('btn btn-success right_button animated rubberBand')
       el.on('click', ->
         $state.go('gameplay.newplay')
         ActiveTeamFactory.toggleActiveTeam()

@@ -4,6 +4,7 @@ angular.module('collegiateRivals')
   return {
     restrict: 'EAC'
     link: (sc, el) ->
+      el.addClass('animated rubberBand')
       el.on('click', ->
         $state.go('home')
       )
@@ -55,7 +56,7 @@ angular.module('collegiateRivals')
     link: (sc, el) ->
       clock = ClockFactory.getGameClock()
 
-      el.addClass('btn btn-success right_button')
+      el.addClass('btn btn-success right_button animated rubberBand')
       el.on('click', ->
         ActiveTeamFactory.toggleActiveTeam()
         clock.start()
@@ -70,7 +71,7 @@ angular.module('collegiateRivals')
     link: (sc, el) ->
       clock = ClockFactory.getGameClock()
 
-      el.addClass('btn btn-success right_button')
+      el.addClass('btn btn-success right_button animated rubberBand')
       el.on('click', ->
         $state.go('question.ask')
 
@@ -84,7 +85,7 @@ angular.module('collegiateRivals')
     restrict: 'EAC'
     template: 'next'
     link: (sc, el) ->
-      el.addClass('btn btn-success')
+      el.addClass('btn btn-success animated rubberBand')
       el.on('click', ->
         PlaysService.setPlay()
         $state.go('play.new')

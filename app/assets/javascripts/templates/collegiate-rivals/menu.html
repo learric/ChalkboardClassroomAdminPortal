@@ -7,8 +7,10 @@
   <div class="content_overlay">
 
     <div class="content_container">
-      <div class="logo">
-        <img src="/images/collegiate_rivals/logo.png" />
+      <div class="logo animated bounceInDown">
+          <div class="animated infinite pulse">
+              <img src="/images/collegiate_rivals/logo.png" />
+          </div>
       </div>
 
       <div ng-hide="showExitGamePopup">
@@ -29,15 +31,15 @@
 
     <div class="button_container">
       <div ng-hide="showExitGamePopup">
-        <a class="btn btn-danger left_button" ng-click="toggleExitGamePopup()">End Game</a>
+        <a class="btn btn-danger left_button animated rubberBand" ng-click="toggleExitGamePopup()">End Game</a>
 
-        <button class="btn btn-success right_button" home-button>Home</button>
+        <button class="btn btn-success right_button animated rubberBand" home-button>Home</button>
       </div>
 
       <div ng-show="showExitGamePopup">
-        <a class="btn btn-danger left_button" href="/games">Exit</a>
+        <a class="btn btn-danger left_button animated rubberBand" href="/games">Exit</a>
 
-        <button class="btn btn-success right_button" ng-click="toggleExitGamePopup()">Resume</button>
+        <button class="btn btn-success right_button animated rubberBand" ng-click="toggleExitGamePopup()">Resume</button>
       </div>
     </div>
 

@@ -7,16 +7,18 @@
   <div class="content_overlay">
 
     <div class="content_container">
-      <div class="logo">
-        <img src="/images/collegiate_rivals/logo.png" />
+      <div class="logo animated bounceInDown">
+          <div class="animated infinite pulse">
+            <img src="/images/collegiate_rivals/logo.png" />
+          </div>
       </div>
-      <h1>Welcome<br />{{ session.name_first }}!</h1>
+      <h1 class="animated infinite tada">Welcome<br />{{ session.name_first }}!</h1>
     </div>
 
     <div class="button_container">
-      <button ui-sref="menu" class="btn btn-primary left_button">Menu</button>
+      <button ui-sref="menu" class="btn btn-primary left_button animated rubberBand">Menu</button>
 
-      <button ui-sref="settings.homeTeam" class="btn btn-success right_button">Start</button>
+      <button ui-sref="settings.homeTeam" class="btn btn-success right_button animated rubberBand">Start</button>
     </div>
 
   </div>

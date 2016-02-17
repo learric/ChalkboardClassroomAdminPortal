@@ -5,7 +5,7 @@ angular.module('collegiateRivals')
     restrict: 'EAC'
     template: 'touchdown'
     link: (sc, el) ->
-      el.addClass('btn btn-success')
+      el.addClass('btn btn-success animated rubberBand')
       el.on('click', ->
         active = ActiveTeamFactory.getActiveTeam()
 
@@ -19,7 +19,7 @@ angular.module('collegiateRivals')
     restrict: 'EAC'
     template: 'one point'
     link: (sc, el) ->
-      el.addClass('btn btn-primary left_button')
+      el.addClass('btn btn-primary left_button animated rubberBand')
       el.on('click', ->
         active = ActiveTeamFactory.getActiveTeam()
         random = Math.floor(Math.random() * 101)
@@ -41,7 +41,7 @@ angular.module('collegiateRivals')
     restrict: 'EAC'
     template: 'two points'
     link: (sc, el) ->
-      el.addClass('btn btn-primary right_button')
+      el.addClass('btn btn-primary right_button animated rubberBand')
       el.on('click', ->
         active = ActiveTeamFactory.getActiveTeam()
         random = Math.floor(Math.random() * 101)
@@ -63,7 +63,7 @@ angular.module('collegiateRivals')
     restrict: 'EAC'
     template: 'field goal'
     link: (sc, el) ->
-      el.addClass('btn btn-warning left_button')
+      el.addClass('btn btn-warning left_button animated rubberBand')
       el.on('click', ->
         active = ActiveTeamFactory.getActiveTeam()
         random = Math.floor(Math.random() * 101)
@@ -87,7 +87,7 @@ angular.module('collegiateRivals')
     link: (sc, el) ->
       clock = ClockFactory.getGameClock()
 
-      el.addClass('btn btn-danger right_button')
+      el.addClass('btn btn-danger right_button animated rubberBand')
       el.on('click', ->
         $state.go('play.new')
         clock.start()
@@ -105,7 +105,7 @@ angular.module('collegiateRivals')
         el.show()
       5000)
 
-      el.addClass('btn btn-success right_button')
+      el.addClass('btn btn-success right_button animated rubberBand')
       el.on('click', ->
         $state.go('gameplay.kickoff')
       )
