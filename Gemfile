@@ -20,10 +20,7 @@ gem 'font-awesome-sass'
 gem 'ngannotate-rails'
 gem 'therubyracer',  platforms: :ruby
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.1.0'
-end
+gem 'rails-assets-tether', '>= 1.1.0', :source => 'https://rails-assets.org'
 
 group :development, :test do
   gem 'byebug'
