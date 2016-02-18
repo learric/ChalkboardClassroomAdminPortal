@@ -6,7 +6,7 @@ angular.module('services')
     countdown: true
   })
 
-  gameClock.setTime(3)
+  gameClock.setTime(60)
 
   gameQuarter = 1
 

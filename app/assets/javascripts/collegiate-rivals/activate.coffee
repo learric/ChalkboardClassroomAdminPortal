@@ -406,7 +406,7 @@ angular.module('collegiateRivals', [
     url: '/half'
     views: {
       'header': {
-        template: '<h2>Half</h2>'
+        template: '<h2>Halftime!</h2>'
       }
       'subheader': {
         template: ''
@@ -424,7 +424,7 @@ angular.module('collegiateRivals', [
     url: '/third'
     views: {
       'header': {
-        template: '<h2>Third</h2>'
+        template: '<h2>End of the Third Quarter</h2>'
       }
       'subheader': {
         template: ''
@@ -442,7 +442,7 @@ angular.module('collegiateRivals', [
     url: '/end'
     views: {
       'header': {
-        template: '<h2>end</h2>'
+        template: '<h2>End of the game!</h2>'
       }
       'subheader': {
         template: ''

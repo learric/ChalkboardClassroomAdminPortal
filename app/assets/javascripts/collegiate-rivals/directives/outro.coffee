@@ -17,7 +17,7 @@ angular.module('collegiateRivals')
 .directive 'winningTeamLogo', ->
   return {
     restrict: 'EAC'
-    template: '<img class="animated tada" ng-src="/assets/teams/{{ outro.winnerLogo }}.png" />'
+    template: '<img class="animated tada" ng-src="/images/teams/{{ outro.winnerLogo }}.png" />'
     link: (sc, el) ->
       el.addClass('animated pulse infinite')
       id = sc.outro.winnerId
