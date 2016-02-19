@@ -22,9 +22,10 @@ gem 'therubyracer',  platforms: :ruby
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails-assets-tether', '>= 1.1.0', :source => 'https://rails-assets.org'
 
+gem 'web-console', '~> 2.0', group: :development
+
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
@@ -32,6 +33,6 @@ group :production, :staging do
   gem 'rails_12factor'
   gem 'rails_stdout_logging'
   gem 'rails_serve_static_assets'
-  gem "sprockets-redirect"
+  gem 'sprockets-redirect'
   gem 'puma'
 end
