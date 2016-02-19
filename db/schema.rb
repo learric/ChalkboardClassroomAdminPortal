@@ -49,25 +49,14 @@ ActiveRecord::Schema.define(version: 20160107003559) do
 
   create_table "students", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "name_first"
-    t.string   "name_last"
-    t.string   "email"
-    t.string   "favorite_team"
-    t.integer  "game_wins",     default: 0
-    t.integer  "game_losses",   default: 0
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "game_wins",   default: 0
+    t.integer  "game_losses", default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "teachers", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "name_prefix"
-    t.string   "name_first"
-    t.string   "name_last"
-    t.string   "school_name"
-    t.string   "school_location"
-    t.string   "school_city"
-    t.string   "school_state"
     t.string   "classroom_name"
     t.string   "classroom_location"
     t.text     "classroom_description"
@@ -80,6 +69,13 @@ ActiveRecord::Schema.define(version: 20160107003559) do
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
+    t.string   "name_first"
+    t.string   "name_last"
+    t.string   "school_name"
+    t.string   "school_location"
+    t.string   "school_city"
+    t.string   "school_state"
+    t.string   "favorite_team"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

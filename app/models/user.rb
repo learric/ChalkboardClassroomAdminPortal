@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   private
 
     def create_student
-      Student.create(id: self.id, user_id: self.id, email: self.email)
+      Student.create(id: self.id, user_id: self.id)
     end
 
     def create_teacher
