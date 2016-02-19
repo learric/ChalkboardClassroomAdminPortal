@@ -5,14 +5,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
-      t.string :name_first
-      t.string :name_last
-      t.string :school_name
-      t.string :school_location
-      t.string :school_city
-      t.string :school_state
-      t.string :favorite_team
-
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
