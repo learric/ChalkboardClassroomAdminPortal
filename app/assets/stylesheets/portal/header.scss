@@ -7,3 +7,7 @@
   background-color: rgba(255, 255, 255, 1);
   position: relative;
 }
+
+.static_header.content_overlay {
+  z-index: 1000;
+}
