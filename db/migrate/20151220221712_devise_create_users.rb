@@ -33,9 +33,17 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.timestamps null: false
 
-      t.boolean :is_admin, default: false
-      t.boolean :is_teacher, default: false
-      t.boolean :is_student, default: true
+      # User Information
+      t.string :first_name, null: false, default: ""
+      t.string :last_name, null: false, default: ""
+      t.string :favorite_team, null: false, default: ""
+      t.integer :game_wins, default: 0
+      t.integer :game_losses, default: 0
+      t.integer :role, default: 0
+
+      # Associations
+      t.belongs_to :school, index: true
+      t.belongs_to :classroom, index: true
     end
 
     add_index :users, :email,                unique: true
