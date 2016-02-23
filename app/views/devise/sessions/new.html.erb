@@ -1,36 +1,36 @@
-<%= render 'layouts/header_main' %>
+<div class="header_column">
+  <%= render 'layouts/header_main' %>
+</div>
 
-<div class="container-fluid content_overlay">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <h2 class="display-4">Sign In</h2>
-      <p>&nbsp;</p>
+<div class="content_column content_overlay">
+  <div class="container-fluid">
+    <h1>Sign In</h1>
+    <p>&nbsp;</p>
 
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <fieldset class="form-group">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, class: "form-control" %>
-        </fieldset>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <fieldset class="form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      </fieldset>
 
-        <fieldset class="form-group">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-        </fieldset>
+      <fieldset class="form-group">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      </fieldset>
 
-        <% if devise_mapping.rememberable? -%>
-          <div class="field checkbox">
-            <label>
-              <%= f.check_box :remember_me %> Remember Me
-            </label>
-          </div>
-        <% end -%>
-
-        <div class="actions">
-          <%= f.submit "Log in", class: "btn btn-primary btn-lg text-uppercase" %>
+      <% if devise_mapping.rememberable? -%>
+        <div class="field checkbox">
+          <label>
+            <%= f.check_box :remember_me %> Remember Me
+          </label>
         </div>
-      <% end %>
+      <% end -%>
 
-      <!--<p><%= render "devise/shared/links" %></p>-->
-    </div>
+      <div class="actions">
+        <%= f.submit "Log in", class: "btn btn-primary btn-lg text-uppercase" %>
+      </div>
+    <% end %>
+
+    <!--<p><%= render "devise/shared/links" %></p>-->
   </div>
 </div>

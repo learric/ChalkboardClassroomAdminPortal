@@ -1,30 +1,10 @@
-//.body_wrapper {
-//  position: fixed;
-//  width: 100%;
-//  height: 100%;
-//  top: 0;
-//  bottom: 0;
-//  left: 0;
-//  right: 0;
-//  background-image: url(bg.jpg);
-//  background-repeat: no-repeat;
-//  -webkit-background-size:100% 100%;
-//  background-size:100% 100%;
-//  background-attachment: fixed;
-//
-//  .bg_color {
-//    background: rgba(255, 255, 255, 0.6);
-//    position: absolute;
-//    width: 100%;
-//    height: 100%;
-//    top: 0;
-//    bottom: 0;
-//    left: 0;
-//    right: 0;
-//  }
-//}
-
 .content_wrapper {
   position: relative;
   z-index:5000;
+}
+
+.content_column {
+  width: 70%;
+  float: left;
+  padding-top: 6vmin;
 }

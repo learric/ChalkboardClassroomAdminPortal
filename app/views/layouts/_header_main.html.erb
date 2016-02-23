@@ -2,8 +2,12 @@
 </div>
 
 <header class="static_header content_overlay">
-  <div class="row">
-    <%= render 'layouts/logo_main' %>
-    <%= render 'layouts/menu_main' %>
-  </div>
+  <h2>The Chalkboard Classroom</h2>
+
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Games", games_path %></li>
+    <li><%= link_to "Sign In", new_user_session_path, method: :get %></li>
+    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+  </ul>
 </header>

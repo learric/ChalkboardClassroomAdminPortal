@@ -1,11 +1,39 @@
+.header_column {
+  width: 30%;
+  float: left;
+  padding: 4vmin 0 0 5vmin;
+}
+
 .static_header {
-  padding: 2vmin;
+  padding: 1vmin;
   margin: 0 0 2vmin;
-  -webkit-box-shadow: 0 1px 2px black;
-  -moz-box-shadow: 0 1px 2px black;
-  box-shadow: 0 1px 2px black;
-  background-color: rgba(255, 255, 255, 1);
   position: relative;
+
+  h2, p, li, a {
+    color: white;
+    font-family: Eraser, sans-serif;
+  }
+
+  h2 {
+    font-size: 4vmin;
+    padding-bottom: 1vmin;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0;
+
+      a {
+        display: block;
+        padding: 1vmin;
+        font-size: 3vmin;
+      }
+    }
+  }
 }
 
 .static_header.content_overlay {
