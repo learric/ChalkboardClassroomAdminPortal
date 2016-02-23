@@ -1,13 +1,23 @@
 <div class="chalkboard_background">
 </div>
 
-<header class="static_header content_overlay">
-  <h2>The Chalkboard Classroom</h2>
+<div class="header_column">
+  <header class="static_header content_overlay">
+    <h2>The Chalkboard Classroom</h2>
 
-  <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "Games", games_path %></li>
-    <li><%= link_to "Sign In", new_user_session_path, method: :get %></li>
-    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-  </ul>
-</header>
+    <ul>
+    <% if user_signed_in? %>
+      <li><%= link_to "Games", root_path %></li>
+      <li><%= link_to "Profile", "#" %></li>
+
+      <% if @user.role == 2 %>
+        <li><%= link_to "School", schools_path %></li>
+      <% end %>
+
+      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+    <% else %>
+      <li><%= link_to "Sign In", new_user_session_path, method: :get %></li>
+    <% end %>
+    </ul>
+  </header>
+</div>

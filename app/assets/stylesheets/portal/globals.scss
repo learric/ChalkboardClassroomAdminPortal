@@ -4,7 +4,17 @@ textarea {
   min-height: 16vmin;
 }
 
+button, .btn {
+  font-size: 2.5vmin;
+}
+
+input {
+  color: #000;
+}
+
+
 .table {
+  font-size: 2.7vmin;
   th {
     text-transform: uppercase;
     background: #333;
@@ -16,7 +26,6 @@ textarea {
 }
 
 .container-fluid {
-  //background-color: rgba(255, 255, 255, 0.8);
   color: white;
   position: relative;
   z-index: 100;
@@ -25,7 +34,13 @@ textarea {
 
   h1 {
     font-family: Eraser, sans-serif;
-    font-size: 6vmin;
+    font-size: 8vmin;
+    padding-bottom: 5vmin;
   }
 }
 
+.content_column {
+  .container-fluid {
+    max-width: 100%;
+  }
+}
