@@ -1,34 +1,36 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_main' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @school.name %>
-</p>
+<div class="content_column content_overlay">
+  <div class="container-fluid">
 
-<p>
-  <strong>Address:</strong>
-  <%= @school.address %>
-</p>
+    <h1>Edit School Info</h1>
 
-<p>
-  <strong>City:</strong>
-  <%= @school.city %>
-</p>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>State:</strong>
-  <%= @school.state %>
-</p>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Mascot</th>
+      </tr>
+      </thead>
 
-<p>
-  <strong>Zip:</strong>
-  <%= @school.zip %>
-</p>
+      <tbody>
+      <tr>
+        <td><%= @school.name %></td>
+        <td><%= @school.address %></td>
+        <td><%= @school.city %></td>
+        <td><%= @school.state %></td>
+        <td><%= @school.zip %></td>
+        <td><%= @school.mascot %></td>
+      </tr>
+      </tbody>
+    </table>
 
-<p>
-  <strong>Mascot:</strong>
-  <%= @school.mascot %>
-</p>
-
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Back', schools_path %>
+    <%= link_to 'Edit', edit_school_path(@school), class: "btn btn-primary" %> &nbsp; <%= link_to 'Back', schools_path, class: "btn btn-danger" %>
+  </div>
+</div>

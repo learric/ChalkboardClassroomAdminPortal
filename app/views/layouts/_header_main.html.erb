@@ -7,13 +7,16 @@
 
     <ul>
     <% if user_signed_in? %>
-      <li><%= link_to "Games", root_path %></li>
-      <li><%= link_to "Profile", "#" %></li>
+      <% if @user.role > 0 %>
+        <li><%= link_to "Classrooms", "#" %></li>
+      <% end %>
 
       <% if @user.role == 2 %>
         <li><%= link_to "School", schools_path %></li>
       <% end %>
 
+      <li><%= link_to "Games", root_path %></li>
+      <li><%= link_to "Profile", profile_path %></li>
       <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
     <% else %>
       <li><%= link_to "Sign In", new_user_session_path, method: :get %></li>

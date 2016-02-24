@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
   private
 
     def get_user_session
-      id = current_user.id
-      @user = User.find(id)
+      if current_user
+        id = current_user.id
+        @user = User.find(id)
+      end
     end
 end

@@ -1,10 +1,12 @@
 class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:index]
 
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.all
+    # @schools = School.all
+    @schools = School.find_by(id: @user.school_id)
   end
 
   # GET /schools/1
@@ -70,5 +72,14 @@ class SchoolsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def school_params
       params.require(:school).permit(:name, :address, :city, :state, :zip, :mascot)
+    end
+
+    def set_user
+      id = current_user.id
+      @user = User.find(id)
+
+      unless @user.role == 2
+        redirect_to new_user_session_path
+      end
     end
 end

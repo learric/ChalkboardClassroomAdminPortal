@@ -6,8 +6,6 @@
 
     <h1>School Profile</h1>
 
-    <% @schools.each do |school| %>
-
       <table class="table">
         <thead>
           <tr>
@@ -22,18 +20,17 @@
 
         <tbody>
           <tr>
-            <td><%= school.name %></td>
-            <td><%= school.address %></td>
-            <td><%= school.city %></td>
-            <td><%= school.state %></td>
-            <td><%= school.zip %></td>
-            <td><%= school.mascot %></td>
+            <td><%= @schools.name %></td>
+            <td><%= @schools.address %></td>
+            <td><%= @schools.city %></td>
+            <td><%= @schools.state %></td>
+            <td><%= @schools.zip %></td>
+            <td><%= @schools.mascot %></td>
           </tr>
         </tbody>
       </table>
 
-      <%= link_to 'Edit', edit_school_path(school), class: "btn btn-primary" %>
+      <%= link_to 'Edit', edit_school_path(@schools), class: "btn btn-primary" %>
 
-    <% end %>
   </div>
 </div>
