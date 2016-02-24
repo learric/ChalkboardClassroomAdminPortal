@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'profile', to: 'profile#show'
   get 'profile/edit', to: 'profile#edit'
+  post 'profile', to: 'profile#update'
 
   devise_for :users
   resources :schools
