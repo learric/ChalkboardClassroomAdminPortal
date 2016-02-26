@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :schools
   resources :classrooms
+  resources :questions
 end
