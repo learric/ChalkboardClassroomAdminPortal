@@ -8,7 +8,7 @@
     <ul>
     <% if user_signed_in? %>
       <% if @user.role > 0 %>
-        <li><%= link_to "Classrooms", "#" %></li>
+        <li><%= link_to "Classrooms", classrooms_path %></li>
       <% end %>
 
       <% if @user.role == 2 %>

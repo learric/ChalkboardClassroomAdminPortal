@@ -1,6 +1,12 @@
-<h1>Editing Classroom</h1>
+<%= render 'layouts/header_main' %>
 
-<%= render 'form' %>
+<div class="content_overlay content_column">
+  <div class="container-fluid content_overlay">
 
-<%= link_to 'Show', @classroom %> |
-<%= link_to 'Back', classrooms_path %>
+    <h1>Edit <%= @classroom.name %></h1>
+
+    <%= render 'form' %>
+
+    <%= link_to 'Back', classrooms_path, class: 'btn btn-danger' %>
+  </div>
+</div>
