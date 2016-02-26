@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'profile/edit', to: 'profile#edit'
   post 'profile', to: 'profile#update'
 
+  get 'schools/teachers', to: 'schools#teachers'
+  get 'schools/students', to: 'schools#students'
+
   devise_for :users
   resources :schools
   resources :classrooms

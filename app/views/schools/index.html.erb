@@ -4,33 +4,36 @@
   <div class="container-fluid content_overlay">
     <p id="notice"><%= notice %></p>
 
-    <h1>School Profile</h1>
+    <h1><%= @schools.name %></h1>
 
       <table class="table">
         <thead>
           <tr>
-            <th>Name</th>
             <th>Address</th>
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
             <th>Mascot</th>
+            <th></th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
-            <td><%= @schools.name %></td>
             <td><%= @schools.address %></td>
             <td><%= @schools.city %></td>
             <td><%= @schools.state %></td>
             <td><%= @schools.zip %></td>
             <td><%= @schools.mascot %></td>
+            <td><%= link_to 'Edit', edit_school_path(@schools), class: "btn btn-primary" %></td>
           </tr>
         </tbody>
       </table>
 
-      <%= link_to 'Edit School', edit_school_path(@schools), class: "btn btn-primary" %>
+    <p>&nbsp;</p>
+
+    <p><%= link_to 'Teachers', schools_teachers_path, class: 'btn btn-primary' %></p>
+  <p><%= link_to 'Students', schools_students_path, class: 'btn btn-success' %></p>
 
   </div>
 </div>

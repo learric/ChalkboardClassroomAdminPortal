@@ -63,6 +63,16 @@ class SchoolsController < ApplicationController
     end
   end
 
+  def teachers
+    school = @user.school_id
+    @teachers = User.where(school_id: school, role: 1)
+  end
+
+  def students
+    school = @user.school_id
+    @students = User.where(school_id: school, role: 0)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_school
@@ -79,7 +89,7 @@ class SchoolsController < ApplicationController
       @user = User.find(id)
 
       unless @user.role == 2
-        redirect_to new_user_session_path
+        redirect_to root_path
       end
     end
 end

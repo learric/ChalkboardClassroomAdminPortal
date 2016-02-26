@@ -1,10 +1,21 @@
 class ClassroomsController < ApplicationController
   before_action :set_classroom, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
 
   # GET /classrooms
   # GET /classrooms.json
   def index
-    @classrooms = Classroom.all
+    role = @user.role
+    id = @user.id
+    school = @user.school_id
+
+    if role == 1
+      @classrooms = Classroom.where(user_id: id)
+    elsif role == 2
+      @classrooms = Classroom.where(school_id: school)
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /classrooms/1
@@ -65,6 +76,15 @@ class ClassroomsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_classroom
       @classroom = Classroom.find(params[:id])
+    end
+
+    def set_user
+      id = current_user.id
+      @user = User.find(id)
+
+      unless @user.role > 0
+        redirect_to root_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

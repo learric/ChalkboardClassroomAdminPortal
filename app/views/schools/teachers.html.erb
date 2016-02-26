@@ -1,0 +1,37 @@
+<%= render 'layouts/header_main' %>
+
+<div class="content_overlay content_column">
+  <div class="container-fluid content_overlay">
+    <p id="notice"><%= notice %></p>
+
+    <h1>Teachers</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <% @teachers.each do |teacher| %>
+          <tr>
+            <td><%= teacher.first_name %> <%= teacher.last_name %></td>
+            <td><%= teacher.email %></td>
+            <td><%= link_to 'Edit', '#', class: 'btn btn-primary' %></td>
+            <td><%= link_to 'Delete', '#', class: 'btn btn-danger' %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+    <p>&nbsp;</p>
+
+    <p><%= link_to 'New Teacher', '#', class: 'btn btn-primary' %></p>
+
+    <p><%= link_to 'Back', schools_path, class: 'btn btn-danger' %></p>
+
+  </div>
+</div>
