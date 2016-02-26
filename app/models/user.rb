@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  belongs_to :school
+  has_and_belongs_to_many :classrooms
+
 end
