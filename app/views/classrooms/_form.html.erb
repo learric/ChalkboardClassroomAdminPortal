@@ -13,17 +13,27 @@
 
 
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <fieldset class="form-group">
           <%= f.label :name %><br>
           <%= f.text_field :name, class: 'form-control' %>
         </fieldset>
       </div>
 
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <fieldset class="form-group">
           <%= f.label :subject %><br>
           <%= f.text_field :subject, class: 'form-control' %>
+        </fieldset>
+      </div>
+
+      <div class="col-sm-4">
+        <fieldset class="form-group">
+          <%= f.label 'Teacher' %><br>
+          <select class="form-control">
+            <option>Teacher 1</option>
+            <option>Teacher 2</option>
+          </select>
         </fieldset>
       </div>
     </div>

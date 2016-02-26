@@ -1,14 +1,38 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_main' %>
 
-<p>
-  <strong>Category:</strong>
-  <%= @question.category %>
-</p>
+<div class="content_overlay content_column">
+  <div class="container-fluid content_overlay">
 
-<p>
-  <strong>First line:</strong>
-  <%= @question.first_line %>
-</p>
+    <h1>Edit Question</h1>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+    <p id="notice"><%= notice %></p>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Category</th>
+        <th>Question</th>
+        <th>Incorrect Answers</th>
+        <th>Correct Answer</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <td><%= @question.category %></td>
+        <td><%= @question.first_line %></td>
+        <td><%= @question.incorrect_one %><br />
+          <%= @question.incorrect_two %><br />
+          <%= @question.incorrect_three %>
+        </td>
+        <td><%= @question.correct_answer %></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <%= link_to 'Edit', edit_question_path(@question), class: 'btn btn-primary' %>
+    <p>&nbsp;</p>
+    <%= link_to 'Back', questions_path, class: 'btn btn-danger' %>
+
+  </div>
+</div>

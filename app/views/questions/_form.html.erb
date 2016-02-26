@@ -11,15 +11,55 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :first_line %><br>
-    <%= f.text_field :first_line %>
-  </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <fieldset class="form-group">
+          <%= f.label 'Question' %><br>
+          <%= f.text_field :first_line, class: 'form-control' %>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4">
+        <fieldset class="form-group">
+          <%= f.label 'Incorrect Answer' %><br>
+          <%= f.text_field :incorrect_one, class: 'form-control' %>
+        </fieldset>
+      </div>
+
+      <div class="col-sm-4">
+        <fieldset class="form-group">
+          <%= f.label 'Incorrect Answer' %><br>
+          <%= f.text_field :incorrect_two, class: 'form-control' %>
+        </fieldset>
+      </div>
+
+      <div class="col-sm-4">
+        <fieldset class="form-group">
+          <%= f.label 'Incorrect Answer' %><br>
+          <%= f.text_field :incorrect_three, class: 'form-control' %>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-8">
+        <fieldset class="form-group">
+          <%= f.label 'Correct Answer' %><br>
+          <%= f.text_field :correct_answer, class: 'form-control' %>
+        </fieldset>
+      </div>
+
+      <div class="col-sm-4">
+        <fieldset class="form-group">
+          <%= f.label :category %><br>
+          <%= f.text_field :category, class: 'form-control' %>
+        </fieldset>
+      </div>
+    </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

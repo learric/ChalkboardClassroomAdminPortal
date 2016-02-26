@@ -22,7 +22,7 @@
             <td><%= classroom.name %></td>
             <td><%= classroom.subject %></td>
             <td><%= link_to 'Students', classroom, class: 'btn btn-primary' %></td>
-            <td><%= link_to 'Questions', '#', class: 'btn btn-success' %></td>
+            <td><%= link_to 'Questions', questions_path, class: 'btn btn-success' %></td>
             <td><%= link_to 'Edit', edit_classroom_path(classroom), class: 'btn btn-warning' %></td>
             <td><%= link_to 'Delete', classroom, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
           </tr>
