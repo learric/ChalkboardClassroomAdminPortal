@@ -30,12 +30,14 @@ class ClassroomsController < ApplicationController
 
   # GET /classrooms/1/edit
   def edit
+    @teachers = User.where(school_id: @user.school_id, role: 1)
   end
 
   # POST /classrooms
   # POST /classrooms.json
   def create
     @classroom = Classroom.new(classroom_params)
+    @classroom.school_id = @user.school_id
 
     respond_to do |format|
       if @classroom.save
@@ -81,6 +83,7 @@ class ClassroomsController < ApplicationController
     def set_user
       id = current_user.id
       @user = User.find(id)
+      @teachers = User.where(school_id: @user.school_id, role: 1)
 
       unless @user.role > 0
         redirect_to root_path
@@ -89,6 +92,6 @@ class ClassroomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def classroom_params
-      params.require(:classroom).permit(:name, :subject)
+      params.require(:classroom).permit(:name, :subject, :school_id, :user_id)
     end
 end

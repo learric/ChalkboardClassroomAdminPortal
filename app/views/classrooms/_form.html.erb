@@ -30,9 +30,14 @@
       <div class="col-sm-4">
         <fieldset class="form-group">
           <%= f.label 'Teacher' %><br>
-          <select class="form-control">
-            <option>Teacher 1</option>
-            <option>Teacher 2</option>
+          <select name="classroom[user_id]" id="classroom_user_id" class="form-control">
+            <% @teachers.each do |t| %>
+                <% if @classroom.user_id == t.id %>
+                    <option value="<%= t.id %>" selected><%= t.first_name %> <%= t.last_name %></option>
+                <% else %>
+                    <%= content_tag(:option, t.first_name + ' ' + t.last_name, value: t.id) %>
+                <% end %>
+            <% end %>
           </select>
         </fieldset>
       </div>
