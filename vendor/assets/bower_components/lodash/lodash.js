@@ -7279,7 +7279,7 @@
      * @returns {Function} Returns the new restricted function.
      * @example
      *
-     * var saves = ['profile', 'settings'];
+     * var saves = ['profiles', 'settings'];
      *
      * var done = _.after(saves.length, function() {
      *   console.log('done saving!');

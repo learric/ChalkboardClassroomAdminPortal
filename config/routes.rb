@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get 'games', to: 'games#index'
   get 'games/collegiate_rivals', to: 'games#collegiate_rivals'
 
-  get 'profile', to: 'profile#show'
-  get 'profile/edit', to: 'profile#edit'
-  post 'profile', to: 'profile#update'
+  get 'profiles', to: 'profiles#show'
+  get 'profiles/:id', to: 'profiles#show'
+  get 'profiles/:id/edit', to: 'profiles#edit'
 
   get 'schools/teachers', to: 'schools#teachers'
   get 'schools/students', to: 'schools#students'
