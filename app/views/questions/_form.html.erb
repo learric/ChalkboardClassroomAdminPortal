@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+    <% if @classroom %>
+      <%= f.hidden_field :classroom_id, value: @classroom.id %>
+    <% end %>
+
     <div class="row">
       <div class="col-sm-12">
         <fieldset class="form-group">

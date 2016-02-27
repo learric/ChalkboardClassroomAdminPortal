@@ -11,7 +11,6 @@
           <tr>
             <th>Name</th>
             <th>Email</th>
-            <th colspan="2"></th>
           </tr>
         </thead>
 
@@ -20,8 +19,6 @@
           <tr>
             <td><%= teacher.first_name %> <%= teacher.last_name %></td>
             <td><%= teacher.email %></td>
-            <td><a href="#" class="btn btn-primary">Edit</a></td>
-            <td><%= link_to 'Delete', '#', class: 'btn btn-danger' %></td>
           </tr>
         <% end %>
         </tbody>
