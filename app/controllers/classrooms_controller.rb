@@ -30,7 +30,6 @@ class ClassroomsController < ApplicationController
 
   # GET /classrooms/1/edit
   def edit
-    @teachers = User.where(school_id: @user.school_id, role: 1)
   end
 
   # POST /classrooms
