@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   get 'questions/classroom/:id/new', to: 'questions#new', as: 'new_classroom_question'
   post 'questions/classroom/:classroom_id', to: 'questions#create'
 
-  post 'classrooms/add_student', to: 'classrooms#add_student', as: 'classroom_add_student'
-
   devise_for :users, controllers: {
       sessions: 'users/sessions'
   }

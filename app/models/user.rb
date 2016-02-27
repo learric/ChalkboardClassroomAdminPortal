@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :school
-  has_and_belongs_to_many :classrooms
+  has_many :classroom_users
+
+  has_many :classrooms, :through => :classroom_users
 
 end
