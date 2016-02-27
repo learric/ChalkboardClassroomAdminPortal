@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   resources :schools
   resources :classrooms
   resources :questions
+  resources :classroom_users
 end
