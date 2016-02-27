@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
 
   before_action :get_user_session
 
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.for(:account_update) << [:first_name, :last_name, :favorite_team, :role]
+    end
+
   private
 
     def get_user_session

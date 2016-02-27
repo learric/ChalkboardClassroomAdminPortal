@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   get 'schools/teachers', to: 'schools#teachers'
   get 'schools/students', to: 'schools#students'
 
-  devise_for :users
+  devise_for :users, controllers: {
+      sessions: 'users/sessions'
+  }
   resources :schools
   resources :classrooms
   resources :questions
