@@ -23,7 +23,7 @@
           <tr>
             <td><%= classroom.name %></td>
             <td><%= classroom.subject %></td>
-            <td><%= link_to 'Students', classroom, class: 'btn btn-primary' %></td>
+            <td><%= link_to 'Students', classroom_users_class_path(classroom.id), class: 'btn btn-primary' %></td>
             <td><%= link_to 'Questions', classroom_questions_path(classroom), class: 'btn btn-success' %></td>
 
             <% if @user.role == 2 %>

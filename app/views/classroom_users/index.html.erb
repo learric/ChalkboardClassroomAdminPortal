@@ -1,25 +1,54 @@
-<p id="notice"><%= notice %></p>
+<%= render 'layouts/header_main' %>
 
-<h1>Listing Classroom Users</h1>
+<div class="content_overlay content_column">
+  <div class="container-fluid content_overlay">
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <p id="notice"><%= notice %></p>
 
-  <tbody>
-    <% @classroom_users.each do |classroom_user| %>
-      <tr>
-        <td><%= link_to 'Show', classroom_user %></td>
-        <td><%= link_to 'Edit', edit_classroom_user_path(classroom_user) %></td>
-        <td><%= link_to 'Destroy', classroom_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <h1><%= @classroom.name %> Students</h1>
 
-<br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
 
-<%= link_to 'New Classroom user', new_classroom_user_path %>
+      <tbody>
+      <% @students.each do |student| %>
+          <tr>
+            <td><%= student.first_name %> <%= student.last_name %></td>
+            <td><%= student.email %></td>
+            <td><%= link_to 'Remove', '#', class: 'btn btn-danger' %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>Add Student</h2>
+
+        <%= form_for :classroom_users, url: classroom_users_add_path(@classroom) do |f| %>
+            <%= f.hidden_field :classroom_id, value: @classroom.id %>
+            <fieldset class="form-group">
+              <select name="classroom_users[user_id]" id="classroom_users_user_id" class="form-control">
+                <% @all_students.each do |student| %>
+                    <%= content_tag(:option, student.first_name + ' ' + student.last_name, value: student.id) %>
+                <% end %>
+              </select>
+            </fieldset>
+
+            <%= f.submit 'Add Student', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
