@@ -23,13 +23,17 @@ div {
 }
 
 #notice {
-  color: green;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
   position: fixed;
-  width:100%;
-  bottom:0;
-  left:0;
-  right:0;
+  width:60%;
+  bottom:3vmin;
   text-align: center;
+  left: 20%;
+  padding: 0;
+  line-height: 200%;
+  font-size: 2.5vmin;
+  font-family: Eraser, sans-serif;
 }
 
 .field_with_errors {
