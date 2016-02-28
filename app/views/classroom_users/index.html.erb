@@ -21,7 +21,7 @@
           <tr>
             <td><%= student.first_name %> <%= student.last_name %></td>
             <td><%= student.email %></td>
-            <td><%= link_to 'Remove', '#', class: 'btn btn-danger' %></td>
+            <td><a href="/classroom_users/<%= student.classroom_id %>" data-method="delete" class="btn btn-danger">Remove</a></td>
           </tr>
       <% end %>
       </tbody>

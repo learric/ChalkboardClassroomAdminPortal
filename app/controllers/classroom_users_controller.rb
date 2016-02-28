@@ -1,5 +1,5 @@
 class ClassroomUsersController < ApplicationController
-  before_action :set_classroom_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_classroom_user, only: [:index, :show, :edit, :update, :destroy]
   before_action :get_students, only: [:index]
   before_action :set_classroom, only: [:index]
   before_action :get_all_students, only: [:index]
@@ -33,7 +33,8 @@ class ClassroomUsersController < ApplicationController
         format.html { redirect_to classroom_users_class_path(classroom_user_params[:classroom_id]), notice: 'Classroom user was successfully created.' }
         format.json { render :show, status: :created, location: @classroom_user }
       else
-        format.html { render :new }
+        # format.html { render :new }
+        format.html { redirect_to classroom_users_class_path(classroom_user_params[:classroom_id]), notice: 'Student is already in this class'}
         format.json { render json: @classroom_user.errors, status: :unprocessable_entity }
       end
     end
@@ -58,7 +59,7 @@ class ClassroomUsersController < ApplicationController
   def destroy
     @classroom_user.destroy
     respond_to do |format|
-      format.html { redirect_to classroom_users_url, notice: 'Classroom user was successfully destroyed.' }
+      format.html { redirect_to classroom_users_class_path(@classroom_user.classroom_id), notice: 'Classroom user was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -81,6 +82,7 @@ class ClassroomUsersController < ApplicationController
 
       @classroom_users.each do |user|
         student = User.find(user.user_id)
+        student.classroom_id = user.id
         @students.push student
       end
     end
