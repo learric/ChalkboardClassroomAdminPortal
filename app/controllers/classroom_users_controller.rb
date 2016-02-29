@@ -1,5 +1,5 @@
 class ClassroomUsersController < ApplicationController
-  before_action :set_classroom_user, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_classroom_user, only: [:show, :edit, :update, :destroy]
   before_action :get_students, only: [:index]
   before_action :set_classroom, only: [:index]
   before_action :get_all_students, only: [:index]

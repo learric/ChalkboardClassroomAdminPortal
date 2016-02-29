@@ -75,12 +75,20 @@
           </div>
         </div>
 
-      <div class="actions">
-        <%= f.submit "Update", class: 'btn btn-primary' %>
-      </div>
-    <% end %>
+        <p>&nbsp;</p>
 
-    <%= link_to "Back", profiles_path, class: 'btn btn-danger' %>
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="actions">
+              <%= f.submit "Update", class: 'btn btn-primary' %>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <%= link_to "Cancel", profiles_path, class: 'btn btn-danger' %>
+          </div>
+        </div>
+    <% end %>
 
   </div>
 </div>

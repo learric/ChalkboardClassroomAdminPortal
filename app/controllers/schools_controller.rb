@@ -44,7 +44,7 @@ class SchoolsController < ApplicationController
   def update
     respond_to do |format|
       if @school.update(school_params)
-        format.html { redirect_to @school, notice: 'School was successfully updated.' }
+        format.html { redirect_to schools_path, notice: 'School was successfully updated.' }
         format.json { render :show, status: :ok, location: @school }
       else
         format.html { render :edit }
@@ -122,6 +122,7 @@ class SchoolsController < ApplicationController
 
   def delete_user
     @user = User.find(params[:id])
+    @user.classroom_users.destroy_all
     @user.destroy
     respond_to do |format|
       if @user.role == 1

@@ -42,7 +42,7 @@ class ClassroomsController < ApplicationController
 
     respond_to do |format|
       if @classroom.save
-        format.html { redirect_to classroom_users_add_url(@classroom), notice: 'Classroom was successfully created.' }
+        format.html { redirect_to classrooms_path, notice: 'Classroom was successfully created.' }
         format.json { render :show, status: :created, location: @classroom }
       else
         format.html { render :new }
@@ -68,6 +68,7 @@ class ClassroomsController < ApplicationController
   # DELETE /classrooms/1
   # DELETE /classrooms/1.json
   def destroy
+    @classroom.classroom_users.destroy_all
     @classroom.destroy
     respond_to do |format|
       format.html { redirect_to classrooms_url, notice: 'Classroom was successfully deleted.' }
