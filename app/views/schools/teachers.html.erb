@@ -11,6 +11,7 @@
           <tr>
             <th>Name</th>
             <th>Email</th>
+            <th colspan="2"></th>
           </tr>
         </thead>
 
@@ -19,6 +20,8 @@
           <tr>
             <td><%= teacher.first_name %> <%= teacher.last_name %></td>
             <td><%= teacher.email %></td>
+            <td><%= link_to 'Edit', school_edit_user_path(teacher.id), class: 'btn btn-primary' %></td>
+            <td><%= link_to 'Delete', school_delete_user_path(teacher.id), class: 'btn btn-danger', method: :delete %></td>
           </tr>
         <% end %>
         </tbody>
@@ -26,9 +29,9 @@
 
     <p>&nbsp;</p>
 
-    <p><%= link_to 'New Teacher', '#', class: 'btn btn-primary' %></p>
+    <p><%= link_to 'New Teacher', school_new_user_path, class: 'btn btn-primary' %></p>
 
-    <p><%= link_to 'Back', schools_path, class: 'btn btn-danger' %></p>
+    <p><%= link_to 'Back to School', schools_path, class: 'btn btn-danger' %></p>
 
   </div>
 </div>

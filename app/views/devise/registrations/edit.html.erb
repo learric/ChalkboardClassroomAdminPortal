@@ -17,10 +17,17 @@
               <%= f.text_field :first_name, class: 'form-control' %>
             </fieldset>
 
-            <fieldset class="form-group">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-            </fieldset>
+            <% if @user.role == 2 %>
+              <fieldset class="form-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, class: 'form-control' %>
+              </fieldset>
+            <% else %>
+              <fieldset class="form-group">
+                <%= f.label :email %> <i>(can only be changed by administrator)</i><br />
+                <%= f.email_field :email, disabled: true, class: 'form-control' %>
+              </fieldset>
+            <% end %>
           </div>
 
 

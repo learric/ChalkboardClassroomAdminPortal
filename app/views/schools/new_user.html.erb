@@ -1,0 +1,76 @@
+<%= render 'layouts/header_main' %>
+
+<div class="content_overlay content_column">
+  <div class="container-fluid content_overlay">
+
+    <p id="notice"><%= notice %></p>
+
+    <h1>Create New User</h1>
+
+    <%= form_for(@new_user, url: '/schools/new_user') do |f| %>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <fieldset class="form-group">
+            <%= f.label :first_name %><br />
+            <%= f.text_field :first_name, class: 'form-control' %>
+          </fieldset>
+        </div>
+
+        <div class="col-sm-6">
+          <fieldset class="form-group">
+            <%= f.label :last_name %><br />
+            <%= f.text_field :last_name, class: 'form-control' %>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <fieldset class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, class: 'form-control' %>
+          </fieldset>
+        </div>
+
+        <div class="col-sm-6">
+          <fieldset class="form-group">
+            <%= f.label 'Permissions' %>
+            <select name="user[role]" id="user_role" class="form-control">
+              <option value="0">Student</option>
+              <option value="1">Teacher</option>
+            </select>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <fieldset class="form-group">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+          </fieldset>
+        </div>
+
+        <div class="col-sm-6">
+          <fieldset class="form-group">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control' %>
+          </fieldset>
+        </div>
+      </div>
+
+        <div class="actions">
+          <%= f.submit 'Create User', class: 'btn btn-primary' %>
+        </div>
+    <% end %>
+
+    <p>&nbsp;</p>
+
+    <%= link_to 'Back to School', schools_path, class: 'btn btn-danger' %>
+
+  </div>
+</div>

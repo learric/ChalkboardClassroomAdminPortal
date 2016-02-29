@@ -1,6 +1,6 @@
 class SchoolsController < ApplicationController
   before_action :set_school, only: [:show, :edit, :update, :destroy]
-  before_action :set_user
+  before_action :set_user, except: [:edit_user, :update_user]
 
   # GET /schools
   # GET /schools.json
@@ -73,6 +73,67 @@ class SchoolsController < ApplicationController
     @students = User.where(school_id: school, role: 0)
   end
 
+  def new_user
+    @new_user = User.new
+  end
+
+  def create_new_user
+    @new_user = User.new(user_params)
+    @new_user.school_id = @user.school_id
+
+    respond_to do |format|
+      if @new_user.save
+        if @new_user.role == 1
+          format.html { redirect_to schools_teachers_path, notice: 'Teacher was successfully created.' }
+        else
+          format.html { redirect_to schools_students_path, notice: 'Student was successfully created.' }
+        end
+
+        format.json { render :index, status: :created }
+      else
+        format.html { redirect_to school_new_user_path }
+        format.json { render json: @new_user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def edit_user
+    @user = User.find(params[:id])
+  end
+
+  def update_user
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      if @user.update(user_params)
+        if @user.role == 1
+          format.html { redirect_to schools_teachers_path, notice: 'Teacher was successfully updated.' }
+          format.json { render :show, status: :ok }
+        else
+          format.html { redirect_to schools_students_path, notice: 'Student was successfully updated.' }
+          format.json { render :show, status: :ok }
+        end
+      else
+        format.html { redirect_to schools_path }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def delete_user
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_to do |format|
+      if @user.role == 1
+        format.html { redirect_to schools_teachers_path, notice: 'Teacher was successfully deleted.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to schools_students_path, notice: 'Student was successfully deleted.' }
+        format.json { head :no_content }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_school
@@ -82,6 +143,10 @@ class SchoolsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def school_params
       params.require(:school).permit(:name, :address, :city, :state, :zip, :mascot)
+    end
+
+    def user_params
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :role)
     end
 
     def set_user

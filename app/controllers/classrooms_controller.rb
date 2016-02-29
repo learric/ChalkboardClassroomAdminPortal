@@ -5,14 +5,16 @@ class ClassroomsController < ApplicationController
   # GET /classrooms
   # GET /classrooms.json
   def index
-    role = @user.role
-    id = @user.id
-    school = @user.school_id
+    if @user.role == 1
+      @classrooms = Classroom.where(user_id: @user.id)
+    elsif @user.role == 2
+      @classrooms = Classroom.where(school_id: @user.school_id)
+      @teachers = []
 
-    if role == 1
-      @classrooms = Classroom.where(user_id: id)
-    elsif role == 2
-      @classrooms = Classroom.where(school_id: school)
+      @classrooms.each do |classroom|
+        teacher = User.find(classroom.user_id)
+        @teachers.push(teacher)
+      end
     else
       redirect_to root_path
     end
@@ -40,7 +42,7 @@ class ClassroomsController < ApplicationController
 
     respond_to do |format|
       if @classroom.save
-        format.html { redirect_to @classroom, notice: 'Classroom was successfully created.' }
+        format.html { redirect_to classroom_users_add_url(@classroom), notice: 'Classroom was successfully created.' }
         format.json { render :show, status: :created, location: @classroom }
       else
         format.html { render :new }
@@ -54,7 +56,7 @@ class ClassroomsController < ApplicationController
   def update
     respond_to do |format|
       if @classroom.update(classroom_params)
-        format.html { redirect_to @classroom, notice: 'Classroom was successfully updated.' }
+        format.html { redirect_to classrooms_url, notice: 'Classroom was successfully updated.' }
         format.json { render :show, status: :ok, location: @classroom }
       else
         format.html { render :edit }
@@ -68,7 +70,7 @@ class ClassroomsController < ApplicationController
   def destroy
     @classroom.destroy
     respond_to do |format|
-      format.html { redirect_to classrooms_url, notice: 'Classroom was successfully destroyed.' }
+      format.html { redirect_to classrooms_url, notice: 'Classroom was successfully deleted.' }
       format.json { head :no_content }
     end
   end

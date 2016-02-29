@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: "games#index"
+  root to: 'games#index'
 
   get 'games', to: 'games#index'
   get 'games/collegiate_rivals', to: 'games#collegiate_rivals'
@@ -11,6 +11,11 @@ Rails.application.routes.draw do
 
   get 'schools/teachers', to: 'schools#teachers'
   get 'schools/students', to: 'schools#students'
+  get 'schools/new_user', to: 'schools#new_user', as: 'school_new_user'
+  get 'schools/edit_user/:id', to: 'schools#edit_user', as: 'school_edit_user'
+  post 'schools/new_user', to: 'schools#create_new_user'
+  patch 'schools/edit_user/:id', to: 'schools#update_user', as: 'school_update_user'
+  delete 'schools/new_user/:id', to: 'schools#delete_user', as: 'school_delete_user'
 
   get 'questions/classroom/:id', to: 'questions#classroom', as: 'classroom_questions'
   get 'questions/classroom/:id/new', to: 'questions#new', as: 'new_classroom_question'

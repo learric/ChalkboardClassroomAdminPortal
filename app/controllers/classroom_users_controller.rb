@@ -30,7 +30,7 @@ class ClassroomUsersController < ApplicationController
 
     respond_to do |format|
       if @classroom_user.save
-        format.html { redirect_to classroom_users_class_path(classroom_user_params[:classroom_id]), notice: 'Classroom user was successfully created.' }
+        format.html { redirect_to classroom_users_class_path(classroom_user_params[:classroom_id]), notice: 'Student was successfully added to class.' }
         format.json { render :show, status: :created, location: @classroom_user }
       else
         # format.html { render :new }
@@ -45,7 +45,7 @@ class ClassroomUsersController < ApplicationController
   def update
     respond_to do |format|
       if @classroom_user.update(classroom_user_params)
-        format.html { redirect_to @classroom_user, notice: 'Classroom user was successfully updated.' }
+        format.html { redirect_to @classroom_user, notice: 'Student was successfully added to class.' }
         format.json { render :show, status: :ok, location: @classroom_user }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class ClassroomUsersController < ApplicationController
   def destroy
     @classroom_user.destroy
     respond_to do |format|
-      format.html { redirect_to classroom_users_class_path(@classroom_user.classroom_id), notice: 'Classroom user was successfully destroyed.' }
+      format.html { redirect_to classroom_users_class_path(@classroom_user.classroom_id), notice: 'Student was successfully removed from class.' }
       format.json { head :no_content }
     end
   end
