@@ -6,7 +6,6 @@ json.questions do
 
     json.category questions.category
     json.firstLine questions.first_line
-    json.lastLine questions.last_line
     json.answers answer_list
   end
 end

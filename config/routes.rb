@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'games#index'
 
   get 'games', to: 'games#index'
+  get 'games/game_session', to: 'games#game_session'
+  get 'games/game_session_questions/:id', to: 'games#game_session_questions'
   get 'games/collegiate_rivals', to: 'games#collegiate_rivals'
 
   get 'profiles', to: 'profiles#show'

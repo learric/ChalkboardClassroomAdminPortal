@@ -13,6 +13,7 @@
 
     <% if @classroom %>
       <%= f.hidden_field :classroom_id, value: @classroom.id %>
+      <%= f.hidden_field :school_id, value: @classroom.school_id %>
     <% end %>
 
     <div class="row">

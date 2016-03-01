@@ -80,7 +80,7 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:classroom_id, :category, :first_line, :incorrect_one, :incorrect_two, :incorrect_three, :correct_answer)
+      params.require(:question).permit(:classroom_id, :school_id, :category, :first_line, :incorrect_one, :incorrect_two, :incorrect_three, :correct_answer)
     end
 
     def set_admin
