@@ -17,9 +17,10 @@ angular.module('services')
     getSession: ->
       return session
 
-    setWinsLosses: (id, result) ->
-      wins = session.student[0].game_wins
-      losses = session.student[0].game_losses
+    setWinsLosses: (result) ->
+      wins = session.user.game_wins
+      losses = session.user.game_losses
+      id = session.user.id
 
       if result == 0
         wins += 1
@@ -27,14 +28,14 @@ angular.module('services')
         losses += 1
 
       $http({
-        method: 'PUT'
-        url: '/students/' + id + '.json'
+        method: 'PATCH'
+        url: '/schools/edit_user/' + id + '.json'
         data: {
-          game_wins: wins
-          game_losses: losses
+          user: {
+            game_wins: wins
+            game_losses: losses
+          }
         }
-      }).then((res) ->
-        console.log res
-      )
+      })
   }
 )

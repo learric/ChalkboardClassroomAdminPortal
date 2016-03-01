@@ -39,16 +39,11 @@ angular.module('collegiateRivals')
     restrict: 'EAC'
     template: '<button class="btn btn-success right_button animated rubberBand">Next</button>'
     link: (sc, el) ->
-      id = {}
       result = sc.outro.winnerId
-
-      SessionFactory.getSession().then((res) ->
-        id = res.student[0].id
-      )
 
       el.on('click', ->
         if result != null
-          SessionFactory.setWinsLosses(id, result)
+          SessionFactory.setWinsLosses(result)
 
         if result == 0
           $state.go('outro.reward')

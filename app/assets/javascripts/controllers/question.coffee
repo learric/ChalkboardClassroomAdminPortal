@@ -10,12 +10,10 @@ angular.module('controllers')
     qRand = Math.floor(Math.random() * QUESTIONS.default.length)
     question.questionList = QUESTIONS.default[qRand]
   else
-    getQuestions = QuestionsFactory.getQuestions()
+    getQuestions = QuestionsFactory.getQuestionsLocally()
 
-    getQuestions.then((res) ->
-      qRand = Math.floor(Math.random() * res.questions.length)
-      question.questionList = res.questions[qRand]
-    )
+    qRand = Math.floor(Math.random() * getQuestions.questions.length)
+    question.questionList = getQuestions.questions[qRand]
 
   random = Math.floor(Math.random() * 4)
 

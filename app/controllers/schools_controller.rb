@@ -108,10 +108,10 @@ class SchoolsController < ApplicationController
       if @user.update(user_params)
         if @user.role == 1
           format.html { redirect_to schools_teachers_path, notice: 'Teacher was successfully updated.' }
-          format.json { render :show, status: :ok }
+          format.json { render json: @user, status: :ok }
         else
           format.html { redirect_to schools_students_path, notice: 'Student was successfully updated.' }
-          format.json { render :show, status: :ok }
+          format.json { render json: @user, status: :ok }
         end
       else
         format.html { redirect_to schools_path }
@@ -147,7 +147,7 @@ class SchoolsController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :role)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :role, :game_wins, :game_losses)
     end
 
     def set_user
