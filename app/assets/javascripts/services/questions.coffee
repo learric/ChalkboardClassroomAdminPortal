@@ -2,20 +2,20 @@ angular.module('services')
 
 .factory 'QuestionsFactory', ($http) ->
 
-  teacher = 0
+  questionId = 0
   question = {}
 
   return {
     setTeacherId: (id) ->
-      teacher = id
+      questionId = id
 
     getTeacherId: ->
-      return teacher
+      return questionId
 
-    getQuestions: ->
+    getQuestions: (id) ->
       $http({
         method: 'GET'
-        url: '/games/questions/' + teacher + '.json'
+        url: '/games/game_session_questions/' + id + '.json'
       }).then((res) ->
         question = res.data
         return question

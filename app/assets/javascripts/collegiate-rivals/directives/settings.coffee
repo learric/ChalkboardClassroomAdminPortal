@@ -21,7 +21,7 @@ angular.module('collegiateRivals')
 .directive 'questionChoices', ->
   return {
     restrict: 'EAC'
-    template: '<ul class="opaque_box_selection_list"><li class="animated rubberBand" ng-repeat="teacher in settings.listTeachers.teachers" ng-click="settings.saveQuestions(teacher.id)" settings-button>{{ teacher.classroom_name }}</li> <li class="animated rubberBand" ng-click="settings.saveQuestions(0)" settings-button>Default</li></ul>'
+    template: '<ul class="opaque_box_selection_list"><li class="animated rubberBand" ng-repeat="classroom in classrooms" ng-click="settings.saveQuestions(classroom.id)" settings-button>{{ classroom.name }}</li> <li class="animated rubberBand" ng-click="settings.saveQuestions(0)" settings-button>Default</li></ul>'
   }
 
 .directive 'soundChoices', ->

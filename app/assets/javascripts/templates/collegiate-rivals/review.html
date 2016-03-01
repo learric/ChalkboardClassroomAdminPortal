@@ -24,7 +24,8 @@
 
     <div class="review_settings">
       <h2>Questions</h2>
-      <p>{{ review.questions }}</p>
+        <p ng-if="review.questions == 0">Default Questions</p>
+      <p ng-repeat="classroom in classrooms" ng-if="review.questions != 0 && review.questions == classroom.id">{{ classroom.name }}</p>
     </div>
 
     <div class="review_settings">

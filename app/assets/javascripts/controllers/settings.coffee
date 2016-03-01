@@ -13,15 +13,6 @@ angular.module('controllers')
   settings.quarterLengths = QUARTER_LENGTHS.quarterLengths
 
 #
-#  list teachers
-  settings.listTeachers = TeachersFactory.getTeachers()
-
-  if Object.keys(settings.listTeachers).length == 0
-    TeachersFactory.setTeachers().then((res) ->
-      settings.listTeachers = res
-    )
-
-#
 #  save teams
   settings.saveTeam = (team) ->
 
@@ -45,7 +36,7 @@ angular.module('controllers')
   settings.saveQuestions = (id) ->
     SettingsFactory.saveTeacher(id)
     QuestionsFactory.setTeacherId(id)
-    $scope.getQuestions()
+    QuestionsFactory.getQuestions(id)
 
 #
 #  save sound effect settings

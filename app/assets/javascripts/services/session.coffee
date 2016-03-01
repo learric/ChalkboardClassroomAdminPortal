@@ -5,10 +5,10 @@ angular.module('services')
   session = {}
 
   return {
-    setSession: (url) ->
+    setSession: ->
       session = $http({
         method: 'GET'
-        url: '/games/' + url + '.json'
+        url: '/games/game_session.json'
       }).then((res) ->
         session = res.data
         return session

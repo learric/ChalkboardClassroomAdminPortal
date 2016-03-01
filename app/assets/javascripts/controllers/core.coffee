@@ -1,9 +1,11 @@
 angular.module('controllers')
 
-.controller 'CoreController', (SessionFactory, $scope) ->
+.controller 'CoreController', (SessionFactory, QuestionsFactory, $scope) ->
 
-  SessionFactory.setSession('collegiate_rivals').then((res) ->
-    $scope.session = res.student[0]
+  SessionFactory.setSession().then((res) ->
+    $scope.user = res.user
+    $scope.school = res.school
+    $scope.classrooms = res.classrooms
   )
 
   $scope.toggleExitGamePopup = ->

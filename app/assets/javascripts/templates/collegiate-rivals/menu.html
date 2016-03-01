@@ -14,13 +14,16 @@
       </div>
 
       <div ng-hide="showExitGamePopup">
-        <h3>Player Info</h3>
 
-        <p>{{ session.name_first }} {{ session.name_last }}</p>
+        <h2>{{ user.first_name }} {{ user.last_name }}</h2>
 
-        <p><strong>Favorite Team:</strong><br />{{ session.favorite_team }}</p>
+          <p><strong>Collegiate Rivals Record</strong><br />{{ user.game_wins }} - {{ user.game_losses }}</p>
 
-        <p><strong>Record:</strong><br />{{ session.game_wins }} - {{ session.game_losses }}</p>
+        <h3>{{ school.name }}</h3><br />
+
+        <p><strong>Your Classes</strong><br /><span ng-repeat="classroom in classrooms">{{ classroom.name }}<br /></span></p>
+
+        <!--<p><strong>Favorite Team:</strong><br />{{ user.favorite_team }}</p>-->
       </div>
 
       <div ng-show="showExitGamePopup">
