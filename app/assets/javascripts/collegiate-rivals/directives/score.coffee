@@ -108,5 +108,6 @@ angular.module('collegiateRivals')
       el.addClass('btn btn-success right_button animated rubberBand')
       el.on('click', ->
         $state.go('gameplay.kickoff')
+        buzz.all().stop()
       )
   }

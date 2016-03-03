@@ -147,7 +147,7 @@ angular.module('collegiateRivals', [
         template: '<div coinflip-choice-confirm></div>'
       }
       'buttons': {
-        template: '<cointoss-change-button>Change</cointoss-change-button><cointoss-button>Flip Coin</cointoss-button>'
+        template: '<span cheer-sound-effect><cointoss-change-button>Change</cointoss-change-button><cointoss-button>Flip Coin</cointoss-button></span>'
       }
     }
   )
@@ -191,7 +191,7 @@ angular.module('collegiateRivals', [
         template: '<h3>line up to kick off</h3>'
       }
       'buttons': {
-        template: '<kickoff-button></kickoff-button>'
+        template: '<span roar-sound-effect><kickoff-button></kickoff-button></span>'
       }
     }
   )
@@ -306,7 +306,7 @@ angular.module('collegiateRivals', [
         template: '<h3 play-result></h3>'
       }
       'score': {
-        template: '<score-button></score-button>'
+        template: '<span roar-sound-effect><score-button></score-button></span>'
       }
       'next': {
         template: '<next-play-button></next-play-button>'
@@ -335,7 +335,7 @@ angular.module('collegiateRivals', [
         template: '<h3>Did you score?</h3>'
       }
       'buttons': {
-        template: '<fg-button></fg-button><touchdown-button></touchdown-button><cancel-score-button></cancel-score-button>'
+        template: '<span active-fight-song-sound-effect><fg-button></fg-button></span><span touchdown-sound-effect><touchdown-button></touchdown-button></span><cancel-score-button></cancel-score-button>'
       }
     }
   )
@@ -353,7 +353,7 @@ angular.module('collegiateRivals', [
         template: '<h3>Choose an extra point try!</h3>'
       }
       'buttons': {
-        template: '<one-point-button></one-point-button><two-point-button></two-point-button>'
+        template: '<span active-fight-song-sound-effect><one-point-button></one-point-button></span><span active-fight-song-sound-effect><two-point-button></two-point-button></span>'
       }
     }
   )
