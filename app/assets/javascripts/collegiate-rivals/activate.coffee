@@ -510,7 +510,7 @@ angular.module('collegiateRivals', [
     url: '/social'
     views: {
       'header': {
-        template: '<h2 home-team-nickname></h2>'
+        template: '<h2 winning-team-nickname></h2>'
       }
       'subheader': {
         template: '<h3>Share your score on Facebook!</h3>'
@@ -531,7 +531,7 @@ angular.module('collegiateRivals', [
     url: '/end'
     views: {
       'header': {
-        template: '<h2 home-team-nickname></h2>'
+        template: '<h2 winning-team-nickname></h2>'
       }
       'subheader': {
         template: '<h3>End of game</h3>'

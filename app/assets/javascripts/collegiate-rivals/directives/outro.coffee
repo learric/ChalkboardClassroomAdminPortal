@@ -34,12 +34,17 @@ angular.module('collegiateRivals')
     template: 'Final score: {{ outro.final.home }} - {{ outro.final.away }}'
   }
 
-.directive 'finalScoreButton', (SessionFactory, $state) ->
+.directive 'finalScoreButton', (SoundsFactory, SessionFactory, $state) ->
   return {
     restrict: 'EAC'
     template: '<button class="btn btn-success right_button animated rubberBand">Next</button>'
     link: (sc, el) ->
       result = sc.outro.winnerId
+
+      if result == 1
+        SoundsFactory.playAwayFightSong('full')
+      else
+        SoundsFactory.playHomeFightSong('full')
 
       el.on('click', ->
         if result != null
@@ -78,6 +83,7 @@ angular.module('collegiateRivals')
     template: '<button class="btn btn-success right_button animated rubberBand">Home</button>'
     link: (sc, el) ->
       el.on('click', ->
+        buzz.all().stop()
         ScoreFactory.resetScores()
         ClockFactory.resetQuarter()
         $state.go('home')
