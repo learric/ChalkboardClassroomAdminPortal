@@ -44,39 +44,57 @@ angular.module('services')
 
   return {
     playCheer: ->
-      buzz.all().stop()
-      cheer.play().fadeOut()
+      mute = SettingsFactory.getSounds()
+      if mute
+        buzz.all().stop()
+        cheer.play().fadeOut()
 
     playCorrectBell: ->
-      buzz.all().stop()
-      correctBell.play()
+      mute = SettingsFactory.getSounds()
+      if mute
+        buzz.all().stop()
+        correctBell.play()
 
     playCrowd: ->
-      buzz.all().stop()
-      crowd.play().fadeOut()
+      mute = SettingsFactory.getSounds()
+      if mute
+        buzz.all().stop()
+        crowd.play().fadeOut()
 
     playIncorrectBuzzer: ->
-      buzz.all().stop()
-      incorrectBuzzer.play()
+      mute = SettingsFactory.getSounds()
+      if mute
+        buzz.all().stop()
+        incorrectBuzzer.play()
 
     playRoar: ->
-      buzz.all().stop()
-      roar.play().fadeOut()
+      mute = SettingsFactory.getSounds()
+      if mute
+        buzz.all().stop()
+        roar.play().fadeOut()
 
     playTouchdown: ->
-      buzz.all().stop()
-      touchdown.play()
+      mute = SettingsFactory.getSounds()
+      if mute
+        buzz.all().stop()
+        touchdown.play()
 
     playWhistle: ->
-      buzz.all().stop()
-      whistle.play()
+      mute = SettingsFactory.getSounds()
+      if mute
+        buzz.all().stop()
+        whistle.play()
 
     playHomeFightSong: (version) ->
-      team = SettingsFactory.getFullHomeTeam()
-      fightSong(team.class, version)
+      mute = SettingsFactory.getSounds()
+      if mute
+        team = SettingsFactory.getFullHomeTeam()
+        fightSong(team.class, version)
 
     playAwayFightSong: (version) ->
-      team = SettingsFactory.getFullAwayTeam()
-      fightSong(team.class, version)
+      mute = SettingsFactory.getSounds()
+      if mute
+        team = SettingsFactory.getFullAwayTeam()
+        fightSong(team.class, version)
   }
 )
