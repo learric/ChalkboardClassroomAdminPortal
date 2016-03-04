@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'questions/classroom/:id', to: 'questions#classroom', as: 'classroom_questions'
   get 'questions/classroom/:id/new', to: 'questions#new', as: 'new_classroom_question'
-  post 'questions/classroom/:classroom_id', to: 'questions#create'
+  post 'questions/classroom/:classroom_id', to: 'questions#create', as: 'create_new_classroom_question'
 
   get 'classroom_users/classroom/:id', to: 'classroom_users#index', as: 'classroom_users_class'
   post 'classroom_users/classroom/:id', to: 'classroom_users#create', as: 'classroom_users_add'

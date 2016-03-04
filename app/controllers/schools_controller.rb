@@ -91,7 +91,7 @@ class SchoolsController < ApplicationController
 
         format.json { render :index, status: :created }
       else
-        format.html { redirect_to school_new_user_path }
+        format.html { render :new_user }
         format.json { render json: @new_user.errors, status: :unprocessable_entity }
       end
     end
@@ -114,7 +114,7 @@ class SchoolsController < ApplicationController
           format.json { render json: @user, status: :ok }
         end
       else
-        format.html { redirect_to schools_path }
+        format.html { render :edit_user }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

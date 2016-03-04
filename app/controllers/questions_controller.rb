@@ -42,7 +42,7 @@ class QuestionsController < ApplicationController
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
       else
-        format.html { render :new }
+        format.html { redirect_to new_classroom_question_path(question_params[:classroom_id]), notice: 'No fields can be left blank' }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end

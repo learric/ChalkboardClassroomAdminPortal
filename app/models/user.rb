@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
 
   has_many :classrooms, :through => :classroom_users
 
+  validates :first_name, :last_name, :role, :school_id, presence: true
+
 end

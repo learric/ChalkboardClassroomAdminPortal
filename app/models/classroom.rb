@@ -6,4 +6,6 @@ class Classroom < ActiveRecord::Base
 
   has_many :users, :through => :classroom_users
 
+  validates :name, :subject, :user_id, presence: true
+
 end
