@@ -48,7 +48,6 @@
           <fieldset class="form-group">
             <%= f.label :role, 'Permissions' %>
             <select name="user[role]" id="user_role" class="form-control">
-              <option>Select Role</option>
               <option value="0">Student</option>
               <option value="1">Teacher</option>
             </select>
@@ -75,14 +74,14 @@
         </div>
       </div>
 
+        <p>&nbsp;</p>
+
         <div class="actions">
           <%= f.submit 'Create User', class: 'btn btn-primary' %>
         </div>
     <% end %>
 
-    <p>&nbsp;</p>
-
-    <%= link_to 'Back to School', schools_path, class: 'btn btn-danger' %>
+    <%= link_to 'Cancel', schools_path, class: 'chalk_link' %>
 
   </div>
 </div>

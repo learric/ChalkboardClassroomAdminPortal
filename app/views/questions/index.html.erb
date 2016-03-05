@@ -12,8 +12,9 @@
         <tr>
           <th>Category</th>
           <th>Question</th>
-          <th>Answers</th>
-          <th>Options</th>
+          <th>Incorrect</th>
+          <th>Correct</th>
+          <th colspan="2">Admin Options</th>
         </tr>
       </thead>
 
@@ -25,22 +26,22 @@
             <td><%= question.incorrect_one %><br />
               <%= question.incorrect_two %><br />
               <%= question.incorrect_three %>
-              <p>&nbsp;</p>
-              <strong>Correct</strong><br />
-              <%= question.correct_answer %>
             </td>
-            <td><%= link_to 'Edit', edit_question_path(question), class: 'btn btn-primary' %>
-              <p>&nbsp;</p>
-              <%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+            <td><%= question.correct_answer %></td>
+            <td><%= link_to 'Edit', edit_question_path(question), class: 'btn btn-warning' %></td>
+            <td><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-    <br>
+    <p>&nbsp;</p>
 
-    <p><%= link_to 'New Question', new_classroom_question_path(@classroom), class: 'btn btn-primary' %></p>
-    <p><%= link_to 'Back', classrooms_path, class: 'btn btn-danger' %></p>
+    <div class="actions">
+      <%= link_to 'New Question', new_classroom_question_path(@classroom), class: 'btn btn-primary' %>
+    </div>
+
+    <%= link_to 'Classrooms', classrooms_path, class: 'chalk_link' %>
 
   </div>
 </div>

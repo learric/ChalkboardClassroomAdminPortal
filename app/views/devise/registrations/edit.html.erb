@@ -9,29 +9,12 @@
       <%= devise_error_messages! %>
 
         <div class="row">
-          <h3>Edit Info</h3>
-
           <div class="col-sm-6">
             <fieldset class="form-group">
               <%= f.label :first_name %><br />
               <%= f.text_field :first_name, class: 'form-control' %>
             </fieldset>
 
-            <% if @user.role == 2 %>
-              <fieldset class="form-group">
-                <%= f.label :email %><br />
-                <%= f.email_field :email, class: 'form-control' %>
-              </fieldset>
-            <% else %>
-              <fieldset class="form-group">
-                <%= f.label :email %> <i>(can only be changed by administrator)</i><br />
-                <%= f.email_field :email, disabled: true, class: 'form-control' %>
-              </fieldset>
-            <% end %>
-          </div>
-
-
-          <div class="col-sm-6">
             <fieldset class="form-group">
               <%= f.label :last_name %><br />
               <%= f.text_field :last_name, class: 'form-control' %>
@@ -42,21 +25,25 @@
               <%= f.text_field :favorite_team, class: 'form-control' %>
             </fieldset>
           </div>
-        </div>
-
-        <p>&nbsp;</p>
-
-        <div class="row">
-          <h3>Edit Password</h3>
 
           <div class="col-sm-6">
+            <% if @user.role == 2 %>
+                <fieldset class="form-group">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, class: 'form-control' %>
+                </fieldset>
+            <% else %>
+                <fieldset class="form-group">
+                  <%= f.label :email %> <i>(can only be changed by administrator)</i><br />
+                  <%= f.email_field :email, disabled: true, class: 'form-control' %>
+                </fieldset>
+            <% end %>
+
             <fieldset class="form-group">
               <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
               <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
             </fieldset>
-          </div>
 
-          <div class="col-sm-6">
             <fieldset class="form-group">
               <%= f.label :password_confirmation %><br />
               <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
@@ -77,17 +64,11 @@
 
         <p>&nbsp;</p>
 
-        <div class="row">
-          <div class="col-sm-2">
-            <div class="actions">
-              <%= f.submit "Update", class: 'btn btn-primary' %>
-            </div>
-          </div>
-
-          <div class="col-sm-2">
-            <%= link_to "Cancel", profiles_path, class: 'btn btn-danger' %>
-          </div>
+        <div class="actions">
+          <%= f.submit 'Update Profile', class: 'btn btn-primary' %>
         </div>
+
+        <%= link_to 'Cancel', profiles_path, class: 'chalk_link' %>
     <% end %>
 
   </div>

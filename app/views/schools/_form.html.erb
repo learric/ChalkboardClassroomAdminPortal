@@ -63,15 +63,9 @@
 
     <p>&nbsp;</p>
 
-    <div class="row">
-      <div class="col-sm-2">
-        <div class="actions">
-          <%= f.submit 'Update', class: "btn btn-primary" %>
-        </div>
-      </div>
-
-      <div class="col-sm-2">
-        <%= link_to 'Back', schools_path, class: "btn btn-danger" %>
-      </div>
+    <div class="actions">
+      <%= f.submit 'Update School', class: "btn btn-primary" %>
     </div>
+
+    <%= link_to 'Cancel', schools_path, class: 'chalk_link' %>
 <% end %>

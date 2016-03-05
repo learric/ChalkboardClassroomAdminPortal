@@ -30,17 +30,19 @@
 
     <p>&nbsp;</p>
 
+    <p><%= link_to 'Edit School', edit_school_path(@schools), class: 'btn btn-primary' %></p>
+
+    <p>&nbsp;</p>
+
     <div class="row">
-      <div class="col-sm-3">
-        <%= link_to 'Edit School', edit_school_path(@schools), class: 'btn btn-primary' %>
+      <div class="col-sm-6">
+        <h2>Teachers</h2>
+        <%= link_to 'View', schools_teachers_path, class: 'btn btn-success' %>
       </div>
 
-      <div class="col-sm-2">
-        <%= link_to 'Teachers', schools_teachers_path, class: 'btn btn-warning' %>
-      </div>
-
-      <div class="col-sm-2">
-        <%= link_to 'Students', schools_students_path, class: 'btn btn-success' %>
+      <div class="col-sm-6">
+        <h2>Students</h2>
+        <%= link_to 'View', schools_students_path, class: 'btn btn-success' %>
       </div>
     </div>
 

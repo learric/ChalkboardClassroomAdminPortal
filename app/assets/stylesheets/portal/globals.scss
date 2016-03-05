@@ -16,6 +16,29 @@ label {
   font-size: 2.5vmin;
 }
 
+.chalk_link {
+  color: white;
+  font-family: Eraser, sans-serif;
+  font-size: 2.5vmin;
+  display: inline-block;
+  padding: 1vmin;
+  text-decoration: none;
+  margin-top: 1vmin;
+
+  &:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: white;
+  }
+}
 
 .table {
   font-size: 2.7vmin;

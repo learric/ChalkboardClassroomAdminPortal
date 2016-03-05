@@ -12,7 +12,7 @@
       <tr>
         <th>Name</th>
         <th>Email</th>
-        <th></th>
+        <th>Admin Options</th>
       </tr>
       </thead>
 
@@ -20,7 +20,7 @@
       <tr>
         <td>Student Name</td>
         <td>student@email.com</td>
-        <td><%= link_to 'Remove', '#', class: 'btn btn-danger' %></td>
+        <td><%= link_to 'Remove', '#', class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
       </tr>
       </tbody>
     </table>

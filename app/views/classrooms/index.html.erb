@@ -31,7 +31,7 @@
             <% if @user.role == 2 %>
               <td><%= @teachers[i].first_name %> <%= @teachers[i].last_name %></td>
             <% end %>
-            <td><p><%= link_to 'Students', classroom_users_class_path(classroom.id), class: 'btn btn-primary' %></p>
+            <td><p><%= link_to 'Students', classroom_users_class_path(classroom.id), class: 'btn btn-success' %></p>
               <p><%= link_to 'Questions', classroom_questions_path(classroom), class: 'btn btn-success' %></p></td>
 
             <% if @user.role == 2 %>

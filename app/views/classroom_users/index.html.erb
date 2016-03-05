@@ -5,14 +5,14 @@
 
     <p id="notice"><%= notice %></p>
 
-    <h1><%= @classroom.name %> Students</h1>
+    <h1><%= @classroom.name %></h1>
 
     <table class="table">
       <thead>
         <tr>
-          <th>Name</th>
+          <th>Student</th>
           <th>Email</th>
-          <th></th>
+          <th>Admin Options</th>
         </tr>
       </thead>
 
@@ -21,7 +21,7 @@
           <tr>
             <td><%= student.first_name %> <%= student.last_name %></td>
             <td><%= student.email %></td>
-            <td><a href="/classroom_users/<%= student.classroom_id %>" data-method="delete" class="btn btn-danger">Remove</a></td>
+            <td><a href="/classroom_users/<%= student.classroom_id %>" data-method="delete" data-confirm="Are you sure?" class="btn btn-danger">Remove</a></td>
           </tr>
       <% end %>
       </tbody>
@@ -43,14 +43,14 @@
               </select>
             </fieldset>
 
-            <%= f.submit 'Add Student', class: 'btn btn-primary' %>
+            <div class="actions">
+              <%= f.submit 'Add to Class', class: 'btn btn-primary', data: { confirm: 'Are you sure?' } %>
+            </div>
         <% end %>
+
+        <%= link_to 'Classrooms', classrooms_path, class: 'chalk_link' %>
       </div>
     </div>
-
-    <p>&nbsp;</p>
-
-    <p><%= link_to 'Back to Classrooms', classrooms_path, class: 'btn btn-danger' %></p>
 
   </div>
 </div>

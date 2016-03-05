@@ -5,15 +5,22 @@
     <h1>Sign In</h1>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <fieldset class="form-group">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: "form-control" %>
-      </fieldset>
 
-      <fieldset class="form-group">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-      </fieldset>
+      <div class="row">
+        <div class="col-sm-6">
+          <fieldset class="form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          </fieldset>
+        </div>
+
+        <div class="col-sm-6">
+          <fieldset class="form-group">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          </fieldset>
+        </div>
+      </div>
 
       <% if devise_mapping.rememberable? -%>
         <div class="field checkbox">
@@ -22,6 +29,8 @@
           </label>
         </div>
       <% end -%>
+
+      <p>&nbsp;</p>
 
       <div class="actions">
         <%= f.submit "Log in", class: "btn btn-primary btn-lg text-uppercase" %>
