@@ -37,5 +37,23 @@ angular.module('services')
           }
         }
       })
+
+    sendRewardEmail: ->
+      $http({
+        method: 'POST'
+        url: '/games/send_reward_email.json'
+        data: {
+          games: {
+            first_name: 'Rickey'
+            email: 'learric@gmail.com'
+            winning_team: 'Auburn Tigers'
+            losing_team: 'Alabama Crimson Tide'
+            winning_score: 14
+            losing_score: 0
+          }
+        }
+      }).then((res) ->
+        console.log res
+      )
   }
 )

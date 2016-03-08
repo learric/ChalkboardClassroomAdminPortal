@@ -17,6 +17,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'angular-rails-templates', '0.2.0'
 gem 'faker'
 gem 'font-awesome-sass'
+gem 'mandrill-api'
+gem 'mail'
 gem 'ngannotate-rails'
 gem 'therubyracer',  platforms: :ruby
 gem 'sdoc', '~> 0.4.0', group: :doc

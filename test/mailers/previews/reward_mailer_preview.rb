@@ -5,8 +5,8 @@ class RewardMailerPreview < ActionMailer::Preview
     user = {
         first_name: 'Rickey',
         email: 'email@user.com',
-        winning_team: 'Auburn',
-        losing_team: 'Alabama',
+        winning_team: 'Auburn Tigers',
+        losing_team: 'Alabama Crimson Tide',
         winning_score: 14,
         losing_score: 0
     }

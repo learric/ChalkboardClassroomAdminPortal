@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'games/game_session', to: 'games#game_session'
   get 'games/game_session_questions/:id', to: 'games#game_session_questions'
   get 'games/collegiate_rivals', to: 'games#collegiate_rivals'
+  post 'games/send_reward_email', to: 'games#send_reward_email'
 
   get 'profiles', to: 'profiles#show'
   get 'profiles/:id', to: 'profiles#show'
