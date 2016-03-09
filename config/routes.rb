@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get 'games/game_session', to: 'games#game_session'
   get 'games/game_session_questions/:id', to: 'games#game_session_questions'
   get 'games/collegiate_rivals', to: 'games#collegiate_rivals'
-  post 'games/send_reward_email', to: 'games#send_reward_email'
 
   get 'profiles', to: 'profiles#show'
   get 'profiles/:id', to: 'profiles#show'
@@ -26,6 +25,8 @@ Rails.application.routes.draw do
 
   get 'classroom_users/classroom/:id', to: 'classroom_users#index', as: 'classroom_users_class'
   post 'classroom_users/classroom/:id', to: 'classroom_users#create', as: 'classroom_users_add'
+
+  post 'rewards/send_email', to: 'rewards#send_email'
 
   devise_for :users, controllers: {
       sessions: 'users/sessions'

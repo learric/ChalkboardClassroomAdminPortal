@@ -41,9 +41,9 @@ angular.module('services')
     sendRewardEmail: ->
       $http({
         method: 'POST'
-        url: '/games/send_reward_email.json'
+        url: '/rewards/send_email.json'
         data: {
-          games: {
+          reward: {
             first_name: 'Rickey'
             email: 'learric@gmail.com'
             winning_team: 'Auburn Tigers'
