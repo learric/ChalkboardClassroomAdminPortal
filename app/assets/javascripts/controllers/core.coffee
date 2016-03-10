@@ -13,5 +13,3 @@ angular.module('controllers')
       $scope.showExitGamePopup = false
     else
       $scope.showExitGamePopup = true
-
-  SessionFactory.sendRewardEmail()

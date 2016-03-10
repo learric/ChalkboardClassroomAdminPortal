@@ -1,6 +1,6 @@
 angular.module('services')
 
-.factory('SessionFactory', ($http) ->
+.factory('SessionFactory', ($http, ScoreFactory, SettingsFactory) ->
 
   session = {}
 
@@ -39,21 +39,36 @@ angular.module('services')
       })
 
     sendRewardEmail: ->
+      scores = ScoreFactory.getFinalScore()
+      home = SettingsFactory.getFullHomeTeam()
+      away = SettingsFactory.getFullAwayTeam()
+      firstName = session.user.first_name
+      email = session.user.email
+
+      if scores.home < scores.away
+        winningScore = scores.away
+        losingScore = scores.home
+        winningTeam = away.nickname + ' ' + away.mascot
+        losingTeam = home.nickname + ' ' + home.mascot
+      else
+        winningScore = scores.home
+        losingScore = scores.away
+        winningTeam = home.nickname + ' ' + home.mascot
+        losingTeam = away.nickname + ' ' + away.mascot
+
       $http({
         method: 'POST'
         url: '/rewards/send_email.json'
         data: {
           reward: {
-            first_name: 'Rickey'
-            email: 'learric@gmail.com'
-            winning_team: 'Auburn Tigers'
-            losing_team: 'Alabama Crimson Tide'
-            winning_score: 14
-            losing_score: 0
+            first_name: firstName
+            email: email
+            winning_team: winningTeam
+            losing_team: losingTeam
+            winning_score: winningScore
+            losing_score: losingScore
           }
         }
-      }).then((res) ->
-        console.log res
-      )
+      })
   }
 )

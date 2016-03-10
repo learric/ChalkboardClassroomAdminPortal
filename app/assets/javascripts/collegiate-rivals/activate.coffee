@@ -489,7 +489,7 @@ angular.module('collegiateRivals', [
     url: '/reward'
     views: {
       'header': {
-        template: '<h2 home-team-nickname></h2>'
+        template: '<h2 winning-team-nickname></h2>'
       }
       'subheader': {
         template: '<h3>Check your email!</h3>'

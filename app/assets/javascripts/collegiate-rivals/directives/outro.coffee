@@ -53,7 +53,7 @@ angular.module('collegiateRivals')
         if result == 0
           $state.go('outro.reward')
         else
-          $state.go('outro.social')
+          $state.go('outro.end')
       )
   }
 
@@ -63,6 +63,7 @@ angular.module('collegiateRivals')
     template: '<button class="btn btn-success right_button animated rubberBand">Next</button>'
     link: (sc, el) ->
       el.on('click', ->
+        SessionFactory.sendRewardEmail()
         $state.go('outro.social')
       )
   }
