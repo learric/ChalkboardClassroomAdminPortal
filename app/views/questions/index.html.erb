@@ -7,35 +7,49 @@
 
     <h1>Questions</h1>
 
-    <table class="table">
-      <thead>
+    <% @questions.each do |question| %>
+
+      <h2><%= question.category %> Question</h2>
+
+      <table class="table">
         <tr>
-          <th>Category</th>
-          <th>Question</th>
-          <th>Incorrect</th>
-          <th>Correct</th>
+          <th width="60%">Question</th>
+          <th width="40%">Correct Answer</th>
+        </tr>
+
+        <tr>
+          <td width="60%"><%= question.first_line %></td>
+          <td width="40%"><%= question.correct_answer %></td>
+        </tr>
+      </table>
+
+      <table class="table">
+        <tr>
+          <th colspan="3">Incorrect Answers</th>
+        </tr>
+
+        <tr>
+          <td width="33.33333%"><%= question.incorrect_one %></td>
+          <td width="33.33333%"><%= question.incorrect_two %></td>
+          <td width="33.33333%"><%= question.incorrect_three %></td>
+        </tr>
+      </table>
+
+      <table class="table">
+        <tr>
+          <th width="60%">Category</th>
           <th colspan="2">Admin Options</th>
         </tr>
-      </thead>
+        <tr>
+          <td width="60%"><%= question.category %></td>
+          <td width="20%"><%= link_to 'Edit', edit_question_path(question), class: 'btn btn-warning' %></td>
+          <td width="20%"><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+        </tr>
+      </table>
 
-      <tbody>
-        <% @questions.each do |question| %>
-          <tr>
-            <td><%= question.category %></td>
-            <td><%= question.first_line %></td>
-            <td><%= question.incorrect_one %><br />
-              <%= question.incorrect_two %><br />
-              <%= question.incorrect_three %>
-            </td>
-            <td><%= question.correct_answer %></td>
-            <td><%= link_to 'Edit', edit_question_path(question), class: 'btn btn-warning' %></td>
-            <td><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+      <p>&nbsp;</p>
 
-    <p>&nbsp;</p>
+    <% end %>
 
     <div class="actions">
       <%= link_to 'New Question', new_classroom_question_path(@classroom), class: 'btn btn-primary' %>
