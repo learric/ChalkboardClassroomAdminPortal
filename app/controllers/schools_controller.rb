@@ -63,20 +63,28 @@ class SchoolsController < ApplicationController
     end
   end
 
+  #########
+  # USERS - ACTIONS OUTSIDE OF DEVISE USER
+  #########
+
+  # GET ALL TEACHERS
   def teachers
     school = @user.school_id
     @teachers = User.where(school_id: school, role: 1)
   end
 
+  # GET ALL STUDENTS
   def students
     school = @user.school_id
     @students = User.where(school_id: school, role: 0)
   end
 
+  # GET NEW USER
   def new_user
     @new_user = User.new
   end
 
+  # CREATE NEW USER
   def create_new_user
     @new_user = User.new(user_params)
     @new_user.school_id = @user.school_id
@@ -97,10 +105,12 @@ class SchoolsController < ApplicationController
     end
   end
 
+  # EDIT USER
   def edit_user
     @user = User.find(params[:id])
   end
 
+  # UPDATE USER
   def update_user
     @user = User.find(params[:id])
 
@@ -120,6 +130,7 @@ class SchoolsController < ApplicationController
     end
   end
 
+  # DELETE USER
   def delete_user
     @user = User.find(params[:id])
     @user.classroom_users.destroy_all
@@ -146,10 +157,12 @@ class SchoolsController < ApplicationController
       params.require(:school).permit(:name, :address, :city, :state, :zip, :mascot)
     end
 
+    # SET USER PARAMS
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :role, :game_wins, :game_losses)
     end
 
+    # SET USER
     def set_user
       id = current_user.id
       @user = User.find(id)
